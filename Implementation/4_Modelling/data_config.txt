@@ -1,0 +1,55 @@
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: random sampling  ####
+epoch 0:
+training loss = 309.8556 | Eval: HR@10 = 0.0395, NDCG@10 = 0.0181 
+epoch 1:
+training loss = 0.5132 | Eval: HR@10 = 0.1502, NDCG@10 = 0.0949 
+epoch 2:
+training loss = 0.5054 | Eval: HR@10 = 0.1086, NDCG@10 = 0.0683 
+epoch 3:
+training loss = 0.4907 | Eval: HR@10 = 0.1318, NDCG@10 = 0.0809 
+epoch 4:
+training loss = 0.4683 | Eval: HR@10 = 0.1715, NDCG@10 = 0.1036 
+epoch 5:
+training loss = 0.4477 | Eval: HR@10 = 0.1937, NDCG@10 = 0.1162 
+epoch 6:
+training loss = 0.4291 | Eval: HR@10 = 0.2109, NDCG@10 = 0.1257 
+epoch 7:
+training loss = 0.4143 | Eval: HR@10 = 0.2266, NDCG@10 = 0.1335 
+epoch 8:
+training loss = 0.4038 | Eval: HR@10 = 0.2379, NDCG@10 = 0.1396 
+epoch 9:
+training loss = 0.3973 | Eval: HR@10 = 0.2465, NDCG@10 = 0.1442 
+epoch 10:
+training loss = 0.3923 | Eval: HR@10 = 0.2525, NDCG@10 = 0.1478 
+epoch 11:
+training loss = 0.3867 | Eval: HR@10 = 0.2494, NDCG@10 = 0.1461 
+
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
