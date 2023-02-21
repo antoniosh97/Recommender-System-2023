@@ -1,0 +1,7 @@
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
