@@ -1,0 +1,187 @@
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: Stratified Sampling By Users  ####
+(2813462, 2)
+
+21-Feb-2023  18:07
+MODEL: FACTORIZATION MACHINE
+epoch 0:
+training loss = 274.1542 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 0:
+training loss = 274.1542 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 1:
+training loss = 0.5160 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 1:
+training loss = 0.5160 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 2:
+training loss = 0.5078 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 2:
+training loss = 0.5078 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 3:
+training loss = 0.4921 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 3:
+training loss = 0.4921 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 4:
+training loss = 0.4727 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 4:
+training loss = 0.4727 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 5:
+training loss = 0.4492 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 5:
+training loss = 0.4492 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 6:
+training loss = 0.4298 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 6:
+training loss = 0.4298 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 7:
+training loss = 0.4157 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 7:
+training loss = 0.4157 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 8:
+training loss = 0.4044 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 8:
+training loss = 0.4044 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 9:
+training loss = 0.3966 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 9:
+training loss = 0.3966 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 10:
+training loss = 0.3907 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 10:
+training loss = 0.3907 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 11:
+training loss = 0.3872 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 11:
+training loss = 0.3872 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+# Training duration: 1125.3995258808136
+
+####  zero_positions: Stratified Sampling By Users  ####
+(2813462, 2)
+
+21-Feb-2023  18:30
+MODEL: FACTORIZATION MACHINE
+epoch 0:
+training loss = 61.2017 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 0:
+training loss = 61.2017 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 1:
+training loss = 0.5166 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 1:
+training loss = 0.5166 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 2:
+training loss = 0.5054 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 2:
+training loss = 0.5054 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 3:
+training loss = 0.4869 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 3:
+training loss = 0.4869 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 4:
+training loss = 0.4625 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 4:
+training loss = 0.4625 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 5:
+training loss = 0.4411 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 5:
+training loss = 0.4411 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 6:
+training loss = 0.4247 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 6:
+training loss = 0.4247 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 7:
+training loss = 0.4105 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 7:
+training loss = 0.4105 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 8:
+training loss = 0.4049 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 8:
+training loss = 0.4049 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 9:
+training loss = 0.3975 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 9:
+training loss = 0.3975 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 10:
+training loss = 0.3922 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 10:
+training loss = 0.3922 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+MODEL: FACTORIZATION MACHINE
+epoch 11:
+training loss = 0.3918 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+MODEL: RANDOM
+epoch 11:
+training loss = 0.3918 | Eval: HR@10 = 0.0000, NDCG@10 = 0.0000 
+_________________________________________________________________
+# Training duration: 1142.6090068817139
