@@ -1,6 +1,6 @@
-v### EPOCH 11, Eval:
+### EPOCH 11, Eval:
 
-| Model            |      Sampling                  |  HR@10    |   NDCG@10 |  
+| Model            |      Sampling for test_x       |  HR@10    |   NDCG@10 |  
 |----------        |:-------------                  |   :------:|   :------:|  
 |  FM              |  Full                          |   XXXXXX  |   XXXXXX  |  
 |  FM              |  Stratified by Users           |   XXXXXX  |   XXXXXX  |  
