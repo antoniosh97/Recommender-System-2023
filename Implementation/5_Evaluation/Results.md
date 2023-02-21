@@ -1,18 +1,19 @@
+v### EPOCH 11, Eval:
 
-| Model   |      Sampling                           |  HR@11 |
-|----------|:-------------                          |------:|
-|  FM |  Full                                       | ?? |
-|  FM |  Stratified by Users                        |   ?? |
-|  FM |  Stratified by Items                        |   ?? |
-|  FM |  Probability                                |    ?? |
-|  FM with context |  Full                          | ?? |
-|  FM with context |  Stratified by Users           |   ?? |
-|  FM with context |  Stratified by Items           |   ?? |
-|  FM with context |  Probability                   |    ?? |
-|  Random |  Full                                   | ?? |
-|  Random |  Stratified by Users                    |   ?? |
-|  Random |  Stratified by Items                    |   ?? |
-|  Random |  Probability                            |    ?? |
+| Model            |      Sampling                  |  HR@10    |   NDCG@10 |  
+|----------        |:-------------                  |   :------:|   :------:|  
+|  FM              |  Full                          |   XXXXXX  |   XXXXXX  |  
+|  FM              |  Stratified by Users           |   XXXXXX  |   XXXXXX  |  
+|  FM              |  Stratified by Items           |  0.3819   |   0.2235  |  
+|  FM              |  Probability                   |   XXXXXX  |   XXXXXX  |  
+|  FM with context |  Full                          |   XXXXXX  |   XXXXXX  |  
+|  FM with context |  Stratified by Users           |   XXXXXX  |   XXXXXX  |  
+|  FM with context |  Stratified by Items           |   XXXXXX  |   XXXXXX  |  
+|  FM with context |  Probability                   |   XXXXXX  |   XXXXXX  |  
+|  Random          |  Full                          |   XXXXXX  |   XXXXXX  |  
+|  Random          |  Stratified by Users           |   XXXXXX  |   XXXXXX  |  
+|  Random          |  Stratified by Items           |   0.1517  |   0.0686  |  
+|  Random          |  Probability                   |   XXXXXX  |   XXXXXX  |  
 
 ### Sampling methods
 * Full
@@ -24,3 +25,4 @@
 * Random selection: 
 
 ctrl + k + v: to preview in pdf with "Markdown Preview Enhanced" extension in VsCode
+
