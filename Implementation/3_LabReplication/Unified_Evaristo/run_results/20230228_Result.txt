@@ -1,0 +1,73 @@
+20230228_Result1
+
+epoch 0:
+MODEL: FACTORIZATION MACHINE
+training loss = 363.2122 | Eval: HR@10 = 0.5394, NDCG@10 = 0.5390, Coverage@:56.33%
+MODEL: RANDOM
+training loss = 363.2122 | Eval: HR@10 = 0.5394, NDCG@10 = 0.5390, Coverage@:100.00%
+
+epoch 1:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.5133 | Eval: HR@10 = 0.5482, NDCG@10 = 0.5445, Coverage@:56.90%
+MODEL: RANDOM
+training loss = 0.5133 | Eval: HR@10 = 0.5395, NDCG@10 = 0.5391, Coverage@:100.00%
+
+epoch 2:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.5056 | Eval: HR@10 = 0.5510, NDCG@10 = 0.5455, Coverage@:57.30%
+MODEL: RANDOM
+training loss = 0.5056 | Eval: HR@10 = 0.5394, NDCG@10 = 0.5392, Coverage@:100.00%
+
+epoch 3:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.4933 | Eval: HR@10 = 0.5511, NDCG@10 = 0.5455, Coverage@:57.06%
+MODEL: RANDOM
+training loss = 0.4933 | Eval: HR@10 = 0.5396, NDCG@10 = 0.5391, Coverage@:100.00%
+
+epoch 4:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.4711 | Eval: HR@10 = 0.5516, NDCG@10 = 0.5458, Coverage@:57.56%
+MODEL: RANDOM
+training loss = 0.4711 | Eval: HR@10 = 0.5395, NDCG@10 = 0.5391, Coverage@:100.00%
+
+epoch 5:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.4495 | Eval: HR@10 = 0.5518, NDCG@10 = 0.5459, Coverage@:57.46%
+MODEL: RANDOM
+training loss = 0.4495 | Eval: HR@10 = 0.5398, NDCG@10 = 0.5392, Coverage@:99.98%
+
+epoch 6:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.4298 | Eval: HR@10 = 0.5519, NDCG@10 = 0.5460, Coverage@:57.48%
+MODEL: RANDOM
+training loss = 0.4298 | Eval: HR@10 = 0.5395, NDCG@10 = 0.5391, Coverage@:100.00%
+
+epoch 7:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.4154 | Eval: HR@10 = 0.5522, NDCG@10 = 0.5463, Coverage@:57.69%
+MODEL: RANDOM
+training loss = 0.4154 | Eval: HR@10 = 0.5397, NDCG@10 = 0.5392, Coverage@:100.00%
+
+epoch 8:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.4039 | Eval: HR@10 = 0.5535, NDCG@10 = 0.5468, Coverage@:57.87%
+MODEL: RANDOM
+training loss = 0.4039 | Eval: HR@10 = 0.5393, NDCG@10 = 0.5390, Coverage@:100.00%
+
+epoch 9:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.3973 | Eval: HR@10 = 0.5541, NDCG@10 = 0.5470, Coverage@:58.01%
+MODEL: RANDOM
+training loss = 0.3973 | Eval: HR@10 = 0.5398, NDCG@10 = 0.5392, Coverage@:100.00%
+
+epoch 10:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.3902 | Eval: HR@10 = 0.5543, NDCG@10 = 0.5472, Coverage@:58.01%
+MODEL: RANDOM
+training loss = 0.3902 | Eval: HR@10 = 0.5396, NDCG@10 = 0.5391, Coverage@:100.00%
+
+epoch 11:
+MODEL: FACTORIZATION MACHINE
+training loss = 0.3858 | Eval: HR@10 = 0.5557, NDCG@10 = 0.5475, Coverage@:58.14%
+MODEL: RANDOM
+training loss = 0.3858 | Eval: HR@10 = 0.5393, NDCG@10 = 0.5390, Coverage@:100.00%
