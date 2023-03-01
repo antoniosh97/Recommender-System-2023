@@ -3,20 +3,20 @@ import sys
 
 from datetime import datetime, timedelta
 import time
-import random
+#import random
 import time
-import math
+#import math
 
 import torch
 from torch.utils.data import DataLoader, Dataset
-from torch.utils.tensorboard import SummaryWriter
+#from torch.utils.tensorboard import SummaryWriter
 
 import pandas as pd
 import numpy as np
 
-import csv
-import json
-import gzip
+#import csv
+#import json
+#import gzip
 from pathlib import Path
 
 from urllib.request import urlopen
@@ -25,7 +25,7 @@ from collections import Counter
 
 import plotly.express as px
 import plotly.graph_objects as go
-import logging
+#import logging
 from tqdm import tqdm
 
 import scipy.sparse as sp
@@ -36,7 +36,7 @@ from IPython.display import display, HTML, clear_output
 
 from statistics import mean
 import ipywidgets as widgets
-import requests
+#import requests
 
 import logs
 import dataset
@@ -51,17 +51,18 @@ import multiprocessing as mp
 class Main():
     def __init__(self):
 
-        self.device    = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+        # > Device ---------------------------------------------------
+        self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
         self.num_cores = mp.cpu_count()
         if self.num_cores > 1:
             self.num_cores = self.num_cores - 1
-        self.num_cores = int(8)
-        
+        self.num_cores = int(8)# fixed size
+        # < Device ---------------------------------------------------
+
+        # > Variables ------------------------------------------------
         self.ini_time   = datetime.now()
-        self.log        = logs.Logs()
-        self.ds         = dataset.DataSet()
-        self.spl        = sampling.Sample()
-        self.res        = results.Results()
+        self.exec_path = os.getcwd()
+        self.sampling_method = "NegSampl"
 
         self.hparams = {
             'batch_size':64,
@@ -69,74 +70,93 @@ class Main():
             'hidden_size': 32,
             'learning_rate':1e-4,
         }
+
+        self.test_mode = False
+        # < Variables ------------------------------------------------
+
+        # > Classes --------------------------------------------------
+        self.log = logs.Logs(exec_path=self.exec_path, sm=self.sampling_method)
+        self.spl = sampling.Sample()
+        self.res = results.Results()
+        # < Classes --------------------------------------------------
+        
+        # > Dataset --------------------------------------------------
+        self.ds = dataset.DataSet()
+
         self.min_reviews, self.min_usuarios = [6,6]
+        self.data_path = "/3_DataPreparation/"
+
         self.col_names =   {"col_id_reviewer": "reviewerID",
                             "col_id_product": "asin",
                             "col_unix_time": "unixReviewTime",
                             "col_rating": "overall",
                             "col_timestamp": "timestamp",
                             "col_year": "year"}
-        self.sampling_method = "neg_sample"
-        self.execution_path = os.getcwd()
+        
         self.train_x, self.test_x = [], []
-    
+        # < Dataset --------------------------------------------------
+
 
     def start(self):
 
-        # Logs
-        self.base_dir_name = os.getcwd()
-        self.exec_path = os.getcwd()
-        tb_fm, tb_rnd = self.log.def_log(self.base_dir_name, self.exec_path)
+        # Define Logs
+        tb_fm, tb_rnd = self.log.def_log()
         
-        # Dataset
-        dataset_path = self.exec_path + "/3_DataPreparation/"
-        df = self.ds.readDataSet(dataset_path, self.min_reviews, self.min_usuarios, nrows=None) 
+        # > Dataset ---------------------------------------------------------------------------------
+        if self.test_mode:
+            NrRows = 9999
+        else:
+            NrRows = None
+
+        dataset_path = self.exec_path + self.data_path
+        df = self.ds.readDataSet(dataset_path, self.min_reviews, self.min_usuarios, nrows=NrRows) 
         self.log.save_data_configuration(str(df.nunique()))
         data, dims = self.ds.getDims(df, self.col_names, True)
+        # < Dataset ---------------------------------------------------------------------------------
         
-        # Prepare data for training
+        # > Split data Training and Test-------------------------------------------------------------
         self.train_x, self.test_x = self.split_train_test(data, dims[0])
         self.train_x = self.train_x[:, :2]
         dims = dims[:2]
+        # < Split data Training and Test-------------------------------------------------------------
         
-        # Sampling Strategy
-        print("Start: Neg Sampling")
+        # > Sampling Strategy -----------------------------------------------------------------------
         self.train_x, rating_mat = self.spl.ng_sample(self.train_x, dims)
         dims[-1]-dims[0]
-        print("End: Neg Sampling")
 
-        print("Start: zero_positions Sampling")
         zero_positions = self.spl.zero_positions_mode(1, rating_mat, self.log, showtime=False)
         print(f"zero_positions: {str(len(zero_positions))}") #287868348
-        print("End: zero_positions Sampling")
 
-        print("Start: items2compute Sampling")
-        chunk_size2 = len(zero_positions) // self.num_cores
-        print(f"Getting chunks...")
-        chunks2 = [(int(round(i*chunk_size2)), int(round((i+1)*chunk_size2))) for i in range(self.num_cores)]
-        print(f"NrChunks: {str(len(chunks2))}")
+        print("Start: items2compute")
+        chunk_size = len(zero_positions) // self.num_cores
+        chunks = [(int(round(i*chunk_size)), int(round((i+1)*chunk_size))) for i in range(self.num_cores)]
+        print(f"NrChunks: {str(len(chunks))}")
         
-        ################################################################################################
+        # > Parallel processing ---------------------------------------------------------------
         print(f"Starting parallel processing...")
 
+        # > Start all processes
         manager = mp.Manager()
         return_dict = manager.dict()
         processes = []
         idx = 0
-        for (start, end) in chunks2:
-            #end = 100000
+        for (start, end) in chunks:
+            
+            if self.test_mode:
+                end = 100000
+
             process_name = f"RS-Process_{str(idx)}_{os.getpid()}_{int(time.time())}"
             process = mp.Process(target=self.items2compV3, args=(idx, dims, zero_positions, start, end, return_dict), name=process_name)
             processes.append(process)
             process.start()
             idx += 1
             
-            #if idx > 2:
-            #    break
+            if self.test_mode:
+                if idx > 2:
+                    break
+        # < Start all processes
 
-        ################################################################################################
-        # Get the return of each process
-
+        # > Get the return of each process
         items2compute =  []
         p_already_collected = [False for _ in processes]
         getting_return = 1
@@ -146,31 +166,33 @@ class Main():
             for proces in processes:
                 if p_already_collected[idx] == False:
                     if proces.is_alive():
-                        check_process_alive = True 
+                        check_process_alive = True
                     else:
-                        items2compute = items2compute + return_dict[idx]
+                        items2compute += return_dict[idx]
                         p_already_collected[idx] = True
                 idx += 1
             if check_process_alive == False:
                 getting_return = 0
+            #by time
+        # < Get the return of each process
         print("All processes finished")
+        # < Parallel processing ---------------------------------------------------------------
+
         print(f"items2compute: {str(len(items2compute))}") 
         del p_already_collected, getting_return, idx, check_process_alive, proces, processes, return_dict
         print("End: items2compute Sampling")
+        # < Sampling Strategy -----------------------------------------------------------------------
 
-        ################################################################################################
-
-        print("Start: build_test_set")
+        # > Build Test Set --------------------------------------------------------------------------
         self.test_x = self.build_test_set(items2compute, self.test_x)
-        print("End: build_test_set")
+        # > Build Test Set --------------------------------------------------------------------------
         
-        print("Start: Create Models: FM, Random, NFC")
+        # > Create Models --------------------------------------------------------------------------
         train_dataset = pointdata.PointData(self.train_x, dims)
         dims = train_dataset.dims
         model = model_fm.FactorizationMachineModel(dims, self.hparams['hidden_size']).to(self.device)
         criterion = torch.nn.BCEWithLogitsLoss(reduction='mean')
         optimizer = torch.optim.Adam(params=model.parameters(), lr=self.hparams['learning_rate'])
-
         rnd_model = model_random.RandomModel(dims)
 
         """
@@ -180,8 +202,9 @@ class Main():
         """
 
         data_loader = DataLoader(train_dataset, batch_size=self.hparams['batch_size'], shuffle=True, num_workers=0)
-        print("End: Create Models: FM, Random, NFC")
+        # < Create Models --------------------------------------------------------------------------
         
+        # > Training and Test ----------------------------------------------------------------------
         print("Start: Epochs")
         topk = 10
         for epoch_i in range(self.hparams['num_epochs']):
@@ -197,6 +220,7 @@ class Main():
             tb_fm.add_scalar('train/loss', train_loss, epoch_i)
             tb_fm.add_scalar('eval/HR@{topk}', hr, epoch_i)
             tb_fm.add_scalar('eval/NDCG@{topk}', ndcg, epoch_i)
+            tb_fm.add_scalar('coverage/coverage', coverage, epoch_i)
 
             hr, ndcg, coverage  = self.test(rnd_model, self.train_x, self.test_x, self.device, topk=topk)
 
@@ -207,17 +231,16 @@ class Main():
         
             tb_rnd.add_scalar('eval/HR@{topk}', hr, epoch_i)
             tb_rnd.add_scalar('eval/NDCG@{topk}', ndcg, epoch_i)
+            tb_rnd.add_scalar('coverage/coverage', coverage, epoch_i)
         
         print("End: Epochs")
-        #os.chdir(os.getcwd() / Path("4_Modelling"))
-        #%tensorboard --logdir run_tensorboard
-       
-        print("End of Method Start")
-
+        # < Training and Test ----------------------------------------------------------------------
+      
         #Calc time of execution
         self.efe(self.ini_time)
 
-    #>>> End of Method Start
+    # > End of Method Start-------------------------------------------------------------------------
+
 
     def efe(self, startime):
         end_time = datetime.now()
@@ -234,10 +257,10 @@ class Main():
 
 
     def items2compV3(self, idx, dims, zero_positions, start, end, return_dict):
-        print(f"Processing Chunk from {str(start)} to {str(end)}")
+        
+        print(f"{str(idx)} - Processing Chunk from {str(start)} to {str(end)}")
+        
         chunk = zero_positions[start:end]
-        out = []
-
         mask = chunk[:, 1] >= dims[0]
         chunk = chunk[mask]
         usuarios = chunk[:, 0]
@@ -248,21 +271,20 @@ class Main():
             list_of_lists[i] = [0]*length
 
         #out = np.array([np.array(x) for x in list_of_lists])
+        out = []
         out = [x for x in list_of_lists]
-        total_idx = len(out)
 
         for user in range(dims[0]):
-            if user < total_idx:
-                try:
-                    aux = chunk[chunk[:, 0] == user][:, 1]
-                    out[user] = aux
-                except IndexError:
-                    None
+            try:
+                #aux = chunk[chunk[:, 0] == user][:, 1]
+                out[user] = chunk[chunk[:, 0] == user][:, 1]
+            except IndexError:
+                None
         
         return_dict[idx] = out
         return return_dict
         
-
+    """
     def items2compV2(self, dims, zero_positions, start, end):
         print(f"Processing Chunk from {str(start)} to {str(end)}")
         chunk = zero_positions[start:end]
@@ -277,8 +299,9 @@ class Main():
             user_item_indices = user_zero_item_indices[user_zero_item_indices >= dims[0]]
             out.append(list(user_item_indices))
         return out
+    """
 
-
+    """
     def items2computes(self, dims, zero_positions, showtime=False, mode=0):
         if showtime:
             ini_time   = datetime.now()
@@ -324,13 +347,14 @@ class Main():
                 print(f"items2compute - Executed in {seconds} seconds")
 
         return items2compute
+    """
     
     def split_train_test(self,
                          data: np.ndarray,
                          n_users: int) -> Tuple[np.ndarray, np.ndarray]:
         # Split and remove timestamp
         train_x, test_x = [], []
-        for u in trange(n_users, desc='spliting train/test and removing timestamp...'):
+        for u in trange(n_users, desc='Spliting train/test and removing timestamp...'):
             user_data = data[data[:, 0] == u]
             sorted_data = user_data[user_data[:, -1].argsort()]
             if len(sorted_data) > 0:
@@ -344,7 +368,7 @@ class Main():
     def build_test_set(self, itemsnoninteracted:list, gt_test_interactions: np.ndarray) -> list:
         #max_users, max_items = dims # number users (943), number items (2625)
         test_set = []
-        for pair, negatives in tqdm(zip(gt_test_interactions, itemsnoninteracted), desc="BUILDING TEST SET..."):
+        for pair, negatives in tqdm(zip(gt_test_interactions, itemsnoninteracted), desc="Building test set..."):
             # APPEND TEST SETS FOR SINGLE USER
             negatives = np.delete(negatives, np.where(negatives == pair[1]))
             single_user_test_set = np.vstack([pair, ] * (len(negatives)+1))
@@ -408,7 +432,7 @@ class Main():
             
         return mean(HR), mean(NDCG), coverage
 
-#<<< End of Class Main
+# < End of Class Main
 
 if __name__ == '__main__':
     main = Main()
