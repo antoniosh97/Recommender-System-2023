@@ -1,0 +1,2358 @@
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               3446
+reviewerID        13809
+overall               5
+unixReviewTime     3491
+timestamp          3491
+year                  1
+dtype: int64
+asin               2789
+reviewerID        13565
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2789
+reviewerID        13565
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2789
+reviewerID        13565
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               2789
+reviewerID        13565
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2789
+reviewerID        13565
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               2803
+reviewerID        13572
+overall               5
+unixReviewTime     3474
+timestamp          3474
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               4658
+reviewerID        14046
+overall               5
+unixReviewTime     3529
+timestamp          3529
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               337
+reviewerID        6284
+overall              5
+unixReviewTime    2509
+timestamp         2509
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+MODEL: FACTORIZATION MACHINE
+epoch 0:
+training loss = 8257.1020 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 0:
+training loss = 8257.1020 | Eval: HR@10 = 0.1711, NDCG@10 = 0.1585 
+MODEL: FACTORIZATION MACHINE
+epoch 1:
+training loss = 7342.0927 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 1:
+training loss = 7342.0927 | Eval: HR@10 = 0.1763, NDCG@10 = 0.1616 
+MODEL: FACTORIZATION MACHINE
+epoch 2:
+training loss = 6426.8245 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 2:
+training loss = 6426.8245 | Eval: HR@10 = 0.1740, NDCG@10 = 0.1593 
+MODEL: FACTORIZATION MACHINE
+epoch 3:
+training loss = 5512.3949 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 3:
+training loss = 5512.3949 | Eval: HR@10 = 0.1702, NDCG@10 = 0.1576 
+MODEL: FACTORIZATION MACHINE
+epoch 4:
+training loss = 4597.3313 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 4:
+training loss = 4597.3313 | Eval: HR@10 = 0.1721, NDCG@10 = 0.1601 
+MODEL: FACTORIZATION MACHINE
+epoch 5:
+training loss = 3681.5409 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 5:
+training loss = 3681.5409 | Eval: HR@10 = 0.1754, NDCG@10 = 0.1612 
+MODEL: FACTORIZATION MACHINE
+epoch 6:
+training loss = 2767.0135 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 6:
+training loss = 2767.0135 | Eval: HR@10 = 0.1707, NDCG@10 = 0.1584 
+MODEL: FACTORIZATION MACHINE
+epoch 7:
+training loss = 1852.8631 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 7:
+training loss = 1852.8631 | Eval: HR@10 = 0.1782, NDCG@10 = 0.1621 
+MODEL: FACTORIZATION MACHINE
+epoch 8:
+training loss = 943.7584 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 8:
+training loss = 943.7584 | Eval: HR@10 = 0.1787, NDCG@10 = 0.1627 
+MODEL: FACTORIZATION MACHINE
+epoch 9:
+training loss = 390.9632 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 9:
+training loss = 390.9632 | Eval: HR@10 = 0.1721, NDCG@10 = 0.1593 
+MODEL: FACTORIZATION MACHINE
+epoch 10:
+training loss = 249.5612 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 10:
+training loss = 249.5612 | Eval: HR@10 = 0.1815, NDCG@10 = 0.1638 
+MODEL: FACTORIZATION MACHINE
+epoch 11:
+training loss = 194.9635 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504 
+MODEL: RANDOM
+epoch 11:
+training loss = 194.9635 | Eval: HR@10 = 0.1787, NDCG@10 = 0.1611 
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+MODEL: FACTORIZATION MACHINE
+epoch 0:
+training loss = 479.1836 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 0:
+training loss = 479.1836 | Eval: HR@10 = 0.1768, NDCG@10 = 0.1606, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 1:
+training loss = 406.7409 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 1:
+training loss = 406.7409 | Eval: HR@10 = 0.1820, NDCG@10 = 0.1632, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 2:
+training loss = 344.4788 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 2:
+training loss = 344.4788 | Eval: HR@10 = 0.1787, NDCG@10 = 0.1617, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 3:
+training loss = 285.3492 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 3:
+training loss = 285.3492 | Eval: HR@10 = 0.1759, NDCG@10 = 0.1597, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 4:
+training loss = 227.1966 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 4:
+training loss = 227.1966 | Eval: HR@10 = 0.1721, NDCG@10 = 0.1605, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 5:
+training loss = 169.6764 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 5:
+training loss = 169.6764 | Eval: HR@10 = 0.1796, NDCG@10 = 0.1619, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 6:
+training loss = 112.8409 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 6:
+training loss = 112.8409 | Eval: HR@10 = 0.1773, NDCG@10 = 0.1614, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 7:
+training loss = 55.9118 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1508, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 7:
+training loss = 55.9118 | Eval: HR@10 = 0.1754, NDCG@10 = 0.1610, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 8:
+training loss = 6.9691 | Eval: HR@10 = 0.3145, NDCG@10 = 0.2403, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 8:
+training loss = 6.9691 | Eval: HR@10 = 0.1801, NDCG@10 = 0.1618, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 9:
+training loss = 0.5059 | Eval: HR@10 = 0.3300, NDCG@10 = 0.2469, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 9:
+training loss = 0.5059 | Eval: HR@10 = 0.1810, NDCG@10 = 0.1624, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 10:
+training loss = 0.5147 | Eval: HR@10 = 0.3300, NDCG@10 = 0.2471, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 10:
+training loss = 0.5147 | Eval: HR@10 = 0.1711, NDCG@10 = 0.1575, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: FACTORIZATION MACHINE
+epoch 11:
+training loss = 0.5036 | Eval: HR@10 = 0.3352, NDCG@10 = 0.2496, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+MODEL: RANDOM
+epoch 11:
+training loss = 0.5036 | Eval: HR@10 = 0.1697, NDCG@10 = 0.1580, Coverage@:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)], mean:[([0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125, 0.3125], 0.3125)]
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+MODEL: FACTORIZATION MACHINE
+epoch 0:
+training loss = 2073.1189 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 0:
+training loss = 2073.1189 | Eval: HR@10 = 0.1773, NDCG@10 = 0.1642, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 1:
+training loss = 1609.1761 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 1:
+training loss = 1609.1761 | Eval: HR@10 = 0.1683, NDCG@10 = 0.1583, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 2:
+training loss = 1315.5977 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 2:
+training loss = 1315.5977 | Eval: HR@10 = 0.1740, NDCG@10 = 0.1604, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 3:
+training loss = 1121.7108 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 3:
+training loss = 1121.7108 | Eval: HR@10 = 0.1815, NDCG@10 = 0.1617, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 4:
+training loss = 984.5525 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 4:
+training loss = 984.5525 | Eval: HR@10 = 0.1688, NDCG@10 = 0.1570, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 5:
+training loss = 879.6752 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 5:
+training loss = 879.6752 | Eval: HR@10 = 0.1740, NDCG@10 = 0.1592, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 6:
+training loss = 788.3011 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 6:
+training loss = 788.3011 | Eval: HR@10 = 0.1711, NDCG@10 = 0.1594, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 7:
+training loss = 703.7360 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 7:
+training loss = 703.7360 | Eval: HR@10 = 0.1744, NDCG@10 = 0.1578, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 8:
+training loss = 623.8056 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 8:
+training loss = 623.8056 | Eval: HR@10 = 0.1787, NDCG@10 = 0.1623, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 9:
+training loss = 549.3801 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 9:
+training loss = 549.3801 | Eval: HR@10 = 0.1759, NDCG@10 = 0.1603, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 10:
+training loss = 479.7623 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 10:
+training loss = 479.7623 | Eval: HR@10 = 0.1749, NDCG@10 = 0.1612, Coverage@:299.41368078175896
+MODEL: FACTORIZATION MACHINE
+epoch 11:
+training loss = 414.4639 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:919200.0
+MODEL: RANDOM
+epoch 11:
+training loss = 414.4639 | Eval: HR@10 = 0.1730, NDCG@10 = 0.1599, Coverage@:299.41368078175896
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+asin               274
+reviewerID        5819
+overall              5
+unixReviewTime    2438
+timestamp         2438
+year                 1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+MODEL: FACTORIZATION MACHINE
+epoch 0:
+training loss = 7458.4476 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:37.5000%
+MODEL: RANDOM
+epoch 0:
+training loss = 7458.4476 | Eval: HR@10 = 0.1707, NDCG@10 = 0.1584, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 1:
+training loss = 6542.8323 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:37.5000%
+MODEL: RANDOM
+epoch 1:
+training loss = 6542.8323 | Eval: HR@10 = 0.1749, NDCG@10 = 0.1609, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 2:
+training loss = 5629.0356 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:37.5000%
+MODEL: RANDOM
+epoch 2:
+training loss = 5629.0356 | Eval: HR@10 = 0.1773, NDCG@10 = 0.1609, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 3:
+training loss = 4714.3586 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:37.5000%
+MODEL: RANDOM
+epoch 3:
+training loss = 4714.3586 | Eval: HR@10 = 0.1707, NDCG@10 = 0.1584, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 4:
+training loss = 3798.1886 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:37.5000%
+MODEL: RANDOM
+epoch 4:
+training loss = 3798.1886 | Eval: HR@10 = 0.1730, NDCG@10 = 0.1592, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 5:
+training loss = 2883.4286 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:37.5000%
+MODEL: RANDOM
+epoch 5:
+training loss = 2883.4286 | Eval: HR@10 = 0.1820, NDCG@10 = 0.1627, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 6:
+training loss = 1968.3782 | Eval: HR@10 = 0.1528, NDCG@10 = 0.1504, Coverage@:37.5000%
+MODEL: RANDOM
+epoch 6:
+training loss = 1968.3782 | Eval: HR@10 = 0.1801, NDCG@10 = 0.1621, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 7:
+training loss = 1053.6422 | Eval: HR@10 = 0.1575, NDCG@10 = 0.1527, Coverage@:37.5000%
+MODEL: RANDOM
+epoch 7:
+training loss = 1053.6422 | Eval: HR@10 = 0.1744, NDCG@10 = 0.1587, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 8:
+training loss = 291.7717 | Eval: HR@10 = 0.1579, NDCG@10 = 0.1523, Coverage@:36.8750%
+MODEL: RANDOM
+epoch 8:
+training loss = 291.7717 | Eval: HR@10 = 0.1716, NDCG@10 = 0.1589, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 9:
+training loss = 69.6757 | Eval: HR@10 = 0.1579, NDCG@10 = 0.1523, Coverage@:36.8750%
+MODEL: RANDOM
+epoch 9:
+training loss = 69.6757 | Eval: HR@10 = 0.1759, NDCG@10 = 0.1608, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 10:
+training loss = 55.7761 | Eval: HR@10 = 0.1579, NDCG@10 = 0.1523, Coverage@:36.8750%
+MODEL: RANDOM
+epoch 10:
+training loss = 55.7761 | Eval: HR@10 = 0.1702, NDCG@10 = 0.1584, Coverage@:100.0000%
+MODEL: FACTORIZATION MACHINE
+epoch 11:
+training loss = 46.1797 | Eval: HR@10 = 0.1579, NDCG@10 = 0.1523, Coverage@:36.8750%
+MODEL: RANDOM
+epoch 11:
+training loss = 46.1797 | Eval: HR@10 = 0.1768, NDCG@10 = 0.1605, Coverage@:100.0000%
+asin               6178
+reviewerID        14138
+overall               5
+unixReviewTime     3622
+timestamp          3622
+year                  1
+dtype: int64
+
+####  zero_positions: all data separated by rows  ####
+MODEL: FACTORIZATION MACHINE
+epoch 0:
+training loss = 363.2122 | Eval: HR@10 = 0.5394, NDCG@10 = 0.5390, Coverage@:56.33%
+MODEL: RANDOM
+epoch 0:
+training loss = 363.2122 | Eval: HR@10 = 0.5394, NDCG@10 = 0.5390, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 1:
+training loss = 0.5133 | Eval: HR@10 = 0.5482, NDCG@10 = 0.5445, Coverage@:56.90%
+MODEL: RANDOM
+epoch 1:
+training loss = 0.5133 | Eval: HR@10 = 0.5395, NDCG@10 = 0.5391, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 2:
+training loss = 0.5056 | Eval: HR@10 = 0.5510, NDCG@10 = 0.5455, Coverage@:57.30%
+MODEL: RANDOM
+epoch 2:
+training loss = 0.5056 | Eval: HR@10 = 0.5394, NDCG@10 = 0.5392, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 3:
+training loss = 0.4933 | Eval: HR@10 = 0.5511, NDCG@10 = 0.5455, Coverage@:57.06%
+MODEL: RANDOM
+epoch 3:
+training loss = 0.4933 | Eval: HR@10 = 0.5396, NDCG@10 = 0.5391, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 4:
+training loss = 0.4711 | Eval: HR@10 = 0.5516, NDCG@10 = 0.5458, Coverage@:57.56%
+MODEL: RANDOM
+epoch 4:
+training loss = 0.4711 | Eval: HR@10 = 0.5395, NDCG@10 = 0.5391, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 5:
+training loss = 0.4495 | Eval: HR@10 = 0.5518, NDCG@10 = 0.5459, Coverage@:57.46%
+MODEL: RANDOM
+epoch 5:
+training loss = 0.4495 | Eval: HR@10 = 0.5398, NDCG@10 = 0.5392, Coverage@:99.98%
+MODEL: FACTORIZATION MACHINE
+epoch 6:
+training loss = 0.4298 | Eval: HR@10 = 0.5519, NDCG@10 = 0.5460, Coverage@:57.48%
+MODEL: RANDOM
+epoch 6:
+training loss = 0.4298 | Eval: HR@10 = 0.5395, NDCG@10 = 0.5391, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 7:
+training loss = 0.4154 | Eval: HR@10 = 0.5522, NDCG@10 = 0.5463, Coverage@:57.69%
+MODEL: RANDOM
+epoch 7:
+training loss = 0.4154 | Eval: HR@10 = 0.5397, NDCG@10 = 0.5392, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 8:
+training loss = 0.4039 | Eval: HR@10 = 0.5535, NDCG@10 = 0.5468, Coverage@:57.87%
+MODEL: RANDOM
+epoch 8:
+training loss = 0.4039 | Eval: HR@10 = 0.5393, NDCG@10 = 0.5390, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 9:
+training loss = 0.3973 | Eval: HR@10 = 0.5541, NDCG@10 = 0.5470, Coverage@:58.01%
+MODEL: RANDOM
+epoch 9:
+training loss = 0.3973 | Eval: HR@10 = 0.5398, NDCG@10 = 0.5392, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 10:
+training loss = 0.3902 | Eval: HR@10 = 0.5543, NDCG@10 = 0.5472, Coverage@:58.01%
+MODEL: RANDOM
+epoch 10:
+training loss = 0.3902 | Eval: HR@10 = 0.5396, NDCG@10 = 0.5391, Coverage@:100.00%
+MODEL: FACTORIZATION MACHINE
+epoch 11:
+training loss = 0.3858 | Eval: HR@10 = 0.5557, NDCG@10 = 0.5475, Coverage@:58.14%
+MODEL: RANDOM
+epoch 11:
+training loss = 0.3858 | Eval: HR@10 = 0.5393, NDCG@10 = 0.5390, Coverage@:100.00%
