@@ -1,7 +1,7 @@
 import torch
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import Dataset
 import numpy as np
-from typing import Tuple, Dict, Any, List
+from typing import Tuple
 
 class PointData(Dataset):
     def __init__(self,

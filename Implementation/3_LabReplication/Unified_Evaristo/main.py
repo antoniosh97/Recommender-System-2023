@@ -1,49 +1,19 @@
 import os
-import sys
-
-from datetime import datetime, timedelta
+from datetime import datetime
 import time
-#import random
-import time
-#import math
-
 import torch
-from torch.utils.data import DataLoader, Dataset
-#from torch.utils.tensorboard import SummaryWriter
-
-import pandas as pd
+from torch.utils.data import DataLoader
 import numpy as np
-
-#import csv
-#import json
-#import gzip
-from pathlib import Path
-
-from urllib.request import urlopen
-from itertools import chain
-from collections import Counter
-
-import plotly.express as px
-import plotly.graph_objects as go
-#import logging
 from tqdm import tqdm
-
-import scipy.sparse as sp
-from typing import Tuple, Dict, Any, List
+from typing import Tuple
 from tqdm import tqdm, trange
-from IPython import embed
-from IPython.display import display, HTML, clear_output
-
 from statistics import mean
-import ipywidgets as widgets
-#import requests
-
 import logs
 import dataset
 import pointdata
 import model_fm
 import model_random
-import model_nfc
+#import model_nfc
 import sampling
 import results
 import multiprocessing as mp
@@ -71,11 +41,11 @@ class Main():
             'learning_rate':1e-4,
         }
 
-        self.test_mode = False
+        self.test_mode = True
         # < Variables ------------------------------------------------
 
         # > Classes --------------------------------------------------
-        self.log = logs.Logs(exec_path=self.exec_path, sm=self.sampling_method)
+        self.log = logs.Logs(exec_path=self.exec_path, sm=self.sampling_method, ml=False)
         self.spl = sampling.Sample()
         self.res = results.Results()
         # < Classes --------------------------------------------------
@@ -270,13 +240,11 @@ class Main():
         for i, length in enumerate(lista_longitud_zeros):
             list_of_lists[i] = [0]*length
 
-        #out = np.array([np.array(x) for x in list_of_lists])
         out = []
         out = [x for x in list_of_lists]
 
         for user in range(dims[0]):
             try:
-                #aux = chunk[chunk[:, 0] == user][:, 1]
                 out[user] = chunk[chunk[:, 0] == user][:, 1]
             except IndexError:
                 None
@@ -426,9 +394,11 @@ class Main():
             NDCG.append(res.getNDCG(recommend_list, gt_item))
         
         #Calculate Coverage Metric
+        #Total of items recommended for all users in test set
         cov_sum_recolist_prod_by_user += len(np.unique(all_reco_list))
+        #Total of items in training set
         count_all_items_train = len(np.unique(train_x[:,1])) 
-        coverage = (cov_sum_recolist_prod_by_user *100 ) / count_all_items_train
+        coverage = (cov_sum_recolist_prod_by_user * 100 ) / count_all_items_train
             
         return mean(HR), mean(NDCG), coverage
 
