@@ -1,9 +1,8 @@
 import numpy as np
 import scipy.sparse as sp
 from tqdm import tqdm
-from typing import Tuple, Dict, Any, List
-from datetime import datetime, timedelta
-import time
+from typing import Tuple
+from datetime import datetime
 
 class Sample():
     def __init__(self):
@@ -28,7 +27,7 @@ class Sample():
         rating_mat = self.build_adj_mx(dims[-1], data)
         interactions = []
         min_item, max_item = dims[0], dims[1]
-        for num, x in tqdm(enumerate(data), desc='perform negative sampling...'):
+        for num, x in tqdm(enumerate(data), desc='Perform negative sampling...'):
             interactions.append(np.append(x, 1))
             for t in range(num_ng):
                 j = np.random.randint(min_item, max_item) #if not pop else random.sample(items_to_sample, 1)[0]
@@ -38,14 +37,17 @@ class Sample():
                 interactions.append(np.concatenate([[x[0], j], x[2:], [0]]))
         return np.vstack(interactions), rating_mat
     
+    """
     def zero_positionsV2(self, log, rating_mat, start, end):
         print(f"zero_positionsV2: Processing Chunk from {str(start)} to {str(end)}")
         chunk = rating_mat[start:end]
         log.save_data_configuration("\n"+"#"*4+"  zero_positions: all data separated by rows  "+"#"*4)
         zero_true_matrix = np.where(chunk.A==0)
         return np.asarray([zero_true_matrix[0],zero_true_matrix[1]]).T
+    """
 
     def zero_positions_mode(self, mode, rating_mat, log, showtime=False):
+        print(f"Running: zero_positions...")
         if showtime:
             ini_time   = datetime.now()
 
