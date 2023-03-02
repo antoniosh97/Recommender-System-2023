@@ -41,7 +41,7 @@ class Main():
             'learning_rate':1e-4,
         }
 
-        self.test_mode = True
+        self.test_mode = False
         # < Variables ------------------------------------------------
 
         # > Classes --------------------------------------------------
