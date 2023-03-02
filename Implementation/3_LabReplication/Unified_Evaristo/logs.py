@@ -1,6 +1,5 @@
 import os
 from torch.utils.tensorboard import SummaryWriter
-from IPython import get_ipython
 
 class Logs():
     def __init__(self, exec_path, sm):
@@ -12,8 +11,8 @@ class Logs():
         #self.sampling_method = "neg_sample" #os.listdir()[3].split(".")[-2][3:].split("_")[-1]
         #old_path = os.getcwd()
         #os.chdir("..")
+        #%load_ext tensorboard
         
-        #get_ipython().run_line_magic('load_ext', 'tensorboard') #%load_ext tensorboard
         logs_base_dir = "runs_" + self.sampling_method
         os.environ["run_tensorboard"] = logs_base_dir
 
