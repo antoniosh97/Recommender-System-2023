@@ -22,7 +22,7 @@ class Main():
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
-        self.test_mode = True
+        self.test_mode = False
 
         self.ini_time   = datetime.now()
         self.exec_path = os.getcwd()
