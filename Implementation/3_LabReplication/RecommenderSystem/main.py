@@ -21,7 +21,7 @@ class Main():
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
-        self.test_mode = False
+        self.test_mode = True
 
         self.ini_time   = datetime.now()
         self.exec_path = os.getcwd()
@@ -60,6 +60,9 @@ class Main():
 
     def start(self):
 
+        if self.test_mode:
+            print(self.device)
+
         # Define Logs
         tb_fm, tb_rnd, tb_pop, tb_ncf = self.log.def_log()
         
@@ -75,10 +78,10 @@ class Main():
         
         if self.test_mode == True:
             print("Dim of users: {}\nDim of items: {}\nDims of unixtime: {}".format(dims[0], dims[1], dims[2]))
-            print(max(data[:,0]))
-            print(max(data[:,1]))
-            print(data)
-            print(f"len(data[:,1]): {str(len(data[:,1]))}")
+            #print(max(data[:,0]))
+            #print(max(data[:,1]))
+            #print(data)
+            #print(f"len(data[:,1]): {str(len(data[:,1]))}")
         # < Dataset ---------------------------------------------------------------------------------
         
         # > Split data Training and Test-------------------------------------------------------------
@@ -87,10 +90,8 @@ class Main():
         dims = dims[:2]
 
         if self.test_mode:
-            print("Train shape: ")
-            print(str(self.train_x.shape))
-            print("Test shape: ")
-            print(str(self.test_x.shape))
+            print(f'Train shape: {str(self.train_x.shape)}')
+            print(f'Test shape: {str(self.test_x.shape)}')
         
         #self.process_res.update({"train_x.shape": self.train_x.shape})
         #self.process_res.update({"test_x.shape": self.test_x.shape})
@@ -103,13 +104,13 @@ class Main():
         dims[-1]-dims[0] 
         if self.test_mode:
             print("Dimensions matrix:\n",dims)
-            print("\nRating matrix:")
-            print(rating_mat)
-            print(np.count_nonzero(rating_mat.toarray())/(dims[-1]*dims[-1]))
-            print(1 - np.count_nonzero(rating_mat.toarray())/(dims[-1]*dims[-1]))
+            #print("\nRating matrix:")
+            #print(rating_mat)
+            #print(np.count_nonzero(rating_mat.toarray())/(dims[-1]*dims[-1]))
+            #print(1 - np.count_nonzero(rating_mat.toarray())/(dims[-1]*dims[-1]))
 
             #???
-            print(rating_mat.shape)
+            #print(rating_mat.shape)
             bits = math.ceil(math.log(rating_mat.shape[0],2))
             print("rating_mat contains log2(rating_mat.shape[0]) = {} bits".format(bits))
         
@@ -128,23 +129,23 @@ class Main():
         zero_positions = self.spl.zero_positions(rating_mat, showtime=False)
         self.log.save_data_configuration("\n"+"#"*4+"  zero_positions: all data separated by rows  "+"#"*4)
         if self.test_mode:
-            print(zero_positions.shape)
-            print(f"zero_positions: {str(len(zero_positions))}") 
+            #print(zero_positions.shape)
+            print(f"zero_positions size: {str(len(zero_positions))}") 
         print(f"End: zero_positions")
         #self.process_res.update({"zero_positions size": str(len(zero_positions))})
 
         print("Start: items2compute")
         items2compute = self.exec.items_to_compute(zero_positions, dims)
         if self.test_mode:
-            print(f"items2compute: {str(len(items2compute))}") 
+            print(f"items2compute size: {str(len(items2compute))}") 
         print("End: items2compute Sampling")
         # < Sampling Strategy -----------------------------------------------------------------------
 
         # > Build Test Set --------------------------------------------------------------------------
         #self.test_x = self.build_test_set(items2compute, self.test_x) #???
         self.test_x = self.exec.build_test_set(items2compute, self.test_x[:,:2])
-        if self.test_mode:
-            print(self.test_x[0])
+        #if self.test_mode:
+        #    print(self.test_x[0])
         # > Build Test Set --------------------------------------------------------------------------
         
         # > Save Data -------------------------------------------------------------------------------
@@ -175,6 +176,8 @@ class Main():
         print("Start: Epochs")
         total_items = dims[1]-dims[0] #calc coverage
         training_time_start = datetime.now()
+        self.log.save_data_configuration("")
+        self.log.save_data_configuration("_"*65)
         self.log.save_data_configuration(datetime.now().strftime("%d-%b-%Y  %H:%M"))
         topk = 10
         #fm  = np.zeros([self.hparams['num_epochs'],3])
@@ -182,6 +185,7 @@ class Main():
         #pop = np.zeros([self.hparams['num_epochs'],3])
         #ncf = np.zeros([self.hparams['num_epochs'],3])
 
+        self.log.save_data_configuration("_"*65)
         for epoch_i in range(self.hparams['num_epochs']):
             train_loss = self.exec.train_one_epoch(fm_model, optimizer, data_loader, criterion, self.device)
 

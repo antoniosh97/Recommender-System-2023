@@ -8,10 +8,10 @@ class DataSet():
     def readDataSet(self, path, min_reviews, min_usuarios, nrows=None):
         csv_filename = str(path + self.data_path) + "interactions_minR" + str(min_reviews) + "_minU" + str(min_usuarios) + ".csv"
 
-        if nrows != None:
-            df = pd.read_csv(csv_filename, nrows=nrows)
-        else:
+        if nrows == None:
             df = pd.read_csv(csv_filename)
+        else:
+            df = pd.read_csv(csv_filename, nrows=nrows)
         return df
     
     def getDims(self, df, cols):
