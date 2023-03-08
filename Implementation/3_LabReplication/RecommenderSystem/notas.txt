@@ -1,0 +1,33 @@
+mask = zero_positions[:, 1] >= dims_usuarios_productos[0]
+
+# Seleccionar los valores de la columna 1 que cumplen la condición
+zero_positions = zero_positions[mask]
+
+# Supongamos que el array se llama 'arr'
+usuarios = zero_positions[:, 0]
+lista_longitud_zeros = np.bincount(usuarios, minlength=len(set(usuarios)))
+
+# Crear lista de sublistas vacías de acuerdo a la lista de longitudes
+list_of_lists = [list() for i in range(len(lista_longitud_zeros))]
+for i, length in enumerate(lista_longitud_zeros):
+
+# Agregar ceros a cada sublista
+    list_of_lists[i] = [0]*length
+
+# Convertir lista de sublistas a un array de NumPy
+items2compute = np.array([np.array(x) for x in list_of_lists])
+
+for user in trange(dims_usuarios_productos[0]):
+    aux = zero_positions[zero_positions[:, 0] == user][:, 1]
+    # Asignar los elementos necesarios a cada usuario
+    items2compute[user] = aux
+
+
+
+------------------------------------------
+
+00_FM: zero_positions: (412493404, 2)
+00_FM: len(items2compute): 20316
+
+Evaristo: zero_positions: (412493404, 2)
+Evaristo: len(items2compute): 
