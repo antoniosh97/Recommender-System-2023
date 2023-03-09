@@ -54,7 +54,7 @@ class Execution():
             single_user_test_set = np.vstack([pair, ] * (len(negatives)+1))
             single_user_test_set[:, 1][1:] = negatives
             test_set.append(single_user_test_set.copy())
-        return test_set
+        return test_set 
     
     def train_one_epoch(self, 
                         model: torch.nn.Module,

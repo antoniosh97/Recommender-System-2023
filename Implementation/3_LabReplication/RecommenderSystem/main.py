@@ -21,7 +21,7 @@ class Main():
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
-        self.test_mode = True
+        self.test_mode = False
 
         self.ini_time   = datetime.now()
         self.exec_path = os.getcwd()
@@ -118,16 +118,18 @@ class Main():
         #if self.test_mode:
         #    print(train_x[:10])
 
+        print(f"Start: train_dataset and dataloader")
         train_dataset = pointdata.PointData(self.train_x, dims)
         if self.test_mode:
             print(train_dataset[0])
 
         data_loader = DataLoader(train_dataset, batch_size=self.hparams['batch_size'], shuffle=True, num_workers=0)
+        print(f"End: train_dataset and dataloader")
 
         #ng_test(rating_mat)
         print(f"Start: zero_positions")
         zero_positions = self.spl.zero_positions(rating_mat, showtime=False)
-        self.log.save_data_configuration("\n"+"#"*4+"  zero_positions: all data separated by rows  "+"#"*4)
+        #self.log.save_data_configuration("\n"+"#"*4+"  zero_positions: all data separated by rows  "+"#"*4) #???
         if self.test_mode:
             #print(zero_positions.shape)
             print(f"zero_positions size: {str(len(zero_positions))}") 
@@ -138,7 +140,7 @@ class Main():
         items2compute = self.exec.items_to_compute(zero_positions, dims)
         if self.test_mode:
             print(f"items2compute size: {str(len(items2compute))}") 
-        print("End: items2compute Sampling")
+        print("End: items2compute")
         # < Sampling Strategy -----------------------------------------------------------------------
 
         # > Build Test Set --------------------------------------------------------------------------
@@ -199,7 +201,7 @@ class Main():
             tb_fm.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_fm.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
 
-            hr, ndcg, reco_list_fm, cov_fm = 0.0, 0.0, [], 0.0
+            hr, ndcg, reco_list_rnd, cov_fm = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_rnd, cov_rnd = self.exec.test(rnd_model, self.test_x, total_items, self.device, topk=topk)
             print(self.log.save_data_configuration(f'MODEL: RANDOM'))
             #print(self.save_data_configuration(f'epoch {epoch_i}:'))
@@ -208,7 +210,7 @@ class Main():
             tb_rnd.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_rnd.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
 
-            hr, ndcg, reco_list_fm, cov_fm = 0.0, 0.0, [], 0.0
+            hr, ndcg, reco_list_pop, cov_fm = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_pop, cov_pop = self.exec.test_pop(pop_model, self.test_x, total_items, self.device, topk=topk)
             print(self.log.save_data_configuration(f'MODEL: POPULARITY-BASED'))
             #print(self.save_data_configuration(f'epoch {epoch_i}:'))
@@ -217,7 +219,7 @@ class Main():
             tb_pop.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_pop.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
 
-            hr, ndcg, reco_list_fm, cov_fm = 0.0, 0.0, [], 0.0
+            hr, ndcg, reco_list_ncf, cov_fm = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_ncf, cov_ncf = self.exec.test(ncf_model, self.test_x, total_items, self.device, topk=topk)
             print(self.log.save_data_configuration(f'MODEL: NCF - NEURAL COLLABORATIVE FILTERING'))
             #print(self.save_data_configuration(f'epoch {epoch_i}:'))
