@@ -178,24 +178,38 @@ class Main():
         print("Start: Epochs")
         total_items = dims[1]-dims[0] #calc coverage
         training_time_start = datetime.now()
-        self.log.save_data_configuration("")
-        self.log.save_data_configuration("_"*100)
-        self.log.save_data_configuration(datetime.now().strftime("%d-%b-%Y  %H:%M"))
+        ln_sep_sz = 72
+        ln_sep_c = "-"
+        self.log.save_data_configuration("\n\n")
+        self.log.save_data_configuration(ln_sep_c*ln_sep_sz)
+        self.log.save_data_configuration("Training and Test")
+        self.log.save_data_configuration(ln_sep_c*ln_sep_sz)
+        #self.log.save_data_configuration(datetime.now().strftime("%d-%b-%Y  %H:%M"))
         topk = 10
         #fm  = np.zeros([self.hparams['num_epochs'],3])
         #rnd = np.zeros([self.hparams['num_epochs'],3])
         #pop = np.zeros([self.hparams['num_epochs'],3])
         #ncf = np.zeros([self.hparams['num_epochs'],3])
+        topks = str(topk)
+        col1 = 5
+        col2 = 5
+        col3 = 11
+        col4 = 10
+        col5 = 10
+        col6 = 12
+        dp = ".4f" #Decimal places
 
-        self.log.save_data_configuration("_"*100)
+        print(self.log.save_data_configuration(f'| {str("Epoch").ljust(col1)} | {str("Model").ljust(col2)} | {str("Train Loss").ljust(col3)} | {str("HR@"+topks).ljust(col4)} | {str("NDCG@"+topks).ljust(col5)} | {str("%Coverage@"+topks).ljust(col6)} |'))
+        print(self.log.save_data_configuration(ln_sep_c*ln_sep_sz))
         for epoch_i in range(self.hparams['num_epochs']):
             train_loss = self.exec.train_one_epoch(fm_model, optimizer, data_loader, criterion, self.device)
 
-            print(self.log.save_data_configuration(f'EPOCH {epoch_i}:'))
+            #print(self.log.save_data_configuration(f'EPOCH {epoch_i}:'))
             hr, ndcg, reco_list_fm, cov_fm = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_fm, cov_fm = self.exec.test(fm_model, self.test_x, total_items, self.device, topk=topk)
             #print(self.log.save_data_configuration(f'MODEL: FM - FACTORIZATION MACHINE'))
-            print(self.log.save_data_configuration(f'MODEL: FM  | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_fm:.4f} '))
+            #print(self.log.save_data_configuration(f'MODEL: FM  | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_fm:.4f} '))
+            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("FM").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_fm,dp)).rjust(col6)} |'))
             #fm[epoch_i] = [hr, ndcg, cov_fm]
             tb_fm.add_scalar('train/loss', train_loss, epoch_i)
             tb_fm.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
@@ -206,7 +220,8 @@ class Main():
             hr, ndcg, reco_list_rnd, cov_rnd = self.exec.test(rnd_model, self.test_x, total_items, self.device, topk=topk)
             #print(self.log.save_data_configuration(f'MODEL: RANDOM'))
             #print(self.save_data_configuration(f'epoch {epoch_i}:'))
-            print(self.log.save_data_configuration(f'MODEL: RND | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_rnd:.4f} '))
+            #print(self.log.save_data_configuration(f'MODEL: RND | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_rnd:.4f} '))
+            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("RND").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_rnd,dp)).rjust(col6)} |'))
             #rnd[epoch_i] = [hr, ndcg, cov_rnd]
             tb_rnd.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_rnd.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
@@ -216,7 +231,8 @@ class Main():
             hr, ndcg, reco_list_pop, cov_pop = self.exec.test_pop(pop_model, self.test_x, total_items, self.device, topk=topk)
             #print(self.log.save_data_configuration(f'MODEL: POPULARITY-BASED'))
             #print(self.save_data_configuration(f'epoch {epoch_i}:'))
-            print(self.log.save_data_configuration(f'MODEL: POP | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_pop:.4f} '))
+            #print(self.log.save_data_configuration(f'MODEL: POP | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_pop:.4f} '))
+            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("POP").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_pop,dp)).rjust(col6)} |'))
             #pop[epoch_i] = [hr, ndcg, cov_pop]
             tb_pop.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_pop.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
@@ -226,13 +242,14 @@ class Main():
             hr, ndcg, reco_list_ncf, cov_ncf = self.exec.test(ncf_model, self.test_x, total_items, self.device, topk=topk)
             #print(self.log.save_data_configuration(f'MODEL: NCF - NEURAL COLLABORATIVE FILTERING'))
             #print(self.save_data_configuration(f'epoch {epoch_i}:'))
-            print(self.log.save_data_configuration(f'MODEL: NCF | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_ncf:.4f} '))
+            #print(self.log.save_data_configuration(f'MODEL: NCF | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_ncf:.4f} '))
+            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("NCF").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_ncf,dp)).rjust(col6)} |'))
             #ncf[epoch_i] = [hr, ndcg, cov_ncf]
             tb_ncf.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_ncf.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
             tb_ncf.add_scalar(f'eval/Coverage@{topk}', cov_ncf, epoch_i)
 
-            self.log.save_data_configuration("_"*100)
+            print(self.log.save_data_configuration(ln_sep_c*ln_sep_sz))
         
         training_time_end = datetime.now()-training_time_start
         seconds = training_time_end.seconds
