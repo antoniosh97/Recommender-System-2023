@@ -152,7 +152,6 @@ class Execution():
         end_time = datetime.now()
         time_dif = end_time - startime
         seconds = time_dif.seconds
-        print(f" ")
         secmin = ""
         if seconds > 60: 
             seconds = seconds / 60

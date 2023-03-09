@@ -21,7 +21,7 @@ class Main():
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
-        self.test_mode = False
+        self.test_mode = True
 
         self.ini_time   = datetime.now()
         self.exec_path = os.getcwd()
@@ -194,39 +194,43 @@ class Main():
             print(self.log.save_data_configuration(f'EPOCH {epoch_i}:'))
             hr, ndcg, reco_list_fm, cov_fm = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_fm, cov_fm = self.exec.test(fm_model, self.test_x, total_items, self.device, topk=topk)
-            print(self.log.save_data_configuration(f'MODEL: FM - FACTORIZATION MACHINE'))
-            print(self.log.save_data_configuration(f'training loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} '))
+            #print(self.log.save_data_configuration(f'MODEL: FM - FACTORIZATION MACHINE'))
+            print(self.log.save_data_configuration(f'MODEL: FM  | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_fm:.4f} '))
             #fm[epoch_i] = [hr, ndcg, cov_fm]
             tb_fm.add_scalar('train/loss', train_loss, epoch_i)
             tb_fm.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_fm.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
+            tb_fm.add_scalar(f'eval/Coverage@{topk}', cov_fm, epoch_i)
 
-            hr, ndcg, reco_list_rnd, cov_fm = 0.0, 0.0, [], 0.0
+            hr, ndcg, reco_list_rnd, cov_rnd = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_rnd, cov_rnd = self.exec.test(rnd_model, self.test_x, total_items, self.device, topk=topk)
-            print(self.log.save_data_configuration(f'MODEL: RANDOM'))
+            #print(self.log.save_data_configuration(f'MODEL: RANDOM'))
             #print(self.save_data_configuration(f'epoch {epoch_i}:'))
-            print(self.log.save_data_configuration(f'training loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} '))
+            print(self.log.save_data_configuration(f'MODEL: RND | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_rnd:.4f} '))
             #rnd[epoch_i] = [hr, ndcg, cov_rnd]
             tb_rnd.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_rnd.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
+            tb_rnd.add_scalar(f'eval/Coverage@{topk}', cov_rnd, epoch_i)
 
-            hr, ndcg, reco_list_pop, cov_fm = 0.0, 0.0, [], 0.0
+            hr, ndcg, reco_list_pop, cov_pop = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_pop, cov_pop = self.exec.test_pop(pop_model, self.test_x, total_items, self.device, topk=topk)
-            print(self.log.save_data_configuration(f'MODEL: POPULARITY-BASED'))
+            #print(self.log.save_data_configuration(f'MODEL: POPULARITY-BASED'))
             #print(self.save_data_configuration(f'epoch {epoch_i}:'))
-            print(self.log.save_data_configuration(f'training loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} '))
+            print(self.log.save_data_configuration(f'MODEL: POP | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_pop:.4f} '))
             #pop[epoch_i] = [hr, ndcg, cov_pop]
             tb_pop.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_pop.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
+            tb_pop.add_scalar(f'eval/Coverage@{topk}', cov_pop, epoch_i)
 
-            hr, ndcg, reco_list_ncf, cov_fm = 0.0, 0.0, [], 0.0
+            hr, ndcg, reco_list_ncf, cov_ncf = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_ncf, cov_ncf = self.exec.test(ncf_model, self.test_x, total_items, self.device, topk=topk)
-            print(self.log.save_data_configuration(f'MODEL: NCF - NEURAL COLLABORATIVE FILTERING'))
+            #print(self.log.save_data_configuration(f'MODEL: NCF - NEURAL COLLABORATIVE FILTERING'))
             #print(self.save_data_configuration(f'epoch {epoch_i}:'))
-            print(self.log.save_data_configuration(f'training loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} '))
+            print(self.log.save_data_configuration(f'MODEL: NCF | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_ncf:.4f} '))
             #ncf[epoch_i] = [hr, ndcg, cov_ncf]
             tb_ncf.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_ncf.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
+            tb_ncf.add_scalar(f'eval/Coverage@{topk}', cov_ncf, epoch_i)
 
             self.log.save_data_configuration("_"*65)
         
@@ -237,13 +241,13 @@ class Main():
             secmin = "minutes"
         else:
             secmin = "seconds"
-        print(self.log.save_data_configuration(f'Training duration: {seconds} {secmin}'))
+        print(self.log.save_data_configuration(f'\nTraining duration: {seconds} {secmin}'))
 
-        print(f"\nCoverage:")
-        print(f'FM: {cov_fm:.4f}')
-        print(f'RAND: {cov_rnd:.4f}')
-        print(f'POP: {cov_pop:.4f}')
-        print(f'NCF: {cov_ncf:.4f}')
+        #print(f"\nCoverage:")
+        #print(f'FM: {cov_fm:.4f}')
+        #print(f'RAND: {cov_rnd:.4f}')
+        #print(f'POP: {cov_pop:.4f}')
+        #print(f'NCF: {cov_ncf:.4f}')
         # < Training and Test ----------------------------------------------------------------------
       
         #Calc Total Time of execution

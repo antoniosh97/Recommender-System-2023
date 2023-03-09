@@ -32,7 +32,8 @@ class Logs():
         #os.chdir("..")
         #%load_ext tensorboard
 
-        logs_base_dir = "runs_" + self.sampling_method
+        #logs_base_dir = "runs_" + self.sampling_method #???
+        logs_base_dir = "runs"# + self.sampling_method #???
         os.environ["run_tensorboard"] = logs_base_dir #???
         dir_path = f'{self.exec_path}/{self.log_dir}/{logs_base_dir}'
 
