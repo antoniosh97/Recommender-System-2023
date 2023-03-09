@@ -21,11 +21,10 @@ class Main():
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
-        self.test_mode = True
+        self.test_mode = False
 
         self.ini_time   = datetime.now()
         self.exec_path = os.getcwd()
-        self.sampling_method = "NegSampl"
         self.strategy = "TLOO"
 
         self.hparams = {
@@ -39,10 +38,10 @@ class Main():
         # < Variables ------------------------------------------------
 
         # > Classes --------------------------------------------------
-        self.log = logs.Logs(exec_path=self.exec_path, sm=self.sampling_method, ml=False)
+        self.log = logs.Logs(exec_path=self.exec_path, ml=False)
         self.spl = sampling.Sample()
         self.exec = exec.Execution()
-        self.savedata = savedata.SaveData() 
+        self.savedata = savedata.SaveData()
         # < Classes --------------------------------------------------
         
         # > Dataset --------------------------------------------------
@@ -56,7 +55,6 @@ class Main():
                             "col_year": "year"}
         self.train_x, self.test_x = [], []
         # < Dataset --------------------------------------------------
-
 
     def start(self):
 
@@ -86,7 +84,7 @@ class Main():
         
         # > Split data Training and Test-------------------------------------------------------------
         self.train_x, self.test_x = self.exec.split_train_test(data, dims[0], self.strategy)
-        self.train_x = self.train_x[:, :2] #???
+        self.train_x = self.train_x[:, :2]
         dims = dims[:2]
 
         if self.test_mode:
@@ -101,23 +99,9 @@ class Main():
         self.pop_reco = self.exec.get_pop_recons(self.train_x, dims)
         
         self.train_x, rating_mat = self.spl.ng_sample(self.train_x, dims)
-        dims[-1]-dims[0] 
         if self.test_mode:
             print("Dimensions matrix:\n",dims)
-            #print("\nRating matrix:")
-            #print(rating_mat)
-            #print(np.count_nonzero(rating_mat.toarray())/(dims[-1]*dims[-1]))
-            #print(1 - np.count_nonzero(rating_mat.toarray())/(dims[-1]*dims[-1]))
-
-            #???
-            #print(rating_mat.shape)
-            bits = math.ceil(math.log(rating_mat.shape[0],2))
-            print("rating_mat contains log2(rating_mat.shape[0]) = {} bits".format(bits))
         
-        #train_x = train_x[:,[0,1,-1]] #???
-        #if self.test_mode:
-        #    print(train_x[:10])
-
         print(f"Start: train_dataset and dataloader")
         train_dataset = pointdata.PointData(self.train_x, dims)
         if self.test_mode:
@@ -126,15 +110,11 @@ class Main():
         data_loader = DataLoader(train_dataset, batch_size=self.hparams['batch_size'], shuffle=True, num_workers=0)
         print(f"End: train_dataset and dataloader")
 
-        #ng_test(rating_mat)
         print(f"Start: zero_positions")
         zero_positions = self.spl.zero_positions(rating_mat, showtime=False)
-        #self.log.save_data_configuration("\n"+"#"*4+"  zero_positions: all data separated by rows  "+"#"*4) #???
         if self.test_mode:
-            #print(zero_positions.shape)
             print(f"zero_positions size: {str(len(zero_positions))}") 
         print(f"End: zero_positions")
-        #self.process_res.update({"zero_positions size": str(len(zero_positions))})
 
         print("Start: items2compute")
         items2compute = self.exec.items_to_compute(zero_positions, dims)
@@ -184,7 +164,6 @@ class Main():
         self.log.save_data_configuration(ln_sep_c*ln_sep_sz)
         self.log.save_data_configuration("Training and Test")
         self.log.save_data_configuration(ln_sep_c*ln_sep_sz)
-        #self.log.save_data_configuration(datetime.now().strftime("%d-%b-%Y  %H:%M"))
         topk = 10
         #fm  = np.zeros([self.hparams['num_epochs'],3])
         #rnd = np.zeros([self.hparams['num_epochs'],3])
@@ -204,11 +183,8 @@ class Main():
         for epoch_i in range(self.hparams['num_epochs']):
             train_loss = self.exec.train_one_epoch(fm_model, optimizer, data_loader, criterion, self.device)
 
-            #print(self.log.save_data_configuration(f'EPOCH {epoch_i}:'))
             hr, ndcg, reco_list_fm, cov_fm = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_fm, cov_fm = self.exec.test(fm_model, self.test_x, total_items, self.device, topk=topk)
-            #print(self.log.save_data_configuration(f'MODEL: FM - FACTORIZATION MACHINE'))
-            #print(self.log.save_data_configuration(f'MODEL: FM  | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_fm:.4f} '))
             print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("FM").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_fm,dp)).rjust(col6)} |'))
             #fm[epoch_i] = [hr, ndcg, cov_fm]
             tb_fm.add_scalar('train/loss', train_loss, epoch_i)
@@ -218,9 +194,6 @@ class Main():
 
             hr, ndcg, reco_list_rnd, cov_rnd = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_rnd, cov_rnd = self.exec.test(rnd_model, self.test_x, total_items, self.device, topk=topk)
-            #print(self.log.save_data_configuration(f'MODEL: RANDOM'))
-            #print(self.save_data_configuration(f'epoch {epoch_i}:'))
-            #print(self.log.save_data_configuration(f'MODEL: RND | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_rnd:.4f} '))
             print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("RND").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_rnd,dp)).rjust(col6)} |'))
             #rnd[epoch_i] = [hr, ndcg, cov_rnd]
             tb_rnd.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
@@ -229,9 +202,6 @@ class Main():
 
             hr, ndcg, reco_list_pop, cov_pop = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_pop, cov_pop = self.exec.test_pop(pop_model, self.test_x, total_items, self.device, topk=topk)
-            #print(self.log.save_data_configuration(f'MODEL: POPULARITY-BASED'))
-            #print(self.save_data_configuration(f'epoch {epoch_i}:'))
-            #print(self.log.save_data_configuration(f'MODEL: POP | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_pop:.4f} '))
             print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("POP").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_pop,dp)).rjust(col6)} |'))
             #pop[epoch_i] = [hr, ndcg, cov_pop]
             tb_pop.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
@@ -240,9 +210,6 @@ class Main():
 
             hr, ndcg, reco_list_ncf, cov_ncf = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_ncf, cov_ncf = self.exec.test(ncf_model, self.test_x, total_items, self.device, topk=topk)
-            #print(self.log.save_data_configuration(f'MODEL: NCF - NEURAL COLLABORATIVE FILTERING'))
-            #print(self.save_data_configuration(f'epoch {epoch_i}:'))
-            #print(self.log.save_data_configuration(f'MODEL: NCF | train loss = {train_loss:.4f} | Eval: HR@{topk} = {hr:.4f}, NDCG@{topk} = {ndcg:.4f} Coverage@{topk} = {cov_ncf:.4f} '))
             print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("NCF").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_ncf,dp)).rjust(col6)} |'))
             #ncf[epoch_i] = [hr, ndcg, cov_ncf]
             tb_ncf.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
@@ -259,12 +226,6 @@ class Main():
         else:
             secmin = "seconds"
         print(self.log.save_data_configuration(f'\nTraining duration: {seconds} {secmin}'))
-
-        #print(f"\nCoverage:")
-        #print(f'FM: {cov_fm:.4f}')
-        #print(f'RAND: {cov_rnd:.4f}')
-        #print(f'POP: {cov_pop:.4f}')
-        #print(f'NCF: {cov_ncf:.4f}')
         # < Training and Test ----------------------------------------------------------------------
       
         #Calc Total Time of execution

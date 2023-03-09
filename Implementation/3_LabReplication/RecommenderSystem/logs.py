@@ -4,15 +4,14 @@ from torch.utils.tensorboard import SummaryWriter
 import shutil
 
 class Logs():
-    def __init__(self, exec_path, sm, ml=True):
+    def __init__(self, exec_path, ml=True):
         self.exec_path = exec_path
         self.multi_logs = ml
         self.log_dir = "logs"
-        self.sampling_method = sm
         self.exectime = datetime.now().strftime("%Y%m%d_%H%M%S")
 
         self.path_log_folder = f'{self.exec_path}/{self.log_dir}'
-        self.save_data_dir = self.exectime + "_data_config_" + self.sampling_method +".txt"
+        self.save_data_dir = self.exectime + "_data_config.txt"
         self.path_save_data_dir = f'{self.exec_path}/{self.log_dir}/{self.save_data_dir}'
 
         if self.multi_logs == False:
@@ -27,14 +26,7 @@ class Logs():
             data_file.write(text+"\n\n")
 
     def def_log(self):
-        #self.sampling_method = "neg_sample" #os.listdir()[3].split(".")[-2][3:].split("_")[-1]
-        #old_path = os.getcwd()
-        #os.chdir("..")
-        #%load_ext tensorboard
-
-        #logs_base_dir = "runs_" + self.sampling_method #???
-        logs_base_dir = "runs"# + self.sampling_method #???
-        os.environ["run_tensorboard"] = logs_base_dir #???
+        logs_base_dir = "runs"
         dir_path = f'{self.exec_path}/{self.log_dir}/{logs_base_dir}'
 
         if self.multi_logs == False:

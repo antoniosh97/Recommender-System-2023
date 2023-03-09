@@ -15,12 +15,10 @@ class DataSet():
         return df
     
     def getDims(self, df, cols):
-        #data = df[[*cols.values()][:3]].astype('int32').to_numpy() #???
         data = df[[*cols.values()][:4]].astype('int32').to_numpy()
 
         add_dims=0
-        #for i in range(data.shape[1] - 1):  # do not affect to timestamp #???
-        for i in range(data.shape[1] - 2):  # do not affect to timestamp and rating // origin::: for i in range(data.shape[1] - 1)
+        for i in range(data.shape[1] - 2):
             # MAKE IT START BY 0
             data[:, i] -= np.min(data[:, i])
             # RE-INDEX

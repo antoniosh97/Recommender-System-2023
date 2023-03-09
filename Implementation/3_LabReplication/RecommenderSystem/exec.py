@@ -136,16 +136,9 @@ class Execution():
         return mean(HR), mean(NDCG), user_reco_list, coverage
 
     def get_pop_recons(self, train_x, dims):
-        """
-        https://github.com/LaxmiChaudhary/Amzon-Product-Recommendation/blob/master/Recommendation%20System.ipynb
-        """
-        # train_data_sort = pd.DataFrame(train_x, columns=list(col_names.values())[:3]).sort_values(col_names['col_rating'], ascending=False)
-        # train_data_sort['rank'] = train_data_sort[col_names['col_id_product']].rank(ascending=0, method='first')
-        # pop_rec = train_data_sort[col_names['col_id_product']].drop_duplicates().to_numpy()
         train_x_rank = np.insert(np.array(train_x), train_x.shape[1], rankdata(train_x[:,-1]), 1)
         pop_rec = train_x[train_x_rank[:,-1].argsort()[::-1]][:,1]- dims[0]
         pop_rec = [i for n, i in enumerate(pop_rec) if i not in pop_rec[:n]] 
-        
         return np.hstack(pop_rec)
 
     def efe(self, startime):
