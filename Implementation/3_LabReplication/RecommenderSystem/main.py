@@ -179,7 +179,7 @@ class Main():
         total_items = dims[1]-dims[0] #calc coverage
         training_time_start = datetime.now()
         self.log.save_data_configuration("")
-        self.log.save_data_configuration("_"*65)
+        self.log.save_data_configuration("_"*100)
         self.log.save_data_configuration(datetime.now().strftime("%d-%b-%Y  %H:%M"))
         topk = 10
         #fm  = np.zeros([self.hparams['num_epochs'],3])
@@ -187,7 +187,7 @@ class Main():
         #pop = np.zeros([self.hparams['num_epochs'],3])
         #ncf = np.zeros([self.hparams['num_epochs'],3])
 
-        self.log.save_data_configuration("_"*65)
+        self.log.save_data_configuration("_"*100)
         for epoch_i in range(self.hparams['num_epochs']):
             train_loss = self.exec.train_one_epoch(fm_model, optimizer, data_loader, criterion, self.device)
 
@@ -232,7 +232,7 @@ class Main():
             tb_ncf.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
             tb_ncf.add_scalar(f'eval/Coverage@{topk}', cov_ncf, epoch_i)
 
-            self.log.save_data_configuration("_"*65)
+            self.log.save_data_configuration("_"*100)
         
         training_time_end = datetime.now()-training_time_start
         seconds = training_time_end.seconds
