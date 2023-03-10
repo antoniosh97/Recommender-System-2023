@@ -15,6 +15,7 @@ class Logs():
         self.path_save_data_dir = f'{self.exec_path}/{self.log_dir}/{self.save_data_dir}'
 
         if self.multi_logs == False:
+            os.makedirs(self.path_log_folder, exist_ok=True) ## add it
             for filename in os.listdir(self.path_log_folder):
                 if filename.startswith(self.save_data_dir[:4]):
                     os.remove(os.path.join(self.path_log_folder, filename))
