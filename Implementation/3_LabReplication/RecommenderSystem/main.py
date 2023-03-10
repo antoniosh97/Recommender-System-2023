@@ -1,6 +1,5 @@
 import os
 from datetime import datetime
-import math
 import torch
 from torch.utils.data import DataLoader
 import numpy as np
@@ -149,7 +148,7 @@ class Main():
         
         # > Training and Test ----------------------------------------------------------------------
         # Hit Ratio: Measures whether the test item is in the top@K positions of the recommendation list
-        # NDCG (Normalized Discounted Cumulative Gain). Measures the ranking quality which gives information about where in the raking is
+        # NDCG (Normalized Discounted Cumulative Gain). Measures the ranking quality which gives information about where in the raking is our test item. 
         # Coverage: Coverage is the percent of items in the training data the model is able to recommend on a test set.
 
         #self.log.wr_process_res(self.process_res)
@@ -225,7 +224,7 @@ class Main():
             secmin = "minutes"
         else:
             secmin = "seconds"
-        print(self.log.save_data_configuration(f'\nTraining duration: {seconds} {secmin}'))
+        print(self.log.save_data_configuration(f'\nTraining duration: {str(format(seconds,dp))} {secmin}'))
         # < Training and Test ----------------------------------------------------------------------
       
         #Calc Total Time of execution

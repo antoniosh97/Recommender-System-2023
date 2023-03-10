@@ -151,5 +151,5 @@ class Execution():
             secmin = "minutes"
         elif seconds <= 60: 
             secmin = "seconds"
-        efe = f"Total execution in {seconds} {secmin}"
+        efe = f'Total execution in {str(format(seconds,".4f"))} {secmin}'
         return efe
