@@ -225,7 +225,7 @@ class Main():
             secmin = "minutes"
         else:
             secmin = "seconds"
-        print(self.log.save_data_configuration(f'\nTraining duration: {seconds} {secmin}'))
+        print(self.log.save_data_configuration(f'\nTraining duration: {str(format(seconds,dp))} {secmin}'))
         # < Training and Test ----------------------------------------------------------------------
       
         #Calc Total Time of execution
