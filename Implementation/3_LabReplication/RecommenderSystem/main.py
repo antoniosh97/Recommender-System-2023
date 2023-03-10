@@ -1,6 +1,5 @@
 import os
 from datetime import datetime
-import math
 import torch
 from torch.utils.data import DataLoader
 import numpy as np
