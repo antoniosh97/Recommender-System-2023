@@ -6,3 +6,4 @@ Puntos a mirar:
 4 - What about Picker?
 5 - Do we need to generate graphics?
 6 - Add comments in model POP
+7- In exec.py, func train_one_epoch, line 72/73, now we are using "predictions = model(interactions[:,:2])"
