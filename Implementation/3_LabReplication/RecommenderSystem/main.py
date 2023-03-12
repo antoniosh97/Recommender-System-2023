@@ -29,7 +29,7 @@ class Main():
         self.hparams = {
             'batch_size':64,
             'num_epochs':12,
-            'hidden_size': 32,
+            'hidden_size':32, 
             'learning_rate':1e-4,
         }
 
@@ -138,12 +138,15 @@ class Main():
         
         # > Create Models --------------------------------------------------------------------------
         dims = train_dataset.dims
-        fm_model = model_fm.FactorizationMachineModel(dims, self.hparams['hidden_size']).to(self.device)
+        fm_model  = model_fm.FactorizationMachineModel(dims, self.hparams['hidden_size']).to(self.device)
         criterion = torch.nn.BCEWithLogitsLoss(reduction='mean')
         optimizer = torch.optim.Adam(params=fm_model.parameters(), lr=self.hparams['learning_rate'])
         rnd_model = model_random.RandomModel(dims)
         pop_model = model_pop.PopularityBasedModel(self.pop_reco)
-        ncf_model = model_nfc.NCF(dims, self.hparams['hidden_size']).to(self.device)
+
+        ncf_model     = model_nfc.NCF(dims, self.hparams['hidden_size']).to(self.device)
+        ncf_optimizer = torch.optim.Adam(params=ncf_model.parameters(), lr=self.hparams['learning_rate'])
+        ncf_criterion = torch.nn.BCEWithLogitsLoss(reduction='mean')
         # < Create Models --------------------------------------------------------------------------
         
         # > Training and Test ----------------------------------------------------------------------
@@ -180,20 +183,21 @@ class Main():
         print(self.log.save_data_configuration(f'| {str("Epoch").ljust(col1)} | {str("Model").ljust(col2)} | {str("Train Loss").ljust(col3)} | {str("HR@"+topks).ljust(col4)} | {str("NDCG@"+topks).ljust(col5)} | {str("%Coverage@"+topks).ljust(col6)} |'))
         print(self.log.save_data_configuration(ln_sep_c*ln_sep_sz))
         for epoch_i in range(self.hparams['num_epochs']):
-            train_loss = self.exec.train_one_epoch(fm_model, optimizer, data_loader, criterion, self.device)
+            train_loss_fm  = self.exec.train_one_epoch(fm_model, optimizer, data_loader, criterion, self.device)
+            train_loss_ncf = self.exec.train_one_epoch(ncf_model, ncf_optimizer, data_loader, ncf_criterion, self.device)
 
             hr, ndcg, reco_list_fm, cov_fm = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_fm, cov_fm = self.exec.test(fm_model, self.test_x, total_items, self.device, topk=topk)
-            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("FM").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_fm,dp)).rjust(col6)} |'))
+            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("FM").ljust(col2)} | {str(format(train_loss_fm,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_fm,dp)).rjust(col6)} |'))
             #fm[epoch_i] = [hr, ndcg, cov_fm]
-            tb_fm.add_scalar('train/loss', train_loss, epoch_i)
+            tb_fm.add_scalar('train/loss', train_loss_fm, epoch_i)
             tb_fm.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_fm.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
             tb_fm.add_scalar(f'eval/Coverage@{topk}', cov_fm, epoch_i)
 
             hr, ndcg, reco_list_rnd, cov_rnd = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_rnd, cov_rnd = self.exec.test(rnd_model, self.test_x, total_items, self.device, topk=topk)
-            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("RND").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_rnd,dp)).rjust(col6)} |'))
+            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("RND").ljust(col2)} | {str(format(train_loss_fm,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_rnd,dp)).rjust(col6)} |'))
             #rnd[epoch_i] = [hr, ndcg, cov_rnd]
             tb_rnd.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_rnd.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
@@ -201,7 +205,7 @@ class Main():
 
             hr, ndcg, reco_list_pop, cov_pop = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_pop, cov_pop = self.exec.test_pop(pop_model, self.test_x, total_items, self.device, topk=topk)
-            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("POP").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_pop,dp)).rjust(col6)} |'))
+            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("POP").ljust(col2)} | {str(format(train_loss_fm,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_pop,dp)).rjust(col6)} |'))
             #pop[epoch_i] = [hr, ndcg, cov_pop]
             tb_pop.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_pop.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
@@ -209,7 +213,7 @@ class Main():
 
             hr, ndcg, reco_list_ncf, cov_ncf = 0.0, 0.0, [], 0.0
             hr, ndcg, reco_list_ncf, cov_ncf = self.exec.test(ncf_model, self.test_x, total_items, self.device, topk=topk)
-            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("NCF").ljust(col2)} | {str(format(train_loss,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_ncf,dp)).rjust(col6)} |'))
+            print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("NCF").ljust(col2)} | {str(format(train_loss_ncf,dp)).rjust(col3)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_ncf,dp)).rjust(col6)} |'))
             #ncf[epoch_i] = [hr, ndcg, cov_ncf]
             tb_ncf.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_ncf.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
