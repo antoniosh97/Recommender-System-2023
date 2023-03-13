@@ -67,7 +67,9 @@ class Main():
         if self.test_mode:
             NrRows = 8000
         else:
-            NrRows = None
+            #NrRows = None
+            NrRows = 5000
+
  
         df = self.ds.readDataSet(self.exec_path, self.min_reviews, self.min_usuarios, nrows=NrRows)
         self.log.save_data_configuration(str(df.nunique()))
@@ -247,9 +249,10 @@ class Main():
         print(self.log.save_data_configuration(txt))
 
     # > End of Method Start-------------------------------------------------------------------------
-
+    
 # < End of Class Main
 
 if __name__ == '__main__':
     main = Main()
     main.start()
+    exit()
