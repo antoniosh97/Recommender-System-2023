@@ -7,7 +7,5 @@ class PopularityBasedModel(torch.nn.Module):
         super(PopularityBasedModel, self).__init__()
         self.popularity_recommendations = popularity_recommendations
   
-  def predict(self,
-              interactions: np.ndarray,
-              device=None) -> torch.Tensor:
-      return torch.IntTensor(self.popularity_recommendations)
+  def predict(self) -> torch.Tensor:
+      return torch.IntTensor(self.popularity_recommendations.astype(np.int))

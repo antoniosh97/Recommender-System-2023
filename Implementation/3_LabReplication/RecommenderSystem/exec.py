@@ -124,7 +124,7 @@ class Execution():
         HR, NDCG = [], []
         for user_test in test_x:
             gt_item = user_test[0][1]
-            predictions = model.predict(user_test, device)
+            predictions = model.predict()
             reco_list = predictions[:topk]
             user_reco_list[idx] = np.hstack(reco_list.tolist().copy())
             idx +=1
