@@ -67,8 +67,8 @@ class Main():
         if self.test_mode:
             NrRows = 8000
         else:
-            #NrRows = None
-            NrRows = 5000
+            NrRows = None
+            #NrRows = 5000
 
  
         df = self.ds.readDataSet(self.exec_path, self.min_reviews, self.min_usuarios, nrows=NrRows)
