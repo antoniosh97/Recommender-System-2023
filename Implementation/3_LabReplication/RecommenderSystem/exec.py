@@ -135,11 +135,14 @@ class Execution():
         coverage = self.res.coverage(user_reco_list, total_items)
         return mean(HR), mean(NDCG), user_reco_list, coverage
 
-    def get_pop_recons(self, train_x, dims):
-        train_x_rank = np.insert(np.array(train_x), train_x.shape[1], rankdata(train_x[:,-1]), 1)
-        pop_rec = train_x[train_x_rank[:,-1].argsort()[::-1]][:,1]- dims[0]
-        pop_rec = [i for n, i in enumerate(pop_rec) if i not in pop_rec[:n]] 
-        return np.hstack(pop_rec)
+    def get_pop_recons(self, train_x):
+        # train_x_rank = np.insert(np.array(train_x), train_x.shape[1], rankdata(train_x[:,-1]), 1)
+        # pop_rec = train_x[train_x_rank[:,-1].argsort()[::-1]][:,1]- dims[0]
+        # pop_rec = [i for n, i in enumerate(pop_rec) if i not in pop_rec[:n]] 
+        # return np.hstack(pop_rec)
+        items_sorted = pd.DataFrame(train_x[:,:2], columns=[ "reviewerID","asin"]).groupby("asin").count().sort_values(by="reviewerID",ascending=False).reset_index()
+        items_sorted.asin = items_sorted.asin.astype(str)
+        return items_sorted.asin.to_numpy()
 
     def efe(self, startime):
         end_time = datetime.now()

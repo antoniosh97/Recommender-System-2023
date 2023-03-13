@@ -105,7 +105,7 @@ class Main():
         # < Split data Training and Test-------------------------------------------------------------
         
         # > Sampling Strategy -----------------------------------------------------------------------
-        self.pop_reco = self.exec.get_pop_recons(self.train_x, dims)
+        self.pop_reco = self.exec.get_pop_recons(self.train_x)
         
         self.train_x, rating_mat = self.spl.ng_sample(self.train_x, dims)
         if self.test_mode:
