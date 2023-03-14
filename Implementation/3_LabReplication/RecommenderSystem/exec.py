@@ -6,6 +6,7 @@ from tqdm import tqdm, trange
 from scipy.stats import rankdata
 from statistics import mean
 import torch
+import random
 import results
 
 class Execution():
@@ -156,3 +157,11 @@ class Execution():
             secmin = "seconds"
         efe = f'Total execution in {str(format(seconds,".4f"))} {secmin}'
         return efe
+    
+    def seed_everything(seed):
+        random.seed(seed)
+        np.random.seed(seed)
+        torch.manual_seed(seed)
+        torch.cuda.manual_seed(seed)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = True
