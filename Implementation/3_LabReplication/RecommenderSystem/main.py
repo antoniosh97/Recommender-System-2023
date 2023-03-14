@@ -35,7 +35,7 @@ class Main():
 
         # seed for Reproducibility
         self.random = exec.Execution.seed_everything(self.seed)
-        
+
         self.pop_reco = []
         # < Variables ------------------------------------------------
 
@@ -160,7 +160,7 @@ class Main():
         rnd_model = model_random.RandomModel(dims)
         pop_model = model_pop.PopularityBasedModel(self.pop_reco)
 
-        ncf_model     = model_nfc.NCF(dims, self.hparams['hidden_size']).to(self.device)
+        ncf_model     = model_nfc.NeuNCF(dims, self.hparams['hidden_size']).to(self.device)
         ncf_optimizer = torch.optim.Adam(params=ncf_model.parameters(), lr=self.hparams['learning_rate'])
         ncf_criterion = torch.nn.BCEWithLogitsLoss(reduction='mean')
         # < Create Models --------------------------------------------------------------------------

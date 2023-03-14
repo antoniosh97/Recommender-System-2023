@@ -2,7 +2,7 @@ import torch
 import numpy as np
 import torch.nn as nn
 
-class NCF(torch.nn.Module):
+class NeuNCF(torch.nn.Module):
     def __init__(self, 
                  field_dims: list,
                  embed_dim: float) -> None:
@@ -47,28 +47,41 @@ class NCF(torch.nn.Module):
             if isinstance(m, nn.Linear) and m.bias is not None:
                 m.bias.data.zero_()
 
+    def _get_user_item_embedding_mf(self, input):
+        user_embedding_mf = self.embedding_user_mf(input[:,0])
+        item_embedding_mf = self.embedding_item_mf(input[:,1] - self.num_users)
+        return user_embedding_mf, item_embedding_mf
+    
+    def _get_user_item_embedding_mlp(self, input):
+        user_embedding_mlp = self.embedding_user_mlp(input[:,0])
+        item_embedding_mlp = self.embedding_item_mlp(input[:,1] - self.num_users)
+        return user_embedding_mlp, item_embedding_mlp
+
+    def _gmf(self, user_embedding_gmf, item_embedding_gmf):
+        return torch.mul(user_embedding_gmf, item_embedding_gmf)
+
+    def _mlp(self, user_embedding_mlp, item_embedding_mlp):
+        mlp_vector = torch.cat([user_embedding_mlp, item_embedding_mlp], dim=-1)
+        return self.mlp(mlp_vector)
+
+    def _neuMF(self, mlp_vector, gmf_vector):
+        return torch.cat([mlp_vector, gmf_vector], dim=-1)
+    
     def forward(self, interaction_pairs: np.ndarray) -> torch.Tensor:
 
-        user_embedding_mf = self.embedding_user_mf(interaction_pairs[:,0])
-        item_embedding_mf = self.embedding_item_mf(interaction_pairs[:,1] - self.num_users)
+        user_embedding_gmf, item_embedding_gmf = self._get_user_item_embedding_mf(interaction_pairs)
+        user_embedding_mlp, item_embedding_mlp = self._get_user_item_embedding_mlp(interaction_pairs)
 
-        user_embedding_mlp = self.embedding_user_mlp(interaction_pairs[:,0])
-        item_embedding_mlp = self.embedding_item_mlp(interaction_pairs[:,1] - self.num_users)
+        # General Matrix Factorization vector
+        gmf_vector = self._gmf(user_embedding_gmf, item_embedding_gmf)
+         # ( _ , 32)    
 
-        # MLP vector reshaped to 2 dimensions
-        mlp_vector = torch.cat([user_embedding_mlp, item_embedding_mlp], dim=-1)  # the concat latent vector
+        # Multi Layer Perceptron vector 
+        mlp_vector = self._mlp(user_embedding_mlp, item_embedding_mlp)
 
-        # MatrixFactorization vector
-        mf_vector = torch.mul(user_embedding_mf, item_embedding_mf) # ( _ , 32)
-
-        # MLP thought layers
-        mlp_vector = self.mlp(mlp_vector) # ( _ , sequential[2][1]) = ( _ , 8)
-
-        # NCF: concat MLP_output and MF_output
-        # NCF: Last fully connected layer of size (40x1) --> (8: mlp output + 32: mf output => 40)
-
-        concatenation = torch.cat([mlp_vector, mf_vector], dim=-1) # (_, 40)
-        logits = self.last_fc(concatenation)
+        # output
+        output = self._neuMF(mlp_vector, gmf_vector)
+        logits = self.last_fc(output)
         # we modify the original code with Sigmoid here
         # if sigmoid is not included we obtain the logits from the las MLP
         # we return the logits and then apply the BCEwithLogitsLoss  
