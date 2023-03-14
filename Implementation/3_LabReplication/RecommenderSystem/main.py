@@ -16,10 +16,13 @@ import savedata
 
 class Main():
     def __init__(self):
-
+        
+        # Select the dataset you want to try
+        self.dataset = "movie lens" # movie lens
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
+        # Simpler version with ess data + debug
         self.test_mode = False
 
         self.ini_time   = datetime.now()
@@ -32,6 +35,8 @@ class Main():
             'hidden_size':32, 
             'learning_rate':1e-4
         }
+
+        self.seed=0
 
         # seed for Reproducibility
         self.random = exec.Execution.seed_everything(self.seed)
@@ -49,12 +54,24 @@ class Main():
         # > Dataset --------------------------------------------------
         self.ds = dataset.DataSet()
         self.min_reviews, self.min_usuarios = [6,6]
-        self.col_names =   {"col_id_reviewer": "reviewerID",
-                            "col_id_product": "asin",
-                            "col_unix_time": "unixReviewTime",
-                            "col_rating": "overall",
-                            "col_timestamp": "timestamp",
-                            "col_year": "year"}
+        
+        # Dataset columns depending on chosen data
+        if self.dataset == "movie lens":
+
+            self.col_names =   {"col_id_reviewer": "user",
+                                "col_id_product": "item",
+                                "col_rating": "rating",
+                                "col_timestamp": "timestamp"}
+            
+        else:
+
+            self.col_names =   {"col_id_reviewer": "reviewerID",
+                    "col_id_product": "asin",
+                    "col_unix_time": "unixReviewTime",
+                    "col_rating": "overall",
+                    "col_timestamp": "timestamp",
+                    "col_year": "year"}
+            
         self.train_x, self.test_x = [], []
         # < Dataset --------------------------------------------------
 
@@ -74,15 +91,16 @@ class Main():
             #NrRows = 5000
 
  
-        df = self.ds.readDataSet(self.exec_path, self.min_reviews, self.min_usuarios, nrows=NrRows)
+        df = self.ds.readDataSet(self.exec_path, self.min_reviews, self.min_usuarios, self.dataset,  nrows=NrRows)
         self.log.save_data_configuration(str(df.nunique()))
-        data, dims = self.ds.getDims(df, self.col_names)
+        data, dims = self.ds.getDims(df, self.col_names, self.dataset, self.col_names)
         if self.test_mode:
             print(f'df head :')
             print(f'{str(df.head())}')
             print(f'getDims data:')
             print(f'{str(data)}')
             print(f'getDims dims: {str(dims)}')
+       
         
         if self.test_mode == True:
             print("Dim of users: {}\nDim of items: {}\nDims of unixtime: {}".format(dims[0], dims[1], dims[2]))
@@ -96,7 +114,7 @@ class Main():
         self.train_x, self.test_x = self.exec.split_train_test(data, dims[0], self.strategy)
         self.train_x = self.train_x[:, :2]
         dims = dims[:2]
-
+        print(dims)
         if self.test_mode:
             print(f'Train shape: {str(self.train_x.shape)}')
             print(f'Test shape: {str(self.test_x.shape)}')
@@ -110,6 +128,7 @@ class Main():
         # > Sampling Strategy -----------------------------------------------------------------------
         self.pop_reco = self.exec.get_pop_recons(self.train_x)
         
+        # Perform negative sampling
         self.train_x, rating_mat = self.spl.ng_sample(self.train_x, dims)
         if self.test_mode:
             print("Dimensions matrix:\n",dims)
@@ -141,7 +160,6 @@ class Main():
         #if self.test_mode:
         #    print(self.test_x[0])
         # > Build Test Set --------------------------------------------------------------------------
-        
         # > Save Data -------------------------------------------------------------------------------
         #???
         #self.savedata.save_train(train_dataset)
