@@ -33,6 +33,9 @@ class Main():
             'learning_rate':1e-4
         }
 
+        # seed for Reproducibility
+        self.random = exec.Execution.seed_everything(self.seed)
+        
         self.pop_reco = []
         # < Variables ------------------------------------------------
 
