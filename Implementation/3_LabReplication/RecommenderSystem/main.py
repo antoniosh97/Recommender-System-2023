@@ -18,7 +18,7 @@ class Main():
     def __init__(self):
         
         # Select the dataset you want to try
-        self.dataset = "movie lens" # movie lens
+        self.dataset = "amazon instruments"#"movie lens" # movie lens
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
