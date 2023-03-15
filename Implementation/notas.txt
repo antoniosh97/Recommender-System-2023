@@ -1,0 +1,40 @@
+Puntos a mirar:
+
+1 - In Exec Class, "split_train_test", line 25, why sorted_data is empty?
+2 - Confirm the time of execution for all process
+3 - Look size of self.test_x[:,:2], main.py, line 128
+4 - What about Picker?
+5 - Do we need to generate graphics?
+6 - Add comments in model POP
+7- In exec.py, func train_one_epoch, line 72/73, now we are using "predictions = model(interactions[:,:2])"
+
+
+
+
+
+Domingo 12:
+
+topk = [50, 100]
+[tloo, rloo]
+num_ng (sampling.py) = [5, 6]
+num_epochs = [20, 30]
+hidden_size = [64, 128]
+
+- Experimento 1: A
+    [tloo, rloo]
+- Experimento 2: A
+    [tloo, topk = 50]
+- Experimento 3: B
+    [tloo, topk = 100]
+- Experimento 4: B
+    [tloo, num_ng = 5]
+- Experimento 5: J
+    [tloo, num_ng = 6]
+- Experimento 6: J
+    num_epochs = [20]
+- Experimento 7: E
+    num_epochs = 30
+- Experimento 8: E
+    hidden_size = 64
+- Experimento 9: A
+    hidden_size = 128
