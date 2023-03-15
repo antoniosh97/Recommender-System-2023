@@ -66,11 +66,11 @@ class Main():
         else:
 
             self.col_names =   {"col_id_reviewer": "reviewerID",
-                    "col_id_product": "asin",
-                    "col_unix_time": "unixReviewTime",
-                    "col_rating": "overall",
-                    "col_timestamp": "timestamp",
-                    "col_year": "year"}
+                                "col_id_product": "asin",
+                                "col_rating": "overall",
+                                "col_unix_time": "unixReviewTime",
+                                "col_timestamp": "timestamp",
+                                "col_year": "year"}
             
         self.train_x, self.test_x = [], []
         # < Dataset --------------------------------------------------
@@ -101,7 +101,8 @@ class Main():
             print(f'{str(data)}')
             print(f'getDims dims: {str(dims)}')
        
-        
+        print(data)
+     
         if self.test_mode == True:
             print("Dim of users: {}\nDim of items: {}\nDims of unixtime: {}".format(dims[0], dims[1], dims[2]))
             #print(max(data[:,0]))
