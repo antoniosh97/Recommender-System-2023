@@ -1,4 +1,4 @@
-# RECOMMENDER SYSTEM
+# RECOMMENDER SYSTEM PROJECT
 Final project for the 2022-2023 Postgraduate course on Artificial Intelligence with Deep Learning, UPC School, authored by **Evaristo Broullon**, **Joan Dayas**, **Brenda Fernández** and **Antonio Sánchez**. 
 
 
@@ -7,39 +7,44 @@ Advised by **Paula Gómez Duran**.
 Table of Contents
 =================
 
-- [RECOMMENDER SYSTEM](#recommender-system)
+- [RECOMMENDER SYSTEM PROJECT](#recommender-system-project)
 - [Table of Contents](#table-of-contents)
-	- [INTRODUCTION AND MOTIVATION](#introduction-and-motivation)
-	- [DATASETS](#datasets)
-		- [Amazon Instruments](#amazon-instruments)
-		- [MovieLens](#movielens)
-	- [ARCHITECTURE AND RESULTS](#architecture-and-results)
-		- [Splitting Datasets](#splitting-datasets)
-		- [Pipeline functions](#pipeline-functions)
-			- [Training](#training)
-			- [Inference](#inference)
-		- [Pipeline](#pipeline)
-	- [ABLATION STUDIES](#ablation-studies)
-	- [STATE OF ART](#state-of-art)
-		- [Collaborative Recommender System](#collaborative-recommender-system)
-		- [Cold Start](#cold-start)
-		- [Contextual Bandits](#contextual-bandits)
-		- [Leave-One-Out error](#leave-one-out-error)
-		- [Paper: Full ranking in test](#paper-full-ranking-in-test)
-		- [Paper: Sampling Techniques](#paper-sampling-techniques)
-		- [Conclusions](#conclusions)
-	- [MODELS](#models)
-		- [FACTORIZATION MACHINE](#factorization-machine)
-		- [NEURAL COLLABORATIVE FILTERING](#neural-collaborative-filtering)
-		- [POPULARITY-BASED](#popularity-based)
-		- [RANDOM](#random)
-		- [Final results](#final-results)
-	- [HYPERPARAMETER TUNING](#hyperparameter-tuning)
-		- [FACTORIZATION MACHINE](#factorization-machine-1)
-		- [NEURAL COLLABORATIVE FILTERING](#neural-collaborative-filtering-1)
-	- [END TO END SYSTEM](#end-to-end-system)
-	- [HOW TO](#how-to)
-		- [HOW TO PREPARE THE DATASET FROM SCRATCH](#how-to-prepare-the-dataset-from-scratch)
+	- [1. INTRODUCTION AND MOTIVATION](#1-introduction-and-motivation)
+	- [2. OBJECTIVES](#2-objectives)
+	- [3. STATE OF ART](#3-state-of-art)
+			- [3.1 COLLABORATIVE RECOMMENDATION SYSTEM](#31-collaborative-recommendation-system)
+			- [3.2 MODELS](#32-models)
+				- [Factorization Machine](#factorization-machine)
+				- [Neural Collaborative Filtering](#neural-collaborative-filtering)
+				- [Popularity Based](#popularity-based)
+				- [Random](#random)
+			- [3.3 COLD START](#33-cold-start)
+			- [3.4 LEAVE-ONE-OUT](#34-leave-one-out)
+			- [3.5 PAPER: FULL RANKING](#35-paper-full-ranking)
+			- [3.6 PAPER: SAMPLING TECHIQUES](#36-paper-sampling-techiques)
+	- [4. METHODOLOGY](#4-methodology)
+		- [4.1 DATASETS](#41-datasets)
+			- [Amazon Instruments](#amazon-instruments)
+			- [MovieLens](#movielens)
+		- [4.2 ARCHITECTURE](#42-architecture)
+			- [Splitting Datasets](#splitting-datasets)
+			- [Pipeline functions](#pipeline-functions)
+				- [Training](#training)
+				- [Inference](#inference)
+			- [Pipeline](#pipeline)
+	- [5. ABLATION STUDY](#5-ablation-study)
+		- [5.1 EXPERIMENT 1:](#51-experiment-1)
+			- [Experiment setup](#experiment-setup)
+			- [Results](#results)
+			- [Conclusions](#conclusions)
+		- [5.2 EXPERIMENT 2:](#52-experiment-2)
+			- [Experiment setup](#experiment-setup-1)
+			- [Results](#results-1)
+			- [Conclusions](#conclusions-1)
+		- [5.3 FINAL RESULTS](#53-final-results)
+		- [5.4 CONCLUSIONS](#54-conclusions)
+	- [6. DEVELOPMENT](#6-development)
+		- [PREPARE THE DATASET FROM SCRATCH](#prepare-the-dataset-from-scratch)
 			- [Download Dataset](#download-dataset)
 			- [Clean dataset](#clean-dataset)
 		- [HOW TO EXTRACT OPTICAL FLOW](#how-to-extract-optical-flow)
@@ -55,50 +60,63 @@ Table of Contents
 				- [Create your Miniconda environment](#create-your-miniconda-environment)
 				- [Create your .env file](#create-your-env-file)
 			- [RUN the project](#run-the-project)
-				- [RabbitMQ](#rabbitmq)
-				- [Video processor app](#video-processor-app)
-		- [HOW TO RUN THE PROGRAM - video\_capture](#how-to-run-the-program---video_capture)
+				- [??](#)
 	- [END](#end)
+
 ---
 ---
 
 
 // ![Image](Management/_images/nn.png)
-## INTRODUCTION AND MOTIVATION
+## 1. INTRODUCTION AND MOTIVATION
 
 Text
 
+---
+## 2. OBJECTIVES
+---
+## 3. STATE OF ART
+#### 3.1 COLLABORATIVE RECOMMENDATION SYSTEM
+#### 3.2 MODELS
+##### Factorization Machine
+##### Neural Collaborative Filtering
+##### Popularity Based
+##### Random
+#### 3.3 COLD START
+#### 3.4 LEAVE-ONE-OUT
+#### 3.5 PAPER: FULL RANKING
+#### 3.6 PAPER: SAMPLING TECHIQUES
 
-## DATASETS
-### Amazon Instruments
-### MovieLens
-## ARCHITECTURE AND RESULTS
-### Splitting Datasets
-### Pipeline functions
-#### Training
-#### Inference
-### Pipeline
-## ABLATION STUDIES
-## STATE OF ART
-### Collaborative Recommender System
-### Cold Start
-### Contextual Bandits
-### Leave-One-Out error
-### Paper: Full ranking in test
-### Paper: Sampling Techniques
-### Conclusions
-## MODELS
-### FACTORIZATION MACHINE
-### NEURAL COLLABORATIVE FILTERING
-### POPULARITY-BASED
-### RANDOM
-### Final results
-## HYPERPARAMETER TUNING
-### FACTORIZATION MACHINE
-### NEURAL COLLABORATIVE FILTERING
-## END TO END SYSTEM
-## HOW TO
-### HOW TO PREPARE THE DATASET FROM SCRATCH
+<!-- ### HYPERPARAMETER TUNING
+#### FACTORIZATION MACHINE
+#### NEURAL COLLABORATIVE FILTERING -->
+
+---
+## 4. METHODOLOGY 
+### 4.1 DATASETS
+#### Amazon Instruments
+#### MovieLens
+### 4.2 ARCHITECTURE
+#### Splitting Datasets
+#### Pipeline functions
+##### Training
+##### Inference
+#### Pipeline
+---
+## 5. ABLATION STUDY
+### 5.1 EXPERIMENT 1: 
+#### Experiment setup
+#### Results
+#### Conclusions
+### 5.2 EXPERIMENT 2: 
+#### Experiment setup
+#### Results
+#### Conclusions
+### 5.3 FINAL RESULTS
+### 5.4 CONCLUSIONS
+---
+## 6. DEVELOPMENT
+### PREPARE THE DATASET FROM SCRATCH
 #### Download Dataset
 #### Clean dataset
 ### HOW TO EXTRACT OPTICAL FLOW
@@ -114,40 +132,10 @@ Text
 ##### Create your Miniconda environment
 ##### Create your .env file
 #### RUN the project
-##### RabbitMQ
-##### Video processor app
-### HOW TO RUN THE PROGRAM - video_capture
+##### ??
 ## END
 
 <!-- 
-
-## ARCHITECTURE AND RESULTS
-Text
-### Splitting Datasets
-Text
-
-#### Pipeline functions
-Text
-### Pipeline
-### MODEL IMPROVEMENTS
-
-#### FIRST APPROACH
-Text
-
-#### SECOND APPROACH
-
-Text
-
-
-#### THIRD APPROACH
-
-Text
-
-
-#### Final results
-
-Text
-
 
 
 ### HOW TO TRAIN THE MODEL
