@@ -25,33 +25,15 @@ class Main():
         # Simpler version with ess data + debug
         self.test_mode = False
 
-        # For experiments use the csv 8x8
-        self.tuning_mode = True
-        self.tuning_params = {
-            "num_neg": 4,               # {4, 5, 6}         original: 4
-            "leave_one_out": "TLOO",    # {TLOO, RLOO}      original: TLOO
-            "topk": 10,                 # {10, 50, 100}     original: 10
-            "num_epochs": 12,           # {12, 20, 30}      original: 12
-
-            "hidden_size": 32,          # {32, 64, 128}     original: 32    
-            "lr":1e-4,                  # {1e-4, 1e-3}      original: 1e-4
-
-            "hidden_size_ncf": 32,      # {32, 64, 128}     original: 32  
-            "lr_ncf":1e-4               # {1e-4, 1e-3}      original: 1e-4
-        }
-
-
         self.ini_time   = datetime.now()
         self.exec_path = os.getcwd()
-        self.strategy = self.tuning_params["leave_one_out"]
+        self.strategy = "TLOO"
 
         self.hparams = {
             'batch_size':64,
-            'num_epochs':self.tuning_params["num_epochs"],
-            'hidden_size':self.tuning_params["hidden_size"], 
-            'learning_rate':self.tuning_params["lr"],
-            'hidden_size_ncf':self.tuning_params["hidden_size_ncf"], 
-            'learning_rate_ncf':self.tuning_params["lr_ncf"]
+            'num_epochs':12,
+            'hidden_size':32, 
+            'learning_rate':1e-4
         }
 
         self.seed=0
@@ -71,8 +53,7 @@ class Main():
         
         # > Dataset --------------------------------------------------
         self.ds = dataset.DataSet()
-
-        self.min_reviews, self.min_usuarios = [8,8] if self.tuning_mode else [6,6]
+        self.min_reviews, self.min_usuarios = [6,6]
         
         # Dataset columns depending on chosen data
         if self.dataset == "movie lens":
@@ -109,12 +90,7 @@ class Main():
             NrRows = None
             #NrRows = 5000
 
-        # > Message for tuning mode ---------------------------------------------------------------------------------
-        if self.tuning_mode:
-            self.log.save_data_configuration("-"*20+"\nTuning mode:")
-            [self.log.save_data_configuration(f"{tuning_param}: {value_param}") for tuning_param, value_param in self.tuning_params.items()]
-            self.log.save_data_configuration("-"*20+"\n")
-
+ 
         df = self.ds.readDataSet(self.exec_path, self.min_reviews, self.min_usuarios, self.dataset,  nrows=NrRows)
         self.log.save_data_configuration(str(df.nunique()))
         data, dims = self.ds.getDims(df, self.col_names, self.dataset, self.col_names)
@@ -125,6 +101,7 @@ class Main():
             print(f'{str(data)}')
             print(f'getDims dims: {str(dims)}')
        
+        print(data)
      
         if self.test_mode == True:
             print("Dim of users: {}\nDim of items: {}\nDims of unixtime: {}".format(dims[0], dims[1], dims[2]))
@@ -153,7 +130,7 @@ class Main():
         self.pop_reco = self.exec.get_pop_recons(self.train_x)
         
         # Perform negative sampling
-        self.train_x, rating_mat = self.spl.ng_sample(self.train_x, dims, num_ng=self.tuning_params["num_neg"])
+        self.train_x, rating_mat = self.spl.ng_sample(self.train_x, dims)
         if self.test_mode:
             print("Dimensions matrix:\n",dims)
         
@@ -202,8 +179,8 @@ class Main():
         rnd_model = model_random.RandomModel(dims)
         pop_model = model_pop.PopularityBasedModel(self.pop_reco)
 
-        ncf_model     = model_nfc.NeuNCF(dims, self.hparams['hidden_size_ncf']).to(self.device)
-        ncf_optimizer = torch.optim.Adam(params=ncf_model.parameters(), lr=self.hparams['learning_rate_ncf'])
+        ncf_model     = model_nfc.NeuNCF(dims, self.hparams['hidden_size']).to(self.device)
+        ncf_optimizer = torch.optim.Adam(params=ncf_model.parameters(), lr=self.hparams['learning_rate'])
         ncf_criterion = torch.nn.BCEWithLogitsLoss(reduction='mean')
         # < Create Models --------------------------------------------------------------------------
         
@@ -224,7 +201,7 @@ class Main():
         self.log.save_data_configuration(ln_sep_c*ln_sep_sz)
         self.log.save_data_configuration("Training and Test")
         self.log.save_data_configuration(ln_sep_c*ln_sep_sz)
-        topk = self.tuning_params["topk"]
+        topk = 10
         #fm  = np.zeros([self.hparams['num_epochs'],3])
         #rnd = np.zeros([self.hparams['num_epochs'],3])
         #pop = np.zeros([self.hparams['num_epochs'],3])
