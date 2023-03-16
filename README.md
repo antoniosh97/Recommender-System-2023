@@ -12,16 +12,16 @@ Table of Contents
 	- [1. INTRODUCTION AND MOTIVATION](#1-introduction-and-motivation)
 	- [2. OBJECTIVES](#2-objectives)
 	- [3. STATE OF ART](#3-state-of-art)
-			- [3.1 COLLABORATIVE RECOMMENDATION SYSTEM](#31-collaborative-recommendation-system)
-			- [3.2 MODELS](#32-models)
-				- [Factorization Machine](#factorization-machine)
-				- [Neural Collaborative Filtering](#neural-collaborative-filtering)
-				- [Popularity Based](#popularity-based)
-				- [Random](#random)
-			- [3.3 COLD START](#33-cold-start)
-			- [3.4 LEAVE-ONE-OUT](#34-leave-one-out)
-			- [3.5 PAPER: FULL RANKING](#35-paper-full-ranking)
-			- [3.6 PAPER: SAMPLING TECHIQUES](#36-paper-sampling-techiques)
+		- [3.1 COLLABORATIVE RECOMMENDATION SYSTEM](#31-collaborative-recommendation-system)
+		- [3.2 MODELS](#32-models)
+			- [Factorization Machine](#factorization-machine)
+			- [Neural Collaborative Filtering](#neural-collaborative-filtering)
+			- [Popularity Based](#popularity-based)
+			- [Random](#random)
+		- [3.3 COLD START](#33-cold-start)
+		- [3.4 LEAVE-ONE-OUT](#34-leave-one-out)
+		- [3.5 PAPER: FULL RANKING](#35-paper-full-ranking)
+		- [3.6 PAPER: SAMPLING TECHIQUES](#36-paper-sampling-techiques)
 	- [4. METHODOLOGY](#4-methodology)
 		- [4.1 DATASETS](#41-datasets)
 			- [Amazon Instruments](#amazon-instruments)
@@ -97,16 +97,16 @@ In a first superficial look, a recommender system can demonstrate help customers
 
 ---
 ## 3. STATE OF ART
-#### 3.1 COLLABORATIVE RECOMMENDATION SYSTEM
-#### 3.2 MODELS
-##### Factorization Machine
-##### Neural Collaborative Filtering
-##### Popularity Based
-##### Random
-#### 3.3 COLD START
-#### 3.4 LEAVE-ONE-OUT
-#### 3.5 PAPER: FULL RANKING
-#### 3.6 PAPER: SAMPLING TECHIQUES
+### 3.1 COLLABORATIVE RECOMMENDATION SYSTEM
+### 3.2 MODELS
+#### Factorization Machine
+#### Neural Collaborative Filtering
+#### Popularity Based
+#### Random
+### 3.3 COLD START
+### 3.4 LEAVE-ONE-OUT
+### 3.5 PAPER: FULL RANKING
+### 3.6 PAPER: SAMPLING TECHIQUES
 
 <!-- ### HYPERPARAMETER TUNING
 #### FACTORIZATION MACHINE
