@@ -81,7 +81,9 @@ In general, recommender systems are algorithms based on suggesting relevant item
 Among the various reasons why this field is interesting to study, we found that improving the user experience encourages them to discover new products of interest. In addition, in case the recommendations are accurate, the commitment with the application is strengthened and this causes a win-win since the company captures data to improve its marketing strategies.
 </div>
 
----
+<br />
+<br />
+
 ## 2. OBJECTIVES
 <div align="justify">
 
