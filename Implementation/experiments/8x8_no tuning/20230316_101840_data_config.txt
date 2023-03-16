@@ -1,4 +1,4 @@
-20230316_001305 - RS-Execution Result
+20230316_101840 - RS-Execution Result
 
 --------------------
 Tuning mode:
@@ -87,5 +87,5 @@ Training and Test
 |    11 | POP   |     0.0356 |     0.0129 |       0.4808 |
 |    11 | NCF   |     0.0601 |     0.0389 |       8.9904 |
 ----------------------------------------------------------
-Training duration: 11.4167 minutes
-Total execution in 11.9667 minutes
+Training duration: 25.4333 minutes
+Total execution in 26.7333 minutes
