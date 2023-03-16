@@ -45,3 +45,7 @@ class Logs():
         with open(self.path_save_data_dir, "a") as data_file:
             data_file.write(text+"\n")
         return text
+    
+
+
+

@@ -13,12 +13,13 @@ import model_nfc
 import sampling
 import exec
 import savedata
+import plots
 
 class Main():
     def __init__(self):
         
         # Select the dataset you want to try
-        self.dataset = "amazon instruments"#"movie lens" # movie lens
+        self.dataset = "movie lens"#"movie lens" # movie lens
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
@@ -93,6 +94,7 @@ class Main():
             
         self.train_x, self.test_x = [], []
         # < Dataset --------------------------------------------------
+        self.log.save_data_configuration("-"*20+f"\nDataset: {self.dataset}")
 
     def start(self):
 
@@ -107,6 +109,7 @@ class Main():
             NrRows = 8000
         else:
             NrRows = None
+            #NrRows = 5000
 
         # > Message for tuning mode ---------------------------------------------------------------------------------
         if self.tuning_mode:
@@ -178,10 +181,13 @@ class Main():
         # < Sampling Strategy -----------------------------------------------------------------------
 
         # > Build Test Set --------------------------------------------------------------------------
+        #self.test_x = self.build_test_set(items2compute, self.test_x) #???
         self.test_x = self.exec.build_test_set(items2compute, self.test_x[:,:2])
+        #if self.test_mode:
+        #    print(self.test_x[0])
         # > Build Test Set --------------------------------------------------------------------------
-
         # > Save Data -------------------------------------------------------------------------------
+        #???
         #self.savedata.save_train(train_dataset)
         #self.savedata.save_train(self.test_x)
         #self.savedata.save_pop(self.pop_reco)
@@ -207,6 +213,7 @@ class Main():
         # Hit Ratio: Measures whether the test item is in the top@K positions of the recommendation list
         # NDCG (Normalized Discounted Cumulative Gain). Measures the ranking quality which gives information about where in the raking is our test item. 
         # Coverage: Coverage is the percent of items in the training data the model is able to recommend on a test set.
+
 
         print("Start: Epochs")
         total_items = dims[1]-dims[0] #calc coverage
@@ -266,9 +273,16 @@ class Main():
             hr, ndcg, reco_list_ncf, cov_ncf = self.exec.test(ncf_model, self.test_x, total_items, self.device, topk=topk)
             print(self.log.save_data_configuration(f'| {str(epoch_i).rjust(col1)} | {str("NCF").ljust(col2)} | {str(format(hr,dp)).rjust(col4)} | {str(format(ndcg,dp)).rjust(col5)} | {str(format(cov_ncf,dp)).rjust(col6)} |'))
             #ncf[epoch_i] = [hr, ndcg, cov_ncf]
+            tb_ncf.add_scalar('train/loss', train_loss_ncf, epoch_i)
             tb_ncf.add_scalar(f'eval/HR@{topk}', hr, epoch_i)
             tb_ncf.add_scalar(f'eval/NDCG@{topk}', ndcg, epoch_i)
             tb_ncf.add_scalar(f'eval/Coverage@{topk}', cov_ncf, epoch_i)
+
+            # plot recommended vs Popular
+            plots.plot_Reco_vs_POP(reco_list_fm, reco_list_pop, "reco_ep_"+ str(epoch_i)+ "" + datetime.now().strftime("%Y%m%d%H%M%S")+".png", str(epoch_i), self.hparams['num_epochs'], "Factorization Machine")
+            plots.plot_Reco_vs_POP(reco_list_pop, reco_list_pop, "reco_ep_"+ str(epoch_i)+ "" + datetime.now().strftime("%Y%m%d%H%M%S")+".png", str(epoch_i), self.hparams['num_epochs'], "Popularity")
+            plots.plot_Reco_vs_POP(reco_list_rnd, reco_list_pop, "reco_ep_"+ str(epoch_i)+ "" + datetime.now().strftime("%Y%m%d%H%M%S")+".png", str(epoch_i), self.hparams['num_epochs'], "Random")
+            plots.plot_Reco_vs_POP(reco_list_ncf, reco_list_pop, "reco_ep_"+ str(epoch_i)+ "" + datetime.now().strftime("%Y%m%d%H%M%S")+".png", str(epoch_i), self.hparams['num_epochs'], "NeuMF")
 
             print(self.log.save_data_configuration(ln_sep_c*ln_sep_sz))
         
