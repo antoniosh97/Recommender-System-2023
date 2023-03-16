@@ -45,31 +45,3 @@ class Logs():
         with open(self.path_save_data_dir, "a") as data_file:
             data_file.write(text+"\n")
         return text
-    
-
-
-
-
-
-    def wr_process_res(self, process_res):
-        col = ""
-        row = ""
-        for k, v in process_res.items():
-            col += str(k) + ";"
-            row += str(v) + ";"
-        with open(self.process_res_dir, "a") as data_file:
-            data_file.write(col+"\n")
-            data_file.write(row+"\n")
-        
-    def wr_model_res(self, model_res):
-        col = ""
-        row = ""
-        for val in model_res:
-            for k, v in val.items():
-                col += str(k) + ";"   
-                 
-            for k, v in model_res.items():
-                row += str(v) + ";"
-        with open(self.model_res_dir, "a") as data_file:
-            data_file.write(col+"\n")
-            data_file.write(row+"\n")

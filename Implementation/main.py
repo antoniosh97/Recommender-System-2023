@@ -107,7 +107,6 @@ class Main():
             NrRows = 8000
         else:
             NrRows = None
-            #NrRows = 5000
 
         # > Message for tuning mode ---------------------------------------------------------------------------------
         if self.tuning_mode:
@@ -179,13 +178,10 @@ class Main():
         # < Sampling Strategy -----------------------------------------------------------------------
 
         # > Build Test Set --------------------------------------------------------------------------
-        #self.test_x = self.build_test_set(items2compute, self.test_x) #???
         self.test_x = self.exec.build_test_set(items2compute, self.test_x[:,:2])
-        #if self.test_mode:
-        #    print(self.test_x[0])
         # > Build Test Set --------------------------------------------------------------------------
+
         # > Save Data -------------------------------------------------------------------------------
-        #???
         #self.savedata.save_train(train_dataset)
         #self.savedata.save_train(self.test_x)
         #self.savedata.save_pop(self.pop_reco)
@@ -211,9 +207,6 @@ class Main():
         # Hit Ratio: Measures whether the test item is in the top@K positions of the recommendation list
         # NDCG (Normalized Discounted Cumulative Gain). Measures the ranking quality which gives information about where in the raking is our test item. 
         # Coverage: Coverage is the percent of items in the training data the model is able to recommend on a test set.
-
-        #self.log.wr_process_res(self.process_res)
-        #self.process_res.clear()
 
         print("Start: Epochs")
         total_items = dims[1]-dims[0] #calc coverage
