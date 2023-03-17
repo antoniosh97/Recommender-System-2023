@@ -17,13 +17,13 @@ explication = ["\nThe objective of this project is to analyze the responses of d
 
 
 if sys.argv[1] == "Amazon":
-    main = Main("amazon")
+    main = Main()
     main.start()
     exit()
 
 elif sys.argv[1] == "MovieLens":
-    main = Main("amazon")
-    main.start("movie lens")
+    main = Main("movie lens")
+    main.start()
     exit()
 else:
     print(title)
