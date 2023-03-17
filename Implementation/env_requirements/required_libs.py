@@ -26,4 +26,16 @@ required_libs = ['absl-py==1.3.0',
                  'nbformat==5.7.0', 'nest-asyncio==1.5.6', 'networkx==2.8.8', 'notebook-shim==0.2.2', 
                  'notebook==6.5.2', 'numpy==1.24.1', 'oauthlib==3.2.1', 'packaging==22.0', 'pandas==1.5.2', 
                  'wget==3.2'
-                 'pandocfilters==1.5.0', 'parso==0.8.3', 'pathtools==0.1.2', 'pexpect==4.8.0', 'pickleshare==0.7.5', 'pillow==8.0.1', 'pip==22.3.1', 'pkgutil-resolve-name==1.3.10', 'platformdirs==2.5.2', 'plotly==5.12.0', 'prometheus-client==0.14.1', 'promise==2.3', 'prompt-toolkit==3.0.36', 'protobuf==3.20.3', 'psutil==5.9.4', 'ptyprocess==0.7.0', 'pure-eval==0.2.2', 'pyasn1-modules==0.2.8', 'pyasn1==0.4.8', 'pycparser==2.21', 'pygments==2.11.2', 'pyjwt==2.4.0', 'pyopenssl==22.0.0', 'pyparsing==3.0.9', 'pyrsistent==0.18.0', 'pysocks==1.7.1', 'python-dateutil==2.8.2', 'pytz==2022.6', 'pyyaml==6.0', 'pyzmq==23.2.0', 'requests-oauthlib==1.3.0', 'requests==2.28.1', 'rsa==4.7.2', 'scikit-learn==1.0.2', 'scipy==1.9.3', 'send2trash==1.8.0', 'sentry-sdk==1.11.1', 'setproctitle==1.3.2', 'setuptools==65.6.3', 'shortuuid==1.0.11', 'six==1.16.0', 'smmap==5.0.0', 'sniffio==1.2.0', 'soupsieve==2.3.2.post1', 'stack-data==0.2.0', 'tenacity==8.1.0', 'tensorboard-data-server==0.6.1', 'tensorboard-plugin-wit==1.6.0', 'tensorboard==2.10.0', 'terminado==0.17.1', 'threadpoolctl==3.1.0', 'tinycss2==1.2.1', 'torch-tb-profiler==0.4.0', 'torch==1.11.0', 'torchtext==0.8.1', 'torchvision==0.12.0', 'tornado==6.2', 'tqdm==4.64.1', 'traitlets==5.7.1', 'typing-extensions==4.4.0', 'urllib3==1.26.14', 'wandb==0.12.15', 'wcwidth==0.2.5', 'webencodings==0.5.1', 'websocket-client==0.58.0', 'werkzeug==2.2.2', 'wheel==0.38.4', 'widgetsnbextension==3.5.2', 'yarl==1.8.1', 'zipp==3.11.0']
+                 'pandocfilters==1.5.0', 'parso==0.8.3', 'pathtools==0.1.2', 'pexpect==4.8.0', 'pickleshare==0.7.5', 
+                 'pillow==8.0.1', 'pip==22.3.1', 'pkgutil-resolve-name==1.3.10', 'platformdirs==2.5.2', 'plotly==5.12.0', 
+                 'prometheus-client==0.14.1', 'promise==2.3', 'prompt-toolkit==3.0.36', 'protobuf==3.20.3', 'psutil==5.9.4',
+                   'ptyprocess==0.7.0', 'pure-eval==0.2.2', 'pyasn1-modules==0.2.8', 'pyasn1==0.4.8', 'pycparser==2.21', 
+                   'pygments==2.11.2', 'pyjwt==2.4.0', 'pyopenssl==22.0.0', 'pyparsing==3.0.9', 'pyrsistent==0.18.0', 'pysocks==1.7.1',
+                     'python-dateutil==2.8.2', 'pytz==2022.6', 'pyyaml==6.0', 'pyzmq==23.2.0', 'requests-oauthlib==1.3.0', 
+                     'requests==2.28.1', 'rsa==4.7.2', 'scikit-learn==1.0.2', 'scipy==1.9.3', 'send2trash==1.8.0', 'sentry-sdk==1.11.1', 
+                     'setproctitle==1.3.2', 'setuptools==65.6.3', 'shortuuid==1.0.11', 'six==1.16.0', 'smmap==5.0.0', 'sniffio==1.2.0', 
+                     'soupsieve==2.3.2.post1', 'stack-data==0.2.0', 'tenacity==8.1.0', 
+                     'tensorboard-data-server==0.6.1', 'tensorboard-plugin-wit==1.6.0', 'tensorboard==2.10.0', 'terminado==0.17.1', 
+                     'threadpoolctl==3.1.0', 'tinycss2==1.2.1', 'torch-tb-profiler==0.4.0', 'torch==1.11.0', 'torchtext==0.8.1', 'torchvision==0.12.0',
+                       'tornado==6.2', 'tqdm==4.64.1', 'traitlets==5.7.1', 'typing-extensions==4.4.0', 'urllib3==1.26.14', 'wandb==0.12.15', 
+                       'wcwidth==0.2.5', 'webencodings==0.5.1', 'websocket-client==0.58.0', 'werkzeug==2.2.2', 'wheel==0.38.4', 'widgetsnbextension==3.5.2', 'yarl==1.8.1', 'zipp==3.11.0']
