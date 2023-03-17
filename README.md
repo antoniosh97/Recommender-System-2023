@@ -197,10 +197,10 @@ where ${a_{out}}$ and $\mathbf{h}$ denote the activation function and edge weigh
 
 we propose to add hidden layers on the concatenated vector, using a standard MLP to learn the interaction between user and item latent features. In this sense, we can endow the model a large level of flexibility and non-linearity to learn the interactions between $\mathbf{p}_u$ and $\mathbf{q}_i$ , rather than the way of GMF that uses only a fixed element-wise product on them. More precisely, the MLP model under our NCF framework is defined as
 
-$$\mathbf{z}_1 = \phi_1(\mathbf{p}_u,\mathbf{q}_i) = \begin{cases}\mathbf{p}_u  \\ \mathbf{q}_i \end{cases} $$ 
-$$ \phi_2(\mathbf{z}_1) = a_2(\mathbf{W}^{T}_2 \mathbf{z}_1 + \mathbf{b}_2) $$
-$$ . . . $$
-$$ \phi_L(\mathbf{z}_{L-1}) = a_L(\mathbf{W}^{T}_L \mathbf{z}_{L-1} + \mathbf{b}_L) $$
+$$\mathbf{z}_1 = \phi_1(\mathbf{p}_u,\mathbf{q}_i) = {\mathbf{p}_u  \brack \mathbf{q}_i} $$
+$$ \phi_2(\mathbf{z}_1) = a_2(\mathbf{W}^{T}_2 \mathbf{z}_1 + \mathbf{b}_2) \\ 
+...\\
+ \phi_L(\mathbf{z}_{L-1}) = a_L(\mathbf{W}^{T}_L \mathbf{z}_{L-1} + \mathbf{b}_L) $$
 $$\hat{y}_{ui}=\sigma(\mathbf{h}^T\phi_L(\mathbf{z}_{L-1}))$$
 
 where $\mathbf{W}_x$, $\mathbf{b}_x$, and ax denote the weight matrix, bias vector, and activation function for the x-th layer’s perceptron, respectively.
@@ -215,27 +215,16 @@ A straightforward solution is to let GMF and MLP share the same embedding layer,
 their interaction functions. This way shares a similar spirit with the well-known Neural Tensor Network (NTN) [33].
 Specifically, the model for combining GMF with a one-layer MLP can be formulated as 
 
-formula
+$$\hat{y}_{ui}=\sigma(\mathbf{h}^T a(\mathbf{p}_u \bigodot \mathbf{q}_i + \mathbf{W} {\mathbf{p}_u  \brack \mathbf{q}_i}  + \mathbf{b}_L) )$$
 
 
-To provide more flexibility to the fused model, we allow
-GMF and MLP to learn separate embeddings, and combine
-the two models by concatenating their last hidden layer.
+To provide more flexibility to the fused model, we allow GMF and MLP to learn separate embeddings, and combine the two models by concatenating their last hidden layer.
 
-formula
+$$ \phi^{GMF} = \mathbf{p}^G_u \bigodot \mathbf{q}^G_i , \\
+\phi^{MLP} = a_L(\mathbf{W}^{T}_L \mathbf{z}_{L-1} + \mathbf{b}_L) , $$
+$$\hat{y}_{ui}=\sigma(\mathbf{h}^T {\phi^{GMF}  \brack \phi^{MLP}} ) $$
 
-The formulation where p
-G
-u and p
-M
-u denote the user embedding for GMF
-and MLP parts, respectively; and similar notations of q
-G
-i
-and q
-M
-i
-for item embeddings.
+The formulation where $\mathbf{p}^G_u$ and $\mathbf{q}^G_i$ denote the user embedding for GMF and MLP parts, respectively; and similar notations of $\mathbf{q}^G_i$ and $\mathbf{p}^G_u$ for item embeddings.
 
 </div>
 
