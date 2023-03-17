@@ -28,7 +28,7 @@ Table of Contents
 			- [FULL RANKING](#full-ranking)
 	- [4. METHODOLOGY](#4-methodology)
 		- [4.1 DATASETS](#41-datasets)
-			- [Amazon Instruments](#amazon-instruments)
+			- [Amazon Musical Instruments](#amazon-musical-instruments)
 			- [MovieLens](#movielens)
 		- [4.2 ARCHITECTURE](#42-architecture)
 			- [Splitting Datasets](#splitting-datasets)
@@ -284,7 +284,19 @@ To rank a set of recommender models, we rank a target set of items for every seq
 
 ## 4. METHODOLOGY 
 ### 4.1 DATASETS
-#### Amazon Instruments
+#### Amazon Musical Instruments
+https://nijianmo.github.io/amazon/index.html
+
+
+
+
+This dataset is part from an updated version of the Amazon review dataset released in 2014. As in the previous version, this dataset includes reviews (ratings, text, helpfulness votes), product metadata (descriptions, category information, price, brand, and image features), and links (also viewed/also bought graphs).
+
+This dataset provides the following features:
+* The total number of clients is 903330
+* The total number of products is 112222
+* The total number of reviews is 1512530
+
 #### MovieLens
 ### 4.2 ARCHITECTURE
 #### Splitting Datasets
