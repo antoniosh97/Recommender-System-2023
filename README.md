@@ -16,6 +16,10 @@ Table of Contents
 		- [3.2 MODELS](#32-models)
 			- [Factorization Machine](#factorization-machine)
 			- [Neural Collaborative Filtering](#neural-collaborative-filtering)
+				- [General framework](#general-framework)
+				- [Generalized Matriz Factorization (GMF)](#generalized-matriz-factorization-gmf)
+				- [Multi-Layer Perceptron (MLP)](#multi-layer-perceptron-mlp)
+				- [Fusion of GMF and MLP](#fusion-of-gmf-and-mlp)
 			- [Popularity Based](#popularity-based)
 			- [Random](#random)
 		- [3.3 COLD START](#33-cold-start)
@@ -161,6 +165,78 @@ where we have three parameters: $w_0 ∈ R$, **w** $∈ R^n$, **V** $∈ R^{n×k
 <div align="justify">
 
 https://arxiv.org/pdf/1708.05031.pdf
+
+Among the various collaborative filtering techniques, matrix factorization (MF) [14, 21] is the most popular one, which projects users and items into a shared latent space, using a vector of latent features to represent a user or an item. Thereafter a user’s interaction on an item is modelled as the inner product of their latent vectors.
+
+To handle the absence of negative data, they have either treated all unobserved entries as negative feedback, or sampled negative instances from unobserved entries [14]. For pairwise learning [27, 44], the idea is that observed entries should be ranked higher than the unobserved ones. As such, instead of minimizing the loss between $\hat{y_{ui}}$ and ${y_{ui}}$, pairwise learning maximizes the margin between observed entry $\hat{y_{ui}}$ and unobserved entry $\hat{y_{uj}}$ .
+Moving one step forward, our NCF framework parameterizes the interaction function f using neural networks to estimate $\hat{y_{ui}}$. As such, it naturally supports both pointwise and pairwise learning.
+
+
+##### General framework
+
+**TO CHANGE: Since this work focuses on the pure collaborative filtering setting, we use only the identity of a user and an item as the input feature, transforming it to a binarized sparse vector with one-hot encoding.**
+
+<p align="center">
+    <img src="Management/README_images/NCF_framework.png">
+</p>
+
+Above the input layer is the embedding layer; it is a fully connected layer that projects the sparse representation to a dense vector. The obtained user (item) embedding can be seen as the latent vector for user (item) in the context of latent factor model. The user embedding and item embedding are then fed into a multi-layer neural architecture, which we term as neural collaborative filtering layers, to map
+the latent vectors to prediction scores. Each layer of the neural CF layers can be customized to discover certain latent structures of user–item interactions. The dimension of the last hidden layer X determines the model’s capability. The final output layer is the predicted score $\hat{y_{ui}}$, and training is performed by minimizing the pointwise loss between $\hat{y_{ui}}$ and its target value ${y_{ui}}$.
+
+##### Generalized Matriz Factorization (GMF)
+
+As MF is the most popular model for recommendation and has been investigated extensively in literature, being able to recover it allows NCF to mimic a large family of factorization models [26].
+Due to the one-hot encoding of user (item) ID of the input layer, the obtained embedding vector can be seen as the latent vector of user (item). Let the user latent vector $\mathbf{p}_u$ be P $\mathbf{P}^T \mathbf{v}^{U}_u$ and item latent vector $\mathbf{q}_i$ be $\mathbf{Q}^T \mathbf{v}^{I}_i$. We define the mapping function of the first neural CF layer as 
+$$\phi_1(\mathbf{p}_u,\mathbf{q}_i) = \mathbf{p}_u \bigodot \mathbf{q}_i$$
+where $\bigodot$ denotes the element-wise product of vectors. We then project the vector to the output layer: 
+$$\hat{y}_{ui}=a_{out}(\mathbf{h}^T(\mathbf{p}_u \bigodot \mathbf{q}_i))$$
+where ${a_{out}}$ and $\mathbf{h}$ denote the activation function and edge weights of the output layer, respectively. 
+
+
+##### Multi-Layer Perceptron (MLP)
+
+we propose to add hidden layers on the concatenated vector, using a standard MLP to learn the interaction between user and item latent features. In this sense, we can endow the model a large level of flexibility and non-linearity to learn the interactions between $\mathbf{p}_u$ and $\mathbf{q}_i$ , rather than the way of GMF that uses only a fixed element-wise product on them. More precisely, the MLP model under our NCF framework is defined as
+
+$$\mathbf{z}_1 = \phi_1(\mathbf{p}_u,\mathbf{q}_i) = \begin{cases}\mathbf{p}_u  \\ \mathbf{q}_i \end{cases} $$ 
+$$ \phi_2(\mathbf{z}_1) = a_2(\mathbf{W}^{T}_2 \mathbf{z}_1 + \mathbf{b}_2) $$
+$$ . . . $$
+$$ \phi_L(\mathbf{z}_{L-1}) = a_L(\mathbf{W}^{T}_L \mathbf{z}_{L-1} + \mathbf{b}_L) $$
+$$\hat{y}_{ui}=\sigma(\mathbf{h}^T\phi_L(\mathbf{z}_{L-1}))$$
+
+where $\mathbf{W}_x$, $\mathbf{b}_x$, and ax denote the weight matrix, bias vector, and activation function for the x-th layer’s perceptron, respectively.
+
+##### Fusion of GMF and MLP
+<p align="center">
+    <img src="Management/README_images/NeuNCF.png">
+	Neural matrix factorization model
+</p>
+
+A straightforward solution is to let GMF and MLP share the same embedding layer, and then combine the outputs of
+their interaction functions. This way shares a similar spirit with the well-known Neural Tensor Network (NTN) [33].
+Specifically, the model for combining GMF with a one-layer MLP can be formulated as 
+
+formula
+
+
+To provide more flexibility to the fused model, we allow
+GMF and MLP to learn separate embeddings, and combine
+the two models by concatenating their last hidden layer.
+
+formula
+
+The formulation where p
+G
+u and p
+M
+u denote the user embedding for GMF
+and MLP parts, respectively; and similar notations of q
+G
+i
+and q
+M
+i
+for item embeddings.
+
 </div>
 
 #### Popularity Based
