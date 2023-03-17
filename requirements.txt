@@ -12,6 +12,7 @@ wandb==0.12.15
 tqdm==4.64.1
 zipp==3.11.0
 scipy==1.9.3
+kaleido==0.2.1
 # docker-pycreds==0.4.0
 # importlib-metadata==4.11.3
 # entrypoints==0.4
