@@ -184,10 +184,12 @@ the latent vectors to prediction scores. Each layer of the neural CF layers can 
 ##### Generalized Matriz Factorization (GMF)
 
 As MF is the most popular model for recommendation and has been investigated extensively in literature, being able to recover it allows NCF to mimic a large family of factorization models [26].
-Due to the one-hot encoding of user (item) ID of the input layer, the obtained embedding vector can be seen as the latent vector of user (item). Let the user latent vector $\mathbf{p}_u$ be P $\mathbf{P}^T \mathbf{v}^{U}_u$ and item latent vector $\mathbf{q}_i$ be $\mathbf{Q}^T \mathbf{v}^{I}_i$. We define the mapping function of the first neural CF layer as 
-$$\phi_1(\mathbf{p}_u,\mathbf{q}_i) = \mathbf{p}_u \bigodot \mathbf{q}_i$$
-where $\bigodot$ denotes the element-wise product of vectors. We then project the vector to the output layer: 
-$$\hat{y}_{ui}=a_{out}(\mathbf{h}^T(\mathbf{p}_u \bigodot \mathbf{q}_i))$$
+Due to the one-hot encoding of user (item) ID of the input layer, the obtained embedding vector can be seen as the latent vector of user (item). Let the user latent vector $\mathbf{p}_u$ be P $\mathbf{P}^T \mathbf{v}^{U}_u$ and item latent vector $\mathbf{q}_i$ be $\mathbf{Q}^T \mathbf{v}^{I}_i$. We define the mapping function of the first neural CF layer as the product of vectors $\mathbf{p}_u$ and $\mathbf{q}_i$.
+
+We then project the vector to the output layer: 
+
+$$\hat{y}_{ui}=a_{out}(\mathbf{h}^T(\mathbf{p}_u · \mathbf{q}_i))$$
+
 where ${a_{out}}$ and $\mathbf{h}$ denote the activation function and edge weights of the output layer, respectively. 
 
 
