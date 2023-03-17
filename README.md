@@ -13,7 +13,14 @@ Table of Contents
 	- [2. OBJECTIVES](#2-objectives)
 	- [3. STATE OF ART](#3-state-of-art)
 		- [3.1 COLLABORATIVE RECOMMENDATION SYSTEM](#31-collaborative-recommendation-system)
-		- [3.2 MODELS](#32-models)
+		- [3.6 TECHNICAL INSITES](#36-technical-insites)
+			- [SAMPLING TECHIQUES](#sampling-techiques)
+			- [FULL RANKING](#full-ranking)
+	- [4. IMPLEMENTATION](#4-implementation)
+		- [4.1 DATASETS](#41-datasets)
+			- [Amazon Musical Instruments](#amazon-musical-instruments)
+			- [MovieLens](#movielens)
+		- [4.2 MODELS](#42-models)
 			- [Factorization Machine](#factorization-machine)
 			- [Neural Collaborative Filtering](#neural-collaborative-filtering)
 				- [General framework](#general-framework)
@@ -22,15 +29,11 @@ Table of Contents
 				- [Fusion of GMF and MLP](#fusion-of-gmf-and-mlp)
 			- [Popularity Based](#popularity-based)
 			- [Random](#random)
-		- [3.3 COLD START](#33-cold-start)
-		- [3.6 TECHNICAL INSITES](#36-technical-insites)
-			- [SAMPLING TECHIQUES](#sampling-techiques)
-			- [FULL RANKING](#full-ranking)
-	- [4. METHODOLOGY](#4-methodology)
-		- [4.1 DATASETS](#41-datasets)
-			- [Amazon Musical Instruments](#amazon-musical-instruments)
-			- [MovieLens](#movielens)
-		- [4.2 PIPELINE](#42-pipeline)
+		- [4.3 METRICS](#43-metrics)
+			- [Hit ratio](#hit-ratio)
+			- [NDCG](#ndcg)
+			- [Coverage](#coverage)
+		- [4.4 PIPELINE](#44-pipeline)
 	- [5. ABLATION STUDY](#5-ablation-study)
 		- [5.1 EXPERIMENT 1: epochs 12](#51-experiment-1-epochs-12)
 			- [Experiment setup](#experiment-setup)
@@ -121,7 +124,53 @@ CB filtering is widely used for recommendation systems design, which utilizes th
 
 </div>
 
-### 3.2 MODELS
+
+
+
+
+### 3.6 TECHNICAL INSITES
+#### SAMPLING TECHIQUES
+
+<div align="justify">
+
+https://arxiv.org/pdf/1706.07881.pdf
+
+“Negative Sampling” strategy, in which k negative samples are drawn whenever a positive example is drawn. The negative samples are sampled based on the positive ones by replacing the items in the positive samples. 
+
+</div>
+
+#### FULL RANKING
+
+<div align="justify">
+
+https://arxiv.org/pdf/2107.13045.pdf
+
+To rank a set of recommender models, we rank a target set of items for every sequence in the test set using each model. We calculate the metrics on the ranked items and then average the values for each model and rank the models using the mean. In this paper we investigate three different strategies to create the target set of items and name the ranking according to the used method to extract the target set for calculating the metrics: The one we are going to focus is the full ranking we calculate the metrics on the target set that is equal to the full item set.
+
+</div>
+<!-- ### HYPERPARAMETER TUNING
+#### FACTORIZATION MACHINE
+#### NEURAL COLLABORATIVE FILTERING -->
+
+---
+<br />
+<br />
+
+## 4. IMPLEMENTATION
+### 4.1 DATASETS
+#### Amazon Musical Instruments
+https://nijianmo.github.io/amazon/index.html
+
+This dataset is part from an updated version of the Amazon review dataset released in 2014. As in the previous version, this dataset includes reviews (ratings, text, helpfulness votes), product metadata (descriptions, category information, price, brand, and image features), and links (also viewed/also bought graphs).
+
+This dataset provides the following features:
+* The total number of clients is 903330
+* The total number of products is 112222
+* The total number of reviews is 1512530
+
+#### MovieLens
+
+### 4.2 MODELS
 #### Factorization Machine
 <div align="justify">
 
@@ -172,7 +221,6 @@ Moving one step forward, our NCF framework parameterizes the interaction functio
 
 ##### General framework
 
-**TO CHANGE: Since this work focuses on the pure collaborative filtering setting, we use only the identity of a user and an item as the input feature, transforming it to a binarized sparse vector with one-hot encoding.**
 
 <p align="center">
     <img src="Management/README_images/NCF_framework.png">
@@ -237,66 +285,19 @@ https://www.analyticssteps.com/blogs/what-are-recommendation-systems-machine-lea
 
 #### Random
 ??
-### 3.3 COLD START
-
-<div align="justify">
-
-https://publications.aston.ac.uk/id/eprint/29586/1/Recommendation_system_for_cold_start_items.pdf
-
-The general CF recommendation task is to predict the missing ratings by given users or for given items by data mining and exploring the user-item rating matrix.
-However it is widely known that CF approach suffers from sparsity and cold start (CS) problems. In the rating matrix only a small percentage of elements get values. Even the most popular items may have only a few ratings.
-
-CF approach requires a large number of ratings from a user or ratings on an item for an effective recommendation, which will not work for new users, new items or both due to few ratings available in the system. In addition, Cold Start (CS) problem can be divided into CCS problem and ICS problem by whether number of rating records is zero or not. Generally, the sparsity of ratings for CS items is higher than 85% (Zhang et al., 2014), and the sparsity of ratings for CCS items is 100%. 
-
-</div>
+### 4.3 METRICS
+#### Hit ratio
+#### NDCG
+#### Coverage
 
 
+### 4.4 PIPELINE
 
+<p align="center">
+    <img src="Management/README_images/pipeline.png">
+	Project pipeline
+</p>
 
-
-### 3.6 TECHNICAL INSITES
-#### SAMPLING TECHIQUES
-
-<div align="justify">
-
-https://arxiv.org/pdf/1706.07881.pdf
-
-“Negative Sampling” strategy, in which k negative samples are drawn whenever a positive example is drawn. The negative samples are sampled based on the positive ones by replacing the items in the positive samples. 
-
-</div>
-
-#### FULL RANKING
-
-<div align="justify">
-
-https://arxiv.org/pdf/2107.13045.pdf
-
-To rank a set of recommender models, we rank a target set of items for every sequence in the test set using each model. We calculate the metrics on the ranked items and then average the values for each model and rank the models using the mean. In this paper we investigate three different strategies to create the target set of items and name the ranking according to the used method to extract the target set for calculating the metrics: The one we are going to focus is the full ranking we calculate the metrics on the target set that is equal to the full item set.
-
-</div>
-<!-- ### HYPERPARAMETER TUNING
-#### FACTORIZATION MACHINE
-#### NEURAL COLLABORATIVE FILTERING -->
-
----
-<br />
-<br />
-
-## 4. METHODOLOGY 
-### 4.1 DATASETS
-#### Amazon Musical Instruments
-https://nijianmo.github.io/amazon/index.html
-
-This dataset is part from an updated version of the Amazon review dataset released in 2014. As in the previous version, this dataset includes reviews (ratings, text, helpfulness votes), product metadata (descriptions, category information, price, brand, and image features), and links (also viewed/also bought graphs).
-
-This dataset provides the following features:
-* The total number of clients is 903330
-* The total number of products is 112222
-* The total number of reviews is 1512530
-
-#### MovieLens
-### 4.2 PIPELINE
-??
 
 ---
 <br />
