@@ -142,7 +142,7 @@ CF approach requires a large number of ratings from a user or ratings on an item
 
 https://arxiv.org/pdf/1706.07881.pdf
 
-“Negative Sampling” strategy, in which k negative samples are drawn whenever a positive example is drawn. The negative samples are sampled based on the positive ones by replacing the items in the positive samples. 
+“Negative Sampling” strategy, in which k negative samples are drawn whenever a positive example is drawn. The negative samples are sampled based on the positive ones by replacing the items in the positive samples. 
 
 </div>
 
@@ -152,8 +152,7 @@ https://arxiv.org/pdf/1706.07881.pdf
 
 https://arxiv.org/pdf/2107.13045.pdf
 
-To rank a set of recommender models, we rank a target set of items for every sequence in the test set using each model. We calculate the metrics on the ranked items and then average the values for each model and rank the models using the mean. In this paper we investigate three different strategies to create the target set
-of items and name the ranking according to the used method to extract the target set for calculating the metrics: The one we are going to focus is the full ranking we calculate the metrics on the target set that is equal to the full item set.
+To rank a set of recommender models, we rank a target set of items for every sequence in the test set using each model. We calculate the metrics on the ranked items and then average the values for each model and rank the models using the mean. In this paper we investigate three different strategies to create the target set of items and name the ranking according to the used method to extract the target set for calculating the metrics: The one we are going to focus is the full ranking we calculate the metrics on the target set that is equal to the full item set.
 
 </div>
 <!-- ### HYPERPARAMETER TUNING
