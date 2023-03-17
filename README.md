@@ -102,6 +102,7 @@ In a first superficial look, a recommender system can demonstrate help customers
 ---
 <br />
 <br />
+
 ## 3. STATE OF ART
 ### 3.1 COLLABORATIVE RECOMMENDATION SYSTEM
 <div align="justify">
