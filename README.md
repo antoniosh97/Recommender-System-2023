@@ -19,9 +19,9 @@ Table of Contents
 			- [Popularity Based](#popularity-based)
 			- [Random](#random)
 		- [3.3 COLD START](#33-cold-start)
-		- [3.4 LEAVE-ONE-OUT](#34-leave-one-out)
-		- [3.5 PAPER: FULL RANKING](#35-paper-full-ranking)
-		- [3.6 PAPER: SAMPLING TECHIQUES](#36-paper-sampling-techiques)
+		- [3.6 PAPERS](#36-papers)
+			- [SAMPLING TECHIQUES](#sampling-techiques)
+			- [FULL RANKING](#full-ranking)
 	- [4. METHODOLOGY](#4-methodology)
 		- [4.1 DATASETS](#41-datasets)
 			- [Amazon Instruments](#amazon-instruments)
@@ -72,7 +72,8 @@ Table of Contents
 
 <div align="justify">
 
-Deep Learning is one of the next big things in Recommendation Systems technology. The exponential growth due to the interest in implementing recommendations that fit the interests of the user.
+The advancement of artificial intelligence and machine learning technologies has brought intelligent products that are essential in providing access to various endeavors of peoples’ day-to-day life. Effective and useful informationfrom massive internet data could be obtained from intelligent recommendation function of personalized recommender systems thereby making it applicable in sundry network platforms which include, movies, music as well as shop-ping platform.
+
 
 It is worth noting several sectors that have suffered a greater impact: social networks are conditioned by the user's interest in publications, online commerce has the purpose of showing products that satisfy the user's needs and finally the marketing sector that with information of their clients to define the most optimal marketing action.
 
@@ -100,16 +101,61 @@ In a first superficial look, a recommender system can demonstrate help customers
 ---
 ## 3. STATE OF ART
 ### 3.1 COLLABORATIVE RECOMMENDATION SYSTEM
+<div align="justify">
+
+https://www.researchgate.net/publication/340416554_Deep_Learning_Architecture_for_Collaborative_Filtering_Recommender_Systems/link/5e8d24ed92851c2f5288696b/download
+
+Recommender Systems (RS) are powerful tools to address the information overload problem in the Internet. They make use of diverse sources of information. Explicit votes from users to items, and implicit interactions are the basis of the Collaborative Filtering (CF) RS. According to the type of data being collected and the ways of using them in recommendation systems, the approaches for recommendation can be classified as content-based (CB), collaborative filtering (CF) and hybrid one (Koren, Bell, & Volinsky, 2009).
+
+Implicit interactions examples are clicks, listened songs, watched movies, likes, dislikes, etc. Often, hybrid RS are designed to ensemble CF with some other types of information filtering: demographic, context-aware, content-based, social information, etc. RS cover a wide range of recommendation targets, such as travels, movies, restaurants, fashion, news, etc.
+
+CB filtering is widely used for recommendation systems design, which utilizes the content of items to create features and attributes to match user profiles. Items are compared with items previous liked by the users and the best matched items are then recommended. One major issue of CB filtering approach is that RS needs to learn user preferences for some types of items and apply these for other types of items.
+
+</div>
+
 ### 3.2 MODELS
 #### Factorization Machine
 #### Neural Collaborative Filtering
 #### Popularity Based
 #### Random
 ### 3.3 COLD START
-### 3.4 LEAVE-ONE-OUT
-### 3.5 PAPER: FULL RANKING
-### 3.6 PAPER: SAMPLING TECHIQUES
 
+<div align="justify">
+
+https://publications.aston.ac.uk/id/eprint/29586/1/Recommendation_system_for_cold_start_items.pdf
+
+The general CF recommendation task is to predict the missing ratings by given users or for given items by data mining and exploring the user-item rating matrix.
+However it is widely known that CF approach suffers from sparsity and cold start (CS) problems. In the rating matrix only a small percentage of elements get values. Even the most popular items may have only a few ratings.
+
+CF approach requires a large number of ratings from a user or ratings on an item for an effective recommendation, which will not work for new users, new items or both due to few ratings available in the system. In addition, Cold Start (CS) problem can be divided into CCS problem and ICS problem by whether number of rating records is zero or not. Generally, the sparsity of ratings for CS items is higher than 85% (Zhang et al., 2014), and the sparsity of ratings for CCS items is 100%. 
+
+</div>
+
+
+
+
+
+### 3.6 PAPERS
+#### SAMPLING TECHIQUES
+
+<div align="justify">
+
+https://arxiv.org/pdf/1706.07881.pdf
+
+“Negative Sampling” strategy, in which k negative samples are drawn whenever a positive example is drawn. The negative samples are sampled based on the positive ones by replacing the items in the positive samples. 
+
+</div>
+
+#### FULL RANKING
+
+<div align="justify">
+
+https://arxiv.org/pdf/2107.13045.pdf
+
+To rank a set of recommender models, we rank a target set of items for every sequence in the test set using each model. We calculate the metrics on the ranked items and then average the values for each model and rank the models using the mean. In this paper we investigate three different strategies to create the target set
+of items and name the ranking according to the used method to extract the target set for calculating the metrics: The one we are going to focus is the full ranking we calculate the metrics on the target set that is equal to the full item set.
+
+</div>
 <!-- ### HYPERPARAMETER TUNING
 #### FACTORIZATION MACHINE
 #### NEURAL COLLABORATIVE FILTERING -->
