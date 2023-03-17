@@ -82,6 +82,7 @@ In general, recommender systems are algorithms based on suggesting relevant item
 Among the various reasons why this field is interesting to study, we found that improving the user experience encourages them to discover new products of interest. In addition, in case the recommendations are accurate, the commitment with the application is strengthened and this causes a win-win since the company captures data to improve its marketing strategies.
 </div>
 
+---
 <br />
 <br />
 
@@ -99,6 +100,8 @@ In a first superficial look, a recommender system can demonstrate help customers
 </div>
 
 ---
+<br />
+<br />
 ## 3. STATE OF ART
 ### 3.1 COLLABORATIVE RECOMMENDATION SYSTEM
 <div align="justify">
@@ -115,9 +118,27 @@ CB filtering is widely used for recommendation systems design, which utilizes th
 
 ### 3.2 MODELS
 #### Factorization Machine
+<div align="justify">
+
+https://arxiv.org/pdf/2203.11026.pdf
+https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db
+</div>
+
 #### Neural Collaborative Filtering
+<div align="justify">
+
+https://arxiv.org/pdf/1708.05031.pdf
+</div>
+
 #### Popularity Based
+<div align="justify">
+
+https://www.ijeat.org/wp-content/uploads/papers/v9i3/B4660129219.pdf
+https://www.analyticssteps.com/blogs/what-are-recommendation-systems-machine-learning
+</div>
+
 #### Random
+??
 ### 3.3 COLD START
 
 <div align="justify">
@@ -160,6 +181,9 @@ To rank a set of recommender models, we rank a target set of items for every seq
 #### NEURAL COLLABORATIVE FILTERING -->
 
 ---
+<br />
+<br />
+
 ## 4. METHODOLOGY 
 ### 4.1 DATASETS
 #### Amazon Instruments
@@ -170,7 +194,11 @@ To rank a set of recommender models, we rank a target set of items for every seq
 ##### Training
 ##### Inference
 #### Pipeline
+
 ---
+<br />
+<br />
+
 ## 5. ABLATION STUDY
 ### 5.1 EXPERIMENT 1: 
 #### Experiment setup
@@ -182,7 +210,11 @@ To rank a set of recommender models, we rank a target set of items for every seq
 #### Conclusions
 ### 5.3 FINAL RESULTS
 ### 5.4 CONCLUSIONS
+
 ---
+<br />
+<br />
+
 ## 6. DEVELOPMENT
 ### PREPARE THE DATASET FROM SCRATCH
 #### Download Dataset
