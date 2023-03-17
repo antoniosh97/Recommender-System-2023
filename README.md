@@ -23,30 +23,28 @@ Table of Contents
 			- [Popularity Based](#popularity-based)
 			- [Random](#random)
 		- [3.3 COLD START](#33-cold-start)
-		- [3.6 PAPERS](#36-papers)
+		- [3.6 TECHNICAL INSITES](#36-technical-insites)
 			- [SAMPLING TECHIQUES](#sampling-techiques)
 			- [FULL RANKING](#full-ranking)
 	- [4. METHODOLOGY](#4-methodology)
 		- [4.1 DATASETS](#41-datasets)
 			- [Amazon Musical Instruments](#amazon-musical-instruments)
 			- [MovieLens](#movielens)
-		- [4.2 ARCHITECTURE](#42-architecture)
-			- [Splitting Datasets](#splitting-datasets)
-			- [Pipeline functions](#pipeline-functions)
-				- [Training](#training)
-				- [Inference](#inference)
-			- [Pipeline](#pipeline)
+		- [4.2 PIPELINE](#42-pipeline)
 	- [5. ABLATION STUDY](#5-ablation-study)
-		- [5.1 EXPERIMENT 1:](#51-experiment-1)
+		- [5.1 EXPERIMENT 1: epochs 12](#51-experiment-1-epochs-12)
 			- [Experiment setup](#experiment-setup)
 			- [Results](#results)
 			- [Conclusions](#conclusions)
-		- [5.2 EXPERIMENT 2:](#52-experiment-2)
-			- [Experiment setup](#experiment-setup-1)
-			- [Results](#results-1)
-			- [Conclusions](#conclusions-1)
-		- [5.3 FINAL RESULTS](#53-final-results)
-		- [5.4 CONCLUSIONS](#54-conclusions)
+		- [5.2 EXPERIMENT 2: epochs 16](#52-experiment-2-epochs-16)
+		- [5.X EXPERIMENT X: batch\_size 32](#5x-experiment-x-batch_size-32)
+		- [5.X EXPERIMENT X: batch\_size 64](#5x-experiment-x-batch_size-64)
+		- [5.X EXPERIMENT X: num\_ng 5](#5x-experiment-x-num_ng-5)
+		- [5.X EXPERIMENT X: num\_ng 6](#5x-experiment-x-num_ng-6)
+		- [5.X EXPERIMENT X: num\_ng 8](#5x-experiment-x-num_ng-8)
+		- [5.X EXPERIMENT X: hidden\_size 64 (final)](#5x-experiment-x-hidden_size-64-final)
+	- [FINAL RESULTS](#final-results)
+	- [CONCLUSIONS](#conclusions-1)
 	- [6. DEVELOPMENT](#6-development)
 		- [PREPARE THE DATASET FROM SCRATCH](#prepare-the-dataset-from-scratch)
 			- [Download Dataset](#download-dataset)
@@ -254,7 +252,7 @@ CF approach requires a large number of ratings from a user or ratings on an item
 
 
 
-### 3.6 PAPERS
+### 3.6 TECHNICAL INSITES
 #### SAMPLING TECHIQUES
 
 <div align="justify">
@@ -287,9 +285,6 @@ To rank a set of recommender models, we rank a target set of items for every seq
 #### Amazon Musical Instruments
 https://nijianmo.github.io/amazon/index.html
 
-
-
-
 This dataset is part from an updated version of the Amazon review dataset released in 2014. As in the previous version, this dataset includes reviews (ratings, text, helpfulness votes), product metadata (descriptions, category information, price, brand, and image features), and links (also viewed/also bought graphs).
 
 This dataset provides the following features:
@@ -298,28 +293,36 @@ This dataset provides the following features:
 * The total number of reviews is 1512530
 
 #### MovieLens
-### 4.2 ARCHITECTURE
-#### Splitting Datasets
-#### Pipeline functions
-##### Training
-##### Inference
-#### Pipeline
+### 4.2 PIPELINE
+??
 
 ---
 <br />
 <br />
 
 ## 5. ABLATION STUDY
-### 5.1 EXPERIMENT 1: 
+*  Numero de epochs modifica bastante el coverage
+*  Si se aumenta topk --> aumenta eficiencia pero empresarialmente no interesa recomendar más de 10 items
+*  hidden_layer aparentemente no afecta
+*  Si se aumenta num_ng --> aumenta eficiencia
+*  Si aumenta batch_size --> disminuye eficiencia
+*  Pending modificar learning rate. (paper: si usas adam este ya lo modifica)
+
+
+### 5.1 EXPERIMENT 1: epochs 12
 #### Experiment setup
 #### Results
 #### Conclusions
-### 5.2 EXPERIMENT 2: 
-#### Experiment setup
-#### Results
-#### Conclusions
-### 5.3 FINAL RESULTS
-### 5.4 CONCLUSIONS
+### 5.2 EXPERIMENT 2: epochs 16
+### 5.X EXPERIMENT X: batch_size 32
+### 5.X EXPERIMENT X: batch_size 64
+### 5.X EXPERIMENT X: num_ng 5
+### 5.X EXPERIMENT X: num_ng 6
+### 5.X EXPERIMENT X: num_ng 8
+### 5.X EXPERIMENT X: hidden_size 64 (final)
+
+## FINAL RESULTS
+## CONCLUSIONS
 
 ---
 <br />
