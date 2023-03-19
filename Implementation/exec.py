@@ -29,9 +29,12 @@ class Execution():
                     # RLOO Random Leave One Out
                     idx = np.random.choice(np.arange(sorted_data.shape[0]), size=1)
                     test_x.append(sorted_data[idx,:-1]) #choose the random value for test
+                    test_x= list(np.vstack(test_x))
                     sorted_data = np.delete(sorted_data, (idx), axis=0) # delete the random value from the train
                     train_x.append(sorted_data[:,:-1])
         return np.vstack(train_x), np.stack(test_x)
+    
+
     
     def items_to_compute(self, zero_positions, dims):
 
