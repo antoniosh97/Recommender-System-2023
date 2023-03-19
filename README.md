@@ -325,9 +325,7 @@ https://www.analyticssteps.com/blogs/what-are-recommendation-systems-machine-lea
 ### 5.X EXPERIMENT X: hidden_size 64 (final)
 
 ## FINAL RESULTS
-## CONCLUSIONS
 
----
 <br />
 <br />
 
@@ -350,6 +348,22 @@ https://www.analyticssteps.com/blogs/what-are-recommendation-systems-machine-lea
 #### RUN the project
 ##### ??
 ## END
+
+
+## 7. CONCLUSIONS
+---
+### 7.1 Text
+
+### 7.2 Ethical
+<div align="justify">
+As far as we get deep in the ethical point applied to recommender system, we could notice this is a topic worthy to have a entire project dedicated to it just considering the different aspects envolved and the importance of it for the user, the society or even for the country.  
+The human being is a creature with preferences that can be a continuous variable, the complexity of implementing systems to monitor and collect those variables are extensive. This information once collected will provide data for the recommender systems. But apart from the technical side, the interests guided behind the code lines mould the nature of the system and show the limits of the ethical side of each company. It's not difficult to imagine inside the big advertisement industry, with sponsored products, brands, stores, ads and videos, the importance of the extreme care when configuring the recommender system to avoid influence in user's choice.
+Recommend a product to a customer require knowledge about this person's preferences, the security issues about user data will be a very big point for discussion in data privacy area, problems that should be mitigated or avoid.
+We can ask ourselves until each level companies should know about their clients?
+In the end, our point of view about the ethical dilemma in recommender systems, companies should play fair with users, cover all the security issues, always be transparent with clients about the user data usage and really try to build a system to solve the user's pain, giving them support and recommending products accordingly with their interests.
+</div>
+
+
 
 <!-- 
 
