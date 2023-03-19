@@ -25,16 +25,13 @@ class Execution():
                 if (strategy == "TLOO"):
                     train_x.append(sorted_data[:-1][:, :-1])
                     test_x.append(sorted_data[-1][:-1])
-                    # if len(sorted_data) > 0: #???
-                    #     train_x.append(sorted_data[:-1][:, :-1])
-                    #     test_x.append(sorted_data[-1][:-1])
                 else:
-                    # seleccionar uno random RLOO Random Leave One Out
-                    np.random.seed()
+                    # RLOO Random Leave One Out
+                    np.random.seed() #initialize the pseudo-random number generator
                     idx = np.random.choice(np.arange(sorted_data.shape[0]), size=1)
-                    test_x.append(sorted_data[idx,:-1]) # añado el registro a test
-                    sorted_data = np.delete(sorted_data, (idx), axis=0) # lo borramos de la lista que va a train            
-                    train_x.append(sorted_data[:,:-1]) # añadimos el resto a train        
+                    test_x.append(sorted_data[idx,:-1]) #choose the random value for test
+                    sorted_data = np.delete(sorted_data, (idx), axis=0) # delete the random value from the train
+                    train_x.append(sorted_data[:,:-1])
         return np.vstack(train_x), np.stack(test_x)
     
     def items_to_compute(self, zero_positions, dims):
