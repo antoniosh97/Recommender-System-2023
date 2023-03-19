@@ -68,6 +68,7 @@ Table of Contents
 	- [CONCLUSIONS](#7-conclusions)
 		- [Text](#71-text)
 		- [Ethical](#72-ethical)
+		- [Text](#73-text)
 	- [END](#end)
 
 ---
@@ -365,6 +366,7 @@ We can ask ourselves until each level companies should know about their clients?
 In the end, our point of view about the ethical dilemma in recommender systems, companies should play fair with users, cover all the security issues, always be transparent with clients about the user data usage and really try to build a system to solve the user's pain, giving them support and recommending products accordingly with their interests.
 </div>
 
+### 7.3 Text
 
 
 <!-- 
