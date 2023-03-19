@@ -8,4 +8,4 @@ class PopularityBasedModel(torch.nn.Module):
         self.popularity_recommendations = popularity_recommendations
   
   def predict(self) -> torch.Tensor:
-      return torch.IntTensor(self.popularity_recommendations.astype(np.int))
+      return torch.IntTensor(self.popularity_recommendations.astype(np.int32))

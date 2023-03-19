@@ -8,6 +8,7 @@ from statistics import mean
 import torch
 import random
 import results
+import os
 
 class Execution():
     def __init__(self):
@@ -33,9 +34,7 @@ class Execution():
                     sorted_data = np.delete(sorted_data, (idx), axis=0) # delete the random value from the train
                     train_x.append(sorted_data[:,:-1])
         return np.vstack(train_x), np.stack(test_x)
-    
-
-    
+        
     def items_to_compute(self, zero_positions, dims):
 
         zp_df = pd.DataFrame(zero_positions[zero_positions[:, 1] >= dims[0]], columns=['u','i'])

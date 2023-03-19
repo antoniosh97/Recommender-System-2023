@@ -15,10 +15,9 @@ class Logs():
         self.path_save_data_dir = f'{self.exec_path}/{self.log_dir}/{self.save_data_dir}'
 
         if self.multi_logs == False:
-            os.makedirs(self.path_log_folder, exist_ok=True) ## add it
-            for filename in os.listdir(self.path_log_folder):
-                if filename.startswith(self.save_data_dir[:4]):
-                    os.remove(os.path.join(self.path_log_folder, filename))
+            if os.path.exists(self.path_log_folder):
+                shutil.rmtree(self.path_log_folder, ignore_errors=True)
+            os.makedirs(self.path_log_folder, exist_ok=True)
             if os.path.isfile(self.path_save_data_dir):
                 open(self.path_save_data_dir, "w").close()
         
@@ -46,6 +45,6 @@ class Logs():
             data_file.write(text+"\n")
         return text
     
-
-
-
+    def show_tensorboard(self):
+        os.system('tensorboard --logdir=./' + self.log_dir + ' --load_fast true --host localhost --port 8088')
+        
