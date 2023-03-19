@@ -150,6 +150,9 @@ class Execution():
         if seconds > 60: 
             seconds = seconds / 60
             secmin = "minutes"
+            if seconds > 60:
+                seconds = seconds / 60
+                secmin = "hours"
         elif seconds <= 60: 
             secmin = "seconds"
         efe = f'Total execution in {str(format(seconds,".4f"))} {secmin}'

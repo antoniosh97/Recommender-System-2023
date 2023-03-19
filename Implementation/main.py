@@ -19,7 +19,7 @@ class Main():
     def __init__(self):
         
         # Select the dataset you want to try
-        self.dataset = "movie lens"#"movie lens" # movie lens
+        self.dataset = ""#"movie lens" # movie lens
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
@@ -30,7 +30,7 @@ class Main():
         self.tuning_mode = True
         self.tuning_params = {
             "num_neg": 4,               # {4, 5, 6}         original: 4
-            "leave_one_out": "TLOO",    # {TLOO, RLOO}      original: TLOO
+            "leave_one_out": "RLOO",    # {TLOO, RLOO}      original: TLOO
             "topk": 10,                 # {10, 50, 100}     original: 10
             "num_epochs": 12,           # {12, 20, 30}      original: 12
 
@@ -40,7 +40,6 @@ class Main():
             "hidden_size_ncf": 32,      # {32, 64, 128}     original: 32  
             "lr_ncf":1e-4               # {1e-4, 1e-3}      original: 1e-4
         }
-
 
         self.ini_time   = datetime.now()
         self.exec_path = os.getcwd()
@@ -291,6 +290,9 @@ class Main():
         if seconds > 60: 
             seconds = seconds / 60
             secmin = "minutes"
+            if seconds > 60:
+                seconds = seconds / 60
+                secmin = "hours"
         else:
             secmin = "seconds"
         print(self.log.save_data_configuration(f'Training duration: {str(format(seconds,dp))} {secmin}'))
