@@ -27,7 +27,6 @@ class Execution():
                     test_x.append(sorted_data[-1][:-1])
                 else:
                     # RLOO Random Leave One Out
-                    np.random.seed() #initialize the pseudo-random number generator
                     idx = np.random.choice(np.arange(sorted_data.shape[0]), size=1)
                     test_x.append(sorted_data[idx,:-1]) #choose the random value for test
                     sorted_data = np.delete(sorted_data, (idx), axis=0) # delete the random value from the train
