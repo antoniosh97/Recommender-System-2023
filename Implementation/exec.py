@@ -96,7 +96,6 @@ class Execution():
         for user_test in test_x:
             gt_item = user_test[0][1]
             predictions = model.predict(user_test, device)
-            #_, indices = torch.topk(predictions, topk) # if predictions less than topk error
             _, indices = torch.topk(predictions, min(topk, predictions.size()[0]))
             recommend_list = user_test[indices.cpu().detach().numpy()][:, 1]
             user_reco_list[idx] = recommend_list.tolist().copy()
