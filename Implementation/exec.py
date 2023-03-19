@@ -30,7 +30,8 @@ class Execution():
                     #     test_x.append(sorted_data[-1][:-1])
                 else:
                     # seleccionar uno random RLOO Random Leave One Out
-                    idx = np.random.choice(np.arange(sorted_data.shape[0]), size=1) # devuelve size indices de la dimension 0
+                    np.random.seed()
+                    idx = np.random.choice(np.arange(sorted_data.shape[0]), size=1)
                     test_x.append(sorted_data[idx,:-1]) # añado el registro a test
                     sorted_data = np.delete(sorted_data, (idx), axis=0) # lo borramos de la lista que va a train            
                     train_x.append(sorted_data[:,:-1]) # añadimos el resto a train        
