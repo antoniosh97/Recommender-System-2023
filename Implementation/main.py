@@ -158,6 +158,8 @@ class Main():
         if self.test_mode:
             print("Dimensions matrix:\n",dims)
         
+        #plot train dataset distribution
+        plots.plot_Train_dataset(self.train_x, self.tuning_params, self.hparams, self.dataset)
         print(f"Start: train_dataset and dataloader")
         train_dataset = pointdata.PointData(self.train_x, dims)
         if self.test_mode:
