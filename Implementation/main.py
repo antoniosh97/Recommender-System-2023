@@ -255,6 +255,7 @@ class Main():
 
             print(self.log.save_data_configuration(ln_sep_c*ln_sep_sz))
         
+        plots.show_generated_plots()
         training_time_end = datetime.now()-training_time_start
         seconds = training_time_end.seconds
         if seconds > 60: 

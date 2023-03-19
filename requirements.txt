@@ -1,6 +1,6 @@
 pandas==1.2.1
 wget==3.2
-numpy==1.19.4
+numpy==1.23.5
 matplotlib==3.3.3
 pip==22.3.1
 plotly==5.12.0
