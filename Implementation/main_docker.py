@@ -27,14 +27,15 @@ class Main():
 
         self.tuning_mode = True         # For experiments use the csv 8x8
         self.tuning_params = {
-            "num_neg": 4,               # {4, 5, 6}         original: 4
+            "num_neg": 5,               # {4, 5, 6}         original: 4
             "leave_one_out": "TLOO",    # {TLOO, RLOO}      original: TLOO
             "topk": 10,                 # {10, 50, 100}     original: 10
-            "num_epochs": 12,           # {12, 20, 30}      original: 12
-            "batch_size": 64,           # {64, 32}          original: 64
-            "hidden_size": 32,          # {32, 64, 128}     original: 32    
+            # "num_epochs": 12,           # {12, 20, 30}      original: 12
+            # "batch_size": 64,           # {64, 32}          original: 64
+
+            "hidden_size": 64,          # {32, 64, 128}     original: 32    
             "lr":1e-4,                  # {1e-4, 1e-3}      original: 1e-4
-            "hidden_size_ncf": 32,      # {32, 64, 128}     original: 32  
+            "hidden_size_ncf": 64,      # {32, 64, 128}     original: 32  
             "lr_ncf":1e-4               # {1e-4, 1e-3}      original: 1e-4
         }
 
@@ -43,8 +44,8 @@ class Main():
         self.strategy = self.tuning_params["leave_one_out"]
 
         self.hparams = {
-            'batch_size':self.tuning_params["batch_size"],
-            'num_epochs':self.tuning_params["num_epochs"],
+            'batch_size':64,
+            'num_epochs': 12,
             'hidden_size':self.tuning_params["hidden_size"], 
             'learning_rate':self.tuning_params["lr"],
             'hidden_size_ncf':self.tuning_params["hidden_size_ncf"], 
@@ -255,7 +256,7 @@ class Main():
 
             print(self.log.save_data_configuration(ln_sep_c*ln_sep_sz))
         
-        plots.show_generated_plots()
+        # plots.show_generated_plots()
         training_time_end = datetime.now()-training_time_start
         seconds = training_time_end.seconds
         if seconds > 60: 
@@ -273,8 +274,8 @@ class Main():
         txt = self.exec.efe(self.ini_time)
         print(self.log.save_data_configuration(txt))
 
-        if self.show_tb:
-            self.log.show_tensorboard()
+        # if self.show_tb:
+        #     self.log.show_tensorboard()
 
     # > End of Method Start-------------------------------------------------------------------------
     
