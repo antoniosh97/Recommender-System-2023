@@ -198,7 +198,7 @@ We include a script that may be used  to set up the datasets that:
 * Remove duplicates
 * Reduce size of dataset by parametrization of a minimum rating value per item and user
 
-In order to reduce computational requirements we created with three different datasets:
+In order to reduce computational requirements we created three different datasets:
 * MovieLens dataset with each user having at least 20 rating, 100000 ratings of 943 users and 1682 items.
 * Amazon Instruments with each user having at least 8 ratings and each item rated by also at least 8 user s, with a result of 52.023 ratings of 4275 users and 2080 items.
 * Amazon Instruments with each user having at least 6 ratings and each item rated by also at least 6 user s, with a result of 137.365 ratings of 14138 users and 6178 items.
