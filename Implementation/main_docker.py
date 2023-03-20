@@ -273,8 +273,8 @@ class Main():
         txt = self.exec.efe(self.ini_time)
         print(self.log.save_data_configuration(txt))
 
-        if self.show_tb:
-            self.log.show_tensorboard()
+        # if self.show_tb:
+        #     self.log.show_tensorboard()
 
     # > End of Method Start-------------------------------------------------------------------------
     

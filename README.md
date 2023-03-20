@@ -20,6 +20,7 @@ Table of Contents
 		- [4.1 DATASETS](#41-datasets)
 			- [Amazon Musical Instruments](#amazon-musical-instruments)
 			- [MovieLens](#movielens)
+			- [Data preparation](#data-preparation)
 		- [4.2 MODELS](#42-models)
 			- [Factorization Machine](#factorization-machine)
 			- [Neural Collaborative Filtering](#neural-collaborative-filtering)
@@ -65,11 +66,11 @@ Table of Contents
 				- [Create your .env file](#create-your-env-file)
 			- [RUN the project](#run-the-project)
 				- [??](#)
-	- [CONCLUSIONS](#7-conclusions)
-		- [Text](#71-text)
-		- [Ethical](#72-ethical)
-		- [Text](#73-text)
 	- [END](#end)
+	- [7. CONCLUSIONS](#7-conclusions)
+		- [7.1 Text](#71-text)
+		- [7.2 Ethical](#72-ethical)
+		- [7.3 Text](#73-text)
 
 ---
 ---
@@ -162,16 +163,48 @@ To rank a set of recommender models, we rank a target set of items for every seq
 ## 4. IMPLEMENTATION
 ### 4.1 DATASETS
 #### Amazon Musical Instruments
+
+<div align="justify">
+
 https://nijianmo.github.io/amazon/index.html
 
 This dataset is part from an updated version of the Amazon review dataset released in 2014. As in the previous version, this dataset includes reviews (ratings, text, helpfulness votes), product metadata (descriptions, category information, price, brand, and image features), and links (also viewed/also bought graphs).
-
+We use the reduced dataset that includes no metadata or reviews but only (item, user, rating, timestamp) tuples.
 This dataset provides the following features:
-* The total number of clients is 903330
-* The total number of products is 112222
-* The total number of reviews is 1512530
+  * The total number of clients is **903330**
+  * The total number of products is **112222**
+  * The total number of ratings is **1512530**
+
+</div>
+
 
 #### MovieLens
+
+<div align="justify">
+
+The MovieLens datasets, first released in 1998, describe people’s expressed preferences for movies. These preferences take the form of tuples, each the result of a person expressing a preference (a 0-5 star rating) for a movie at a particular time. These preferences were entered by way of the MovieLens web site1 — a recommender system that asks its users to give movie ratings in order to receive personalized movie recommendations.
+We use the MovieLens-100K Dataset containing 100.000 anonymous ratings with:
+- **userID** in range between 1 and 943
+- **movieID** in range between 1 and 1682
+- **rating** that are made in a 5-star scale
+- **timestamp** representing time in seconds since de rating was done
+- Each user has **at least 20 ratings**
+https://files.grouplens.org/datasets/movielens/ml-100k.zip 
+
+#### Data preparation
+Cleaning and transforming data is absolutely necessary for reliable results.
+We include a script that may be used  to set up the datasets that:
+* Reformat data types
+* Remove duplicates
+* Reduce size of dataset by parametrization of a minimum rating value per item and user
+
+In order to reduce computational requirements we created with three different datasets:
+* MovieLens dataset with each user having at least 20 rating, 100000 ratings of 943 users and 1682 items.
+* Amazon Instruments with each user having at least 8 ratings and each item rated by also at least 8 user s, with a result of 52.023 ratings of 4275 users and 2080 items.
+* Amazon Instruments with each user having at least 6 ratings and each item rated by also at least 6 user s, with a result of 137.365 ratings of 14138 users and 6178 items.
+
+</div>
+
 
 ### 4.2 MODELS
 #### Factorization Machine
