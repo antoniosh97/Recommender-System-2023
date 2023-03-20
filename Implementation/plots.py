@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import time
 import os 
+from PIL import Image
 
 def plot_Train_dataset(train, params, hparams, name):
     # plot train dataset distribution 
@@ -59,6 +60,16 @@ def plot_Reco_vs_POP(listREC, listPOP, name, epoch, num_epochs, model):
         fig.write_image(os.getcwd() + "/logs/" + name)
         time.sleep(2)
 
+def show_generated_plots():
+    logs_dir = os.getcwd() + "/logs/"
+    logs_content = os.listdir(logs_dir)
+    for filename in logs_content:
+        if not ".png" in filename:
+            logs_content.remove(filename)
+        else:
+            path = str(os.getcwd() + "/logs/" + filename)
+            im = Image.open(rf"{path}")
+            im.show()
 
 
 # import plotly.graph_objects as go

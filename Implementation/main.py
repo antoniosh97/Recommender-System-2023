@@ -28,7 +28,7 @@ class Main():
         self.tuning_mode = True         # For experiments use the csv 8x8
         self.tuning_params = {
             "num_neg": 5,               # {4, 5, 6}         original: 4
-            "leave_one_out": "RLOO",    # {TLOO, RLOO}      original: TLOO
+            "leave_one_out": "TLOO",    # {TLOO, RLOO}      original: TLOO
             "topk": 10,                 # {10, 50, 100}     original: 10
             "num_epochs": 12,           # {12, 20, 30}      original: 12
             "batch_size": 64,           # {64, 32}          original: 64
@@ -255,6 +255,7 @@ class Main():
 
             print(self.log.save_data_configuration(ln_sep_c*ln_sep_sz))
         
+        plots.show_generated_plots()
         training_time_end = datetime.now()-training_time_start
         seconds = training_time_end.seconds
         if seconds > 60: 

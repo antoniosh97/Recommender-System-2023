@@ -1,0 +1,28 @@
+
+docker build -f Dockerfile -t aidl2022-final-project .
+docker run -v C:/aidl2022-final-project -w /Implemetation/experiments -i -t ubuntu bash  
+docker run aidl2022-final-project Amazon 
+docker run aidl2022-final-project MovieLens
+
+docker run -v ./aidl2022-final-project:/rec_sys/implementation/experiments
+
+
+
+docker run -v volum_project:/container_project/Implementation/experiments --name container_project aidl2022-final-project Amazon
+
+docker run --name rec_sys aidl2022-final-project Amazon
+docker stop rec_sys
+
+
+export CONTAINER_NAME = "rec_sys"
+export FOLDER = "data"
+export 
+
+docker run -v ${VOLUME_NAME}:/${CONTAINER_NAME}/${FOLDER} --name ${CONTAINER_NAME} aidl2022-final-project Amazon
+
+docker build -f Dockerfile -t rec_sys_project .
+docker run rec_sys_project Amazon 
+
+
+>> tensorboard --logdir ./ --host 0.0.0.0 --port 8088 & curl http://localhost:8088/
+
