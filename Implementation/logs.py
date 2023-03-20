@@ -46,5 +46,6 @@ class Logs():
         return text
     
     def show_tensorboard(self):
-        os.system('tensorboard --logdir=./' + self.log_dir + ' --load_fast true --host localhost --port 8088')
+        # os.system('tensorboard --logdir=./' + self.log_dir + ' --load_fast true --host localhost --port 8088')
+        os.system('tensorboard --logdir=./' + self.log_dir + ' --host localhost --port 8088')
         
