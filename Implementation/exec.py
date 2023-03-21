@@ -3,12 +3,10 @@ import pandas as pd
 import numpy as np
 from typing import Tuple
 from tqdm import tqdm, trange
-from scipy.stats import rankdata
 from statistics import mean
 import torch
 import random
 import results
-import os
 
 class Execution():
     def __init__(self):
@@ -69,10 +67,7 @@ class Execution():
         for i, (interactions, targets) in enumerate(data_loader):
             interactions = interactions.to(device)
             targets = targets.to(device)
-
-            #predictions = model(interactions)
-            predictions = model(interactions[:,:2]) #???
-        
+            predictions = model(interactions[:,:2])
             loss = criterion(predictions, targets.float())
             model.zero_grad()
             loss.backward()
@@ -136,10 +131,6 @@ class Execution():
         return mean(HR), mean(NDCG), user_reco_list, coverage
 
     def get_pop_recons(self, train_x):
-        # train_x_rank = np.insert(np.array(train_x), train_x.shape[1], rankdata(train_x[:,-1]), 1)
-        # pop_rec = train_x[train_x_rank[:,-1].argsort()[::-1]][:,1]- dims[0]
-        # pop_rec = [i for n, i in enumerate(pop_rec) if i not in pop_rec[:n]] 
-        # return np.hstack(pop_rec)
         items_sorted = pd.DataFrame(train_x[:,:2], columns=[ "reviewerID","asin"]).groupby("asin").count().sort_values(by="reviewerID",ascending=False).reset_index()
         items_sorted.asin = items_sorted.asin.astype(str)
         return items_sorted.asin.to_numpy()
