@@ -431,6 +431,7 @@ In a first superficial look, a recommender system can demonstrate help customers
 
 <br />
 <br />
+
 ## FINAL RESULTS
 * Number of negatives per positive: $\mathbf{5}$
 * Number of hidden neurons: $\mathbf{64}$
