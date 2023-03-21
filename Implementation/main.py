@@ -30,8 +30,7 @@ class Main():
             "num_neg": 5,               # {4, 5, 6}         original: 4
             "leave_one_out": "TLOO",    # {TLOO, RLOO}      original: TLOO
             "topk": 10,                 # {10, 50, 100}     original: 10
-            "num_epochs": 12,           # {12, 20, 30}      original: 12
-            "batch_size": 64,           # {64, 32}          original: 64
+            
             "hidden_size": 64,          # {32, 64, 128}     original: 32    
             "lr":1e-3,                  # {1e-4, 1e-3}      original: 1e-4
 
