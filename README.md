@@ -429,6 +429,8 @@ In a first superficial look, a recommender system can demonstrate help customers
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0536 |     0.0274 |      67.8846 |
 
+<br />
+<br />
 ## FINAL RESULTS
 * Number of negatives per positive: $\mathbf{5}$
 * Number of hidden neurons: $\mathbf{64}$
