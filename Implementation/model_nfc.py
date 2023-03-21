@@ -11,7 +11,6 @@ class NeuNCF(torch.nn.Module):
         self.embed_dim = embed_dim
         self.num_users = field_dims[0]
         self.num_items = (field_dims[1] - field_dims[0])     
-        #self.num_items = (field_dims[1]) 
 
         self.embedding_user_mlp = nn.Embedding(num_embeddings=self.num_users, embedding_dim=self.embed_dim)
         self.embedding_item_mlp = nn.Embedding(num_embeddings=self.num_items, embedding_dim=self.embed_dim)
@@ -21,14 +20,13 @@ class NeuNCF(torch.nn.Module):
 
         sequential = [[self.embed_dim*2, 32], [32, 16], [16, 8]]
         self.mlp = torch.nn.Sequential(
-                        torch.nn.Linear(sequential[0][0], sequential[0][1]), #  (64, 32)
+                        torch.nn.Linear(sequential[0][0], sequential[0][1]),
                         torch.nn.ReLU(),
                         torch.nn.Linear(sequential[1][0], sequential[1][1]),
                         torch.nn.ReLU(),
                         torch.nn.Linear(sequential[2][0], sequential[2][1]),
                         torch.nn.ReLU())
         self.last_fc = torch.nn.Linear(sequential[2][1]+self.embed_dim, 1)
-        # self.logistic = nn.Sigmoid()
         self.init_weight() 
     
     def init_weight(self):
@@ -74,12 +72,10 @@ class NeuNCF(torch.nn.Module):
 
         # General Matrix Factorization vector
         gmf_vector = self._gmf(user_embedding_gmf, item_embedding_gmf)
-         # ( _ , 32)    
 
         # Multi Layer Perceptron vector 
         mlp_vector = self._mlp(user_embedding_mlp, item_embedding_mlp)
 
-        # output
         output = self._neuMF(mlp_vector, gmf_vector)
         logits = self.last_fc(output)
         # we modify the original code with Sigmoid here
@@ -88,8 +84,6 @@ class NeuNCF(torch.nn.Module):
         # this is usually preferred due to numerical stability.
 
         return logits.squeeze()
-        # rating = self.logistic(logits) 
-        # return rating.squeeze()
 
     def predict(self,
                 interactions: np.ndarray,
