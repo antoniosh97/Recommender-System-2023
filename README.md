@@ -11,51 +11,23 @@ Table of Contents
 	- [1. INTRODUCTION AND MOTIVATION](#1-introduction-and-motivation)
 	- [2. OBJECTIVES](#2-objectives)
 	- [3. STATE OF ART](#3-state-of-art)
-		- [3.1 COLLABORATIVE RECOMMENDATION SYSTEM](#31-collaborative-recommendation-system)
-		- [3.6 TECHNICAL INSITES](#36-technical-insites)
-			- [SAMPLING TECHIQUES](#sampling-techiques)
-			- [FULL RANKING](#full-ranking)
 	- [4. IMPLEMENTATION](#4-implementation)
 		- [4.1 DATASETS](#41-datasets)
-			- [Amazon Musical Instruments](#amazon-musical-instruments)
-			- [MovieLens](#movielens)
-			- [Data preparation](#data-preparation)
 		- [4.2 MODELS](#42-models)
 			- [Factorization Machine](#factorization-machine)
 			- [Neural Collaborative Filtering](#neural-collaborative-filtering)
-				- [General framework](#general-framework)
-				- [Generalized Matriz Factorization (GMF)](#generalized-matriz-factorization-gmf)
-				- [Multi-Layer Perceptron (MLP)](#multi-layer-perceptron-mlp)
-				- [Fusion of GMF and MLP](#fusion-of-gmf-and-mlp)
 			- [Popularity Based](#popularity-based)
 			- [Random](#random)
 		- [4.3 METRICS](#43-metrics)
 		- [4.4 PIPELINE](#44-pipeline)
 	- [5. ABLATION STUDY](#5-ablation-study)
 		- [5.1 EXPERIMENT A](#51-experiment-a)
-			- [Experiment setup](#experiment-setup)
-			- [Results](#results)
-			- [Conclusions](#conclusions)
 		- [5.2 EXPERIMENT B](#52-experiment-b)
-			- [Experiment setup](#experiment-setup-1)
-			- [Results](#results-1)
-			- [Conclusions](#conclusions-1)
 		- [5.3 EXPERIMENT C](#53-experiment-c)
-			- [Experiment setup](#experiment-setup-2)
-			- [Results](#results-2)
-			- [Conclusions](#conclusions-2)
 		- [5.4 EXPERIMENT D](#54-experiment-d)
-			- [Experiment setup](#experiment-setup-3)
-			- [Results](#results-3)
-			- [Conclusions](#conclusions-3)
 	- [FINAL RESULTS](#final-results)
 	- [6. EXECUTION PROCEDURE](#6-execution-procedure)
-		- [Activate the environment](#activate-the-environment)
-		- [Set the variables in the __init__ function of the Main class](#set-the-variables-in-the-init-function-of-the-main-class)
-		- [Run the main module](#run-the-main-module)
 	- [7. CONCLUSIONS](#7-conclusions)
-		- [Next steps](#next-steps)
-		- [Ethical](#ethical)
 
 ---
 ---
@@ -97,10 +69,9 @@ In a first superficial look, a recommender system can demonstrate help customers
 <br />
 
 ## 3. STATE OF ART
-### 3.1 COLLABORATIVE RECOMMENDATION SYSTEM
-<div align="justify">
 
-https://www.researchgate.net/publication/340416554_Deep_Learning_Architecture_for_Collaborative_Filtering_Recommender_Systems/link/5e8d24ed92851c2f5288696b/download
+**COLLABORATIVE RECOMMENDATION SYSTEM**
+<div align="justify">
 
 Recommender Systems (RS) are powerful tools to address the information overload problem in the Internet. They make use of diverse sources of information. Explicit votes from users to items, and implicit interactions are the basis of the Collaborative Filtering (CF) RS. According to the type of data being collected and the ways of using them in recommendation systems, the approaches for recommendation can be classified as content-based (CB), collaborative filtering (CF) and hybrid one (Koren, Bell, & Volinsky, 2009).
 
@@ -116,37 +87,27 @@ CB filtering is widely used for recommendation systems design, which utilizes th
 
 
 
-### 3.6 TECHNICAL INSITES
-#### SAMPLING TECHIQUES
+**SAMPLING TECHIQUES**
 
 <div align="justify">
 
-https://arxiv.org/pdf/1706.07881.pdf
+[“Negative Sampling”](https://arxiv.org/pdf/1706.07881.pdf) strategy, in which k negative samples are drawn whenever a positive example is drawn. The negative samples are sampled based on the positive ones by replacing the items in the positive samples. 
 
-“Negative Sampling” strategy, in which k negative samples are drawn whenever a positive example is drawn. The negative samples are sampled based on the positive ones by replacing the items in the positive samples. 
-
+**FULL RANKING**
+To rank a set of recommender models, we rank a target set of items for every sequence in the test set using each model. We calculate the metrics on the ranked items and then average the values for each model and rank the models using the mean. In this paper we investigate three different strategies to create the target set of items and name the ranking according to the used method to extract the target set for calculating the metrics: The one we are going to focus is the full ranking we calculate the metrics on the target set that is equal to the [full item set](https://arxiv.org/pdf/2107.13045.pdf).
 </div>
 
-#### FULL RANKING
 
-<div align="justify">
-
-https://arxiv.org/pdf/2107.13045.pdf
-
-To rank a set of recommender models, we rank a target set of items for every sequence in the test set using each model. We calculate the metrics on the ranked items and then average the values for each model and rank the models using the mean. In this paper we investigate three different strategies to create the target set of items and name the ranking according to the used method to extract the target set for calculating the metrics: The one we are going to focus is the full ranking we calculate the metrics on the target set that is equal to the full item set.
-
-</div>
 <!-- ### HYPERPARAMETER TUNING
 #### FACTORIZATION MACHINE
 #### NEURAL COLLABORATIVE FILTERING -->
 
----
 <br />
 <br />
 
 ## 4. IMPLEMENTATION
 ### 4.1 DATASETS
-#### Amazon Musical Instruments
+**Amazon Musical Instruments**
 
 <div align="justify">
 
@@ -162,7 +123,7 @@ This dataset provides the following features:
 </div>
 
 
-#### MovieLens
+**MovieLens**
 
 <div align="justify">
 
@@ -175,7 +136,7 @@ We use the MovieLens-100K Dataset containing 100.000 anonymous ratings with:
 - Each user has **at least 20 ratings**
 https://files.grouplens.org/datasets/movielens/ml-100k.zip 
 
-#### Data preparation
+**Data preparation**
 Cleaning and transforming data is absolutely necessary for reliable results.
 We include a script that may be used  to set up the datasets that:
 * Reformat data types
@@ -194,9 +155,6 @@ In order to reduce computational requirements we created three different dataset
 #### Factorization Machine
 <div align="justify">
 
-https://arxiv.org/pdf/2203.11026.pdf
-https://towardsdatascience.com/factorization-machines-for-item-recommendation-with-implicit-feedback-data-5655a7c749db
-
 
 
 To start understanding matrix factorization for recommender systems, we define the following matrices: a rating matrix R which is in general an R ∈ R m×n matrix. Each row of R represents a user and each column represents an item. The values Rui represent the rating (or score) that user u has given to item i. The problem we are trying to solve is as follows: For any collection of users and items, we have the situation where not all users have given ratings to all the items. In fact, if examined the values of R, we would find that several values are incomplete. However, we wish to recommend certain items to users. How do we do that? One way is to simply recommend any item the user has not already rated to them; this could mean sending a message to the user daily with a recommendation for an item. However, we quickly see the issue with this; if we keep recommending items to users that they don’t like, they will very quickly start ignoring our messages. We would lose credibility with the user and they may eventually unsubscribe from our messages.
@@ -206,8 +164,8 @@ example:
 1. Implicit: We only know the historical data whether the user watch the movie or not. The data can be represented as 0 and 1 format that 0 means un-watch and 1 means watch.
 2. Explicit: Users explicitly rate all the movie they watch in the past. The data can be represented in discrete range, e.g 1, 2, · · · , 5.
 
-Factorization Machine (FM) is designed to combine Support Vector Machine (SVM) and MF. It can handle large sparse data and subsumes MF and SVD++. FM does not only use first-order feature linear components but also second-order (cross-product) of the features to capture more potential relationship inside the features.
-Suppose we have x as input matrix (rating and other features) and ˆy as output. 2-way FM can be written as equation24 which only concerns first-order and second-order feature interactions. An example of the input and output data format as figure.
+[Factorization Machine](https://arxiv.org/pdf/2203.11026.pdf) (FM) is designed to combine Support Vector Machine (SVM) and MF. It can handle large sparse data and subsumes MF and SVD++. FM does not only use first-order feature linear components but also second-order (cross-product) of the features to capture more potential relationship inside the features.
+Suppose we have x as input matrix (rating and other features) and $\hat{y}$ as output. 2-way FM can be written as equation24 which only concerns first-order and second-order feature interactions. An example of the input and output data format as figure.
 
 ![Image](Management/README_images/FactorizationMachine.png)
 <p align="center"> Example of FM’s input and output data format. </p>
@@ -219,7 +177,7 @@ Suppose we have x as input matrix (rating and other features) and ˆy as output.
     <img src="Management/README_images/FM_formula1.png">
 </p>
 
-where we have three parameters: $w_0 ∈ R$, **w** $∈ R^n$, **V** $∈ R^{n×k}$ that $w_0$ is the global bias, $w_i$ models the strength of the i-th variable, $\hat{w}_{i,j} :=<\nu_i,\nu_j>$ models the interaction between the ith and j-th variable which idea is similar with FM that can do dimensionality reduction on w. We can prove the computation complexity of equation above is linear.
+where we have three parameters: $w_0 ∈ R$, $\mathbf{w} ∈ R^n$, $\mathbf{v}$ $∈ R^{n×k}$ that $w_0$ is the global bias, $w_i$ models the strength of the i-th variable, $\hat{w}_{i,j} :=<\nu_i,\nu_j>$ models the interaction between the ith and j-th variable which idea is similar with FM that can do dimensionality reduction on w. We can prove the computation complexity of equation above is linear.
 
 <p align="center">
     <img src="Management/README_images/FM_formula2.png">
@@ -231,15 +189,15 @@ where we have three parameters: $w_0 ∈ R$, **w** $∈ R^n$, **V** $∈ R^{n×k
 #### Neural Collaborative Filtering
 <div align="justify">
 
-https://arxiv.org/pdf/1708.05031.pdf
-
-Among the various collaborative filtering techniques, matrix factorization (MF) [14, 21] is the most popular one, which projects users and items into a shared latent space, using a vector of latent features to represent a user or an item. Thereafter a user’s interaction on an item is modelled as the inner product of their latent vectors.
-
-To handle the absence of negative data, they have either treated all unobserved entries as negative feedback, or sampled negative instances from unobserved entries [14]. For pairwise learning [27, 44], the idea is that observed entries should be ranked higher than the unobserved ones. As such, instead of minimizing the loss between $\hat{y_{ui}}$ and ${y_{ui}}$, pairwise learning maximizes the margin between observed entry $\hat{y_{ui}}$ and unobserved entry $\hat{y_{uj}}$ .
-Moving one step forward, our NCF framework parameterizes the interaction function f using neural networks to estimate $\hat{y_{ui}}$. As such, it naturally supports both pointwise and pairwise learning.
 
 
-##### General framework
+Among the various collaborative filtering techniques, matrix factorization (MF) is the most popular one, which projects users and items into a shared latent space, using a vector of latent features to represent a user or an item. Thereafter a user’s interaction on an item is modelled as the inner product of their latent vectors.
+
+To handle the absence of negative data, they have either treated all unobserved entries as negative feedback, or sampled negative instances from unobserved entries. For pairwise learning, the idea is that observed entries should be ranked higher than the unobserved ones. As such, instead of minimizing the loss between $\hat{y_{ui}}$ and ${y_{ui}}$, pairwise learning maximizes the margin between observed entry $\hat{y_{ui}}$ and unobserved entry $\hat{y_{uj}}$ .
+Moving one step forward, our [NCF](https://arxiv.org/pdf/1708.05031.pdf) framework parameterizes the interaction function f using neural networks to estimate $\hat{y_{ui}}$. As such, it naturally supports both pointwise and pairwise learning.
+
+
+**General framework**
 
 
 <p align="center">
@@ -249,9 +207,9 @@ Moving one step forward, our NCF framework parameterizes the interaction functio
 Above the input layer is the embedding layer; it is a fully connected layer that projects the sparse representation to a dense vector. The obtained user (item) embedding can be seen as the latent vector for user (item) in the context of latent factor model. The user embedding and item embedding are then fed into a multi-layer neural architecture, which we term as neural collaborative filtering layers, to map
 the latent vectors to prediction scores. Each layer of the neural CF layers can be customized to discover certain latent structures of user–item interactions. The dimension of the last hidden layer X determines the model’s capability. The final output layer is the predicted score $\hat{y_{ui}}$, and training is performed by minimizing the pointwise loss between $\hat{y_{ui}}$ and its target value ${y_{ui}}$.
 
-##### Generalized Matriz Factorization (GMF)
+**Generalized Matriz Factorization (GMF)**
 
-As MF is the most popular model for recommendation and has been investigated extensively in literature, being able to recover it allows NCF to mimic a large family of factorization models [26].
+As MF is the most popular model for recommendation and has been investigated extensively in literature, being able to recover it allows NCF to mimic a large family of factorization models.
 Due to the one-hot encoding of user (item) ID of the input layer, the obtained embedding vector can be seen as the latent vector of user (item). Let the user latent vector $\mathbf{p}_u$ be P $\mathbf{P}^T \mathbf{v}^{U}_u$ and item latent vector $\mathbf{q}_i$ be $\mathbf{Q}^T \mathbf{v}^{I}_i$. We define the mapping function of the first neural CF layer as the product of vectors $\mathbf{p}_u$ and $\mathbf{q}_i$.
 
 We then project the vector to the output layer: 
@@ -261,7 +219,7 @@ $$\hat{y}_{ui}=a_{out}(\mathbf{h}^T(\mathbf{p}_u · \mathbf{q}_i))$$
 where ${a_{out}}$ and $\mathbf{h}$ denote the activation function and edge weights of the output layer, respectively. 
 
 
-##### Multi-Layer Perceptron (MLP)
+**Multi-Layer Perceptron (MLP)**
 
 we propose to add hidden layers on the concatenated vector, using a standard MLP to learn the interaction between user and item latent features. In this sense, we can endow the model a large level of flexibility and non-linearity to learn the interactions between $\mathbf{p}_u$ and $\mathbf{q}_i$ , rather than the way of GMF that uses only a fixed element-wise product on them. More precisely, the MLP model under our NCF framework is defined as
 
@@ -273,14 +231,13 @@ $$\hat{y}_{ui}=\sigma(\mathbf{h}^T\phi_L(\mathbf{z}_{L-1}))$$
 
 where $\mathbf{W}_x$, $\mathbf{b}_x$, and ax denote the weight matrix, bias vector, and activation function for the x-th layer’s perceptron, respectively.
 
-##### Fusion of GMF and MLP
+**Fusion of GMF and MLP**
 <p align="center">
     <img src="Management/README_images/NeuNCF.png">
 	Neural matrix factorization model
 </p>
 
-A straightforward solution is to let GMF and MLP share the same embedding layer, and then combine the outputs of
-their interaction functions. This way shares a similar spirit with the well-known Neural Tensor Network (NTN) [33].
+A straightforward solution is to let GMF and MLP share the same embedding layer, and then combine the outputs of their interaction functions. This way shares a similar spirit with the well-known Neural Tensor Network (NTN).
 Specifically, the model for combining GMF with a one-layer MLP can be formulated as 
 
 $$\hat{y}_{ui}=\sigma(\mathbf{h}^T a(\mathbf{p}_u \bigodot \mathbf{q}_i + \mathbf{W} {\mathbf{p}_u  \brack \mathbf{q}_i}  + \mathbf{b}_L) )$$
@@ -299,8 +256,6 @@ The formulation where $\mathbf{p}^G_u$ and $\mathbf{q}^G_i$ denote the user embe
 #### Popularity Based
 <div align="justify">
 
-https://www.ijeat.org/wp-content/uploads/papers/v9i3/B4660129219.pdf
-https://www.analyticssteps.com/blogs/what-are-recommendation-systems-machine-learning
 
 The popularity model is a simple statistic model that generates a list of the items ordered by the number of interactions.
 
@@ -347,12 +302,12 @@ To be able to accomplish our goal and process all those different datasets, trai
 
 
 ### 5.1 EXPERIMENT A
-#### Experiment setup
+**Experiment setup**
 * Number of negatives per positive: $\mathbf{5}$
 * Number of hidden neurons: $\mathbf{64}$
 * Learning rate for MF and NCF: $\mathbf{1·10^{-4}}$
 
-#### Results
+**Results**
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |
@@ -361,7 +316,7 @@ To be able to accomplish our goal and process all those different datasets, trai
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0709 |     0.0433 |      16.9712 |
 
-#### Conclusions
+**Conclusions**
 
 <div align="justify">
 
@@ -370,13 +325,12 @@ With this experiment, comparing our models, given the current tuning parameters,
 </div>
 
 ### 5.2 EXPERIMENT B
-#### Experiment setup
+**Experiment setup**
 * Number of negatives per positive: $\mathbf{5}$
 * Number of hidden neurons: $\mathbf{64}$
 * Learning rate for MF and NCF: $\mathbf{1·10^{-3}}$
 
-#### Results
-
+**Results**
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |
@@ -385,7 +339,7 @@ With this experiment, comparing our models, given the current tuning parameters,
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0515 |     0.0275 |      68.5096 |
 
-#### Conclusions
+**Conclusions**
 <div align="justify">
 
 Based on the results of this experiment, given the current tuning parameters, we can see in this case changing our learning rate, the best result was obtained by the model FM. With more presence of our test item in the topk 10 predicted values observed by the metric Hit Ratio and the ranking quality of our test item comparing inside the predicted values is close to the NCF, with a difference of 0,0079% better, observable by the NDCG metric. In contradiction, it's posible to see somehow, the total coverage of items in test set comparing with the training set for the Factorization Machine model was lower than NCF, with a negative difference of 18,8461%.
@@ -395,11 +349,13 @@ Based on the results of this experiment, given the current tuning parameters, we
 
 
 ### 5.3 EXPERIMENT C
-#### Experiment setup
+**Experiment setup**
 * Number of negatives per positive: $\mathbf{6}$
 * Number of hidden neurons: $\mathbf{64}$
 * Learning rate for MF and NCF: $\mathbf{1·10^{-4}}$
-#### Results
+
+
+**Results**
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |
@@ -408,7 +364,7 @@ Based on the results of this experiment, given the current tuning parameters, we
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0699 |     0.0432 |      17.5481 |
 
-#### Conclusions
+**Conclusions**
 
 <div align="justify">
 
@@ -416,11 +372,12 @@ Given the current tuning parameters for this experiment, is easly to see the a g
 </div>
 
 ### 5.4 EXPERIMENT D
-#### Experiment setup
+**Experiment setup**
 * Number of negatives per positive: $\mathbf{6}$
 * Number of hidden neurons: $\mathbf{64}$
 * Learning rate for MF and NCF: $\mathbf{1·10^{-3}}$
-#### Results
+
+**Results**
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |  
 | FM    |     0.0639 |     0.0360 |      43.7500 |
@@ -428,7 +385,7 @@ Given the current tuning parameters for this experiment, is easly to see the a g
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0536 |     0.0274 |      67.8846 |
 
-#### Conclusions
+**Conclusions**
 <div align="justify">
 
 For this experiment, based on the tuning parameters, it is not difficult to observe a small difference in our end results. Even so, FM achieved more presence of our test item in the topk 10 predicted values observed by the metric Hit Ratio compared with NCF and we can notice the same behavior for the ranking quality of our test item comparing inside the predicted values. Otherwise, even if FM reached a better position for the previous rates, the coverage in contradiction was much more favorable to NCF.
@@ -504,9 +461,9 @@ The following graphs show that neither of the two models generates bias, since t
 
 ## 6. EXECUTION PROCEDURE
 <div align="justify">
-To get started with the development process for this Deep learning-based recommender system, you'll need to follow the steps outlined below:
+To get started with the development process for this Deep learning-based recommender system, you'll need to follow the steps outlined below:<br /><br />
 
-### Activate the environment
+**Activate the environment**
 To begin, you'll need to activate the project's environment. This can be achieved by running the following commands in the terminal:
 ```
 conda create --name final-project python=3.8 
@@ -514,9 +471,9 @@ conda activate final-project
 pip install -r requirements.txt 
 
 ```
-These commands will create a new environment called "final-project" with Python version 3.8 and install all the required packages listed in the "requirements.txt" file.
+These commands will create a new environment called "final-project" with Python version 3.8 and install all the required packages listed in the "requirements.txt" file.<br /><br />
 
-### Set the variables in the __init__ function of the Main class
+**Set the variables in the __init__ function of the Main class**
 * **dataset**: the name of the dataset to use. Set it to "Amazon" or "movie lens".
 * **device**: the device to use for training. Set it to torch.device('cuda') to use the GPU, or torch.device('cpu') to use the CPU. (automatically tries to use CUDA if available)
 * **test_mode**: set it to True to use a smaller dataset for testing purposes.
@@ -532,9 +489,9 @@ These commands will create a new environment called "final-project" with Python 
 * **lr**: the learning rate to use for training.
 * **hidden_size_ncf**: the size of the hidden layer in the NCF model.
 * **lr_ncf**: the learning rate to use for training the NCF model.
-* **seed**: the seed to use for random reproducibility.
+* **seed**: the seed to use for random reproducibility.<br /><br />
 
-### Run the main module
+**Run the main module**
 This will execute a pipeline that includes the following steps:
 - Initializing the parameters and settings for the pipeline, such as the dataset to be used, the device to run the code on (GPU or CPU), and the hyperparameters to tune the models.
 - Reading and preprocessing the dataset using the dataset module.
@@ -555,17 +512,17 @@ In summary, the pipeline takes in a dataset, trains and evaluates multiple recom
 As we have been able to verify, when comparing different models using the Amazon dataset, Neural Collaborative Filtering has been the winning model, since it has undoubtedly improved the Hit Ratio and NDCG metrics of the Factorization Machine, but has doubled your coverage.<br/><br/>
 After analyzing the final test, we can deduce several key points that have a great impact on the understanding of a recommender system. The importance of the coverage value, since good metrics can be compatible with low coverage and must be taken into account. On the other hand, there must be a trade-off, this can be seen in the Random model where with a convergence of one hundred percent we have very low results, since it does not learn from user preferences. On the other hand, the Popularity-Based model would be a great candidate to recommend items to a new user, a phenomenon also called "cold start", following the same line, it is worth mentioning that when running few epochs, the models tend to recommend the products more popular.<br/><br/>
 
-Finally, comment that recommendation systems often tend to restrict compliance in business, whether due to legal, social or political issues.
+Finally, comment that recommendation systems often tend to restrict compliance in business, whether due to legal, social or political issues.<br/><br/>
 
-### Next steps
+**Next steps**
 
 In conclusion of the project, the numbers generated give us evidence of optimist results, leaving some topics open due to the interest in the subject that could improve the quality in general terms. 
 
 Pursuing our main goal to improve the user experience and make them engage with the content, using context variables to measure the behavior of the user as an explicit feedback should be a very important next step for this project. Regrettably, as already mentioned, as long as we enter in the domain of the recommender systems, we could understand the complexity of recommending something to a customer at this level, which makes us follow the way of using the implicit feedback. The calculations have been made taking into account the following tags: userID, itemID and timestamp, so several parameters have been left unanalysed. The rating has an important role, which we could have used as explicit feedback, the only drawback would be that if our matrix was already sparse enough, with this context we add more zeros. As well as, rating could have focused on defining the behavior of the user, since, if the user tends to score low, we would have this situation present and controlled together with the BIAS of the average score of the item. The analysis of the history of the items saved in the basket, favorites and deleted from the basket would be something interesting to take into account because that would generate a BIAS per user. The product category could have been added since the user may be interested in a specific area, such as string instruments. It must be emphasized that there are companies whose interests are to set a bias in the model, this is how certain products are shown to you either by marketing strategies or advertising agreements, but this could enter in conflict with the ethical side of using a recommender system and the data privacy area. 
 
-One of our consensus point is the possibility to “bring to life” and see the system in action to visualize the interested party to interact with the system, creating an application that would allow us to choose a user and it would show their top 10 recommendations with the highlighted ground truth. </
+One of our consensus point is the possibility to “bring to life” and see the system in action to visualize the interested party to interact with the system, creating an application that would allow us to choose a user and it would show their top 10 recommendations with the highlighted ground truth. <br/><br/>
 
-### Ethical
+**Ethical**
 
 As far as we get deep in the ethical point applied to recommender system, we could notice this is a topic worthy to have a entire project dedicated to it just considering the different aspects envolved and the importance of it for the user, the society or even for the country.<br/>
 The human being is a creature with preferences that can be a continuous variable, the complexity of implementing systems to monitor and collect those variables are extensive. This information once collected will provide data for the recommender systems. But apart from the technical side, the interests guided behind the code lines mould the nature of the system and show the limits of the ethical side of each company. It's not difficult to imagine inside the big advertisement industry, with sponsored products, brands, stores, ads and videos, the importance of the extreme care when configuring the recommender system to avoid influence in user's choice.<br/>
