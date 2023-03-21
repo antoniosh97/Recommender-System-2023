@@ -372,6 +372,7 @@ To be able to accomplish our goal and process all those different datasets, trai
 
 #### Results
 
+
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |
 | FM    |     0.0606 |     0.0354 |      49.6635 |
