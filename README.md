@@ -369,7 +369,7 @@ To be able to accomplish our goal and process all those different datasets, trai
 
 <div align="justify">
 
-With this experiment, comparing our models, given the current tuning parameters, it's possible to conclude the NCF model have a better performance in the end of the last epoch. With more presence of our test item in the topk 10 predicted values observed by the metric Hit Ratio. The ranking quality of our test item comparing inside the predicted values is close to the FM, but a difference 0,0129% better, observable by the NDCG metric. On the other hand, the total coverage of items in test set comparing with the training set was quite similar to the Factorization Machine model, with a positive advantage of 1,3943%
+With this experiment, comparing our models, given the current tuning parameters, it's possible to conclude the NCF model have a better performance in the end of the last epoch. With more presence of our test item in the topk 10 predicted values observed by the metric Hit Ratio. The ranking quality of our test item comparing inside the predicted values is close to the FM, but a difference 0,0129% better, observable by the NDCG metric. On the other hand, the total coverage of items in test set comparing with the training set was quite similar to the Factorization Machine model, with a positive advantage of 1,3943%.
 
 </div>
 
@@ -390,6 +390,13 @@ With this experiment, comparing our models, given the current tuning parameters,
 | NCF   |     0.0515 |     0.0275 |      68.5096 |
 
 #### Conclusions
+<div align="justify">
+
+Based on the results of this experiment, given the current tuning parameters, we can see in this case changing our learning rate, the best result was obtained by the model FM. With more presence of our test item in the topk 10 predicted values observed by the metric Hit Ratio and the ranking quality of our test item comparing inside the predicted values is close to the NCF, with a difference of 0,0079% better, observable by the NDCG metric. In contradiction, it's posible to see somehow, the total coverage of items in test set comparing with the training set for the Factorization Machine model was lower than NCF, with a negative difference of 18,8461%.
+
+</div>
+
+
 
 ### 5.3 EXPERIMENT C
 #### Experiment setup
@@ -430,12 +437,24 @@ With this experiment, comparing our models, given the current tuning parameters,
 <br />
 
 ## FINAL RESULTS
+
+<div align="justify">
+
+The above experiments show that the best combination is when the Factorization Machine (FM) model has a learning rate of ${1·10^{-3}}$ and $l_r ={ 1·10^{-4}}$ for the Neural Collaborative Filtering (NCF) model. Can be seen that both 6 negatives for positive and 5 are quite similar, so we decided to implement everything with 5.
+The final configuration looks like this:
 * Number of negatives per positive: $\mathbf{5}$
 * Number of hidden neurons: $\mathbf{64}$
 * MF Learning rate: $\mathbf{1·10^{-3}}$
 * NCF Learning rate: $\mathbf{1·10^{-4}}$
+</div>
+
+<div align="justify">
 
 **Dataset with a minimium of 8 reviews per user and 8 users per item**
+Como hemos mencionado ya, con los parámetros optimos ajustamos el los modelos y ejecutamos con el dataset más pequeño y obtenemos los siguientes resultados.
+
+En donde vemos que los valores de Hit Ratio son lo más elevado posible tanto en FM como en NCF y sus coverages tiene un 
+</div>
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |  
@@ -503,6 +522,14 @@ With this experiment, comparing our models, given the current tuning parameters,
 
 ### 7.2 Ethical
 <div align="justify">
+
+In conclusion of the project, the numbers generated give us evidence of optimist results, leaving some topics open due to the interest in the subject that could improve the quality in general terms. 
+
+Pursuing our main goal to improve the user experience and make them engage with the content, using context variables to measure the behavior of the user as an explicit feedback should be a very important next step for this project. Regrettably, as already mentioned, as long as we enter in the domain of the recommender systems, we could understand the complexity of recommending something to a customer at this level, which makes us follow the way of using the implicit feedback. The calculations have been made taking into account the following tags: userID, itemID and timestamp, so several parameters have been left unanalysed. The rating has an important role, which we could have used as explicit feedback, the only drawback would be that if our matrix was already sparse enough, with this context we add more zeros. As well as, rating could have focused on defining the behavior of the user, since, if the user tends to score low, we would have this situation present and controlled together with the BIAS of the average score of the item. The analysis of the history of the items saved in the basket, favorites and deleted from the basket would be something interesting to take into account because that would generate a BIAS per user. The product category could have been added since the user may be interested in a specific area, such as string instruments. It must be emphasized that there are companies whose interests are to set a bias in the model, this is how certain products are shown to you either by marketing strategies or advertising agreements, but this could enter in conflict with the ethical side of using a recommender system and the data privacy area. 
+
+One of our consensus point is the possibility to “bring to life” and see the system in action to visualize the interested party to interact with the system, creating an application that would allow us to choose a user and it would show their top 10 recommendations with the highlighted ground truth. 
+
+
 As far as we get deep in the ethical point applied to recommender system, we could notice this is a topic worthy to have a entire project dedicated to it just considering the different aspects envolved and the importance of it for the user, the society or even for the country.<br/>
 The human being is a creature with preferences that can be a continuous variable, the complexity of implementing systems to monitor and collect those variables are extensive. This information once collected will provide data for the recommender systems. But apart from the technical side, the interests guided behind the code lines mould the nature of the system and show the limits of the ethical side of each company. It's not difficult to imagine inside the big advertisement industry, with sponsored products, brands, stores, ads and videos, the importance of the extreme care when configuring the recommender system to avoid influence in user's choice.<br/>
 Recommend a product to a customer require knowledge about this person's preferences, the security issues about user data will be a very big point for discussion in data privacy area, problems that should be mitigated or avoid.<br/>
