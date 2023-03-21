@@ -452,6 +452,7 @@ The final configuration looks like this:
 
 
 **Dataset with a minimium of 8 reviews per user and 8 users per item**
+
 As already mentioned, the models are fitted with the optimal parameters and run with the smallest dataset.
 
 The following table shows that the Hit Ratio values are as high as possible in both FM and NCF besides their coverages have a decent value.
@@ -475,6 +476,7 @@ The following graphs show that neither of the two models generates bias, since t
 
 
 **Dataset with a minimium of 6 reviews per user and 6 users per item**
+
 To present a single result, we take the measurements above as a reference and run everything with the final dataset.
 
 The following table shows that the initial hypothesis in which the NCF model gives better results than the FM is fulfilled.
