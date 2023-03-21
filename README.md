@@ -53,7 +53,6 @@ Table of Contents
 		- [Activate the environment](#activate-the-environment)
 		- [Set the variables in the __init__ function of the Main class](#set-the-variables-in-the-init-function-of-the-main-class)
 		- [Run the main module](#run-the-main-module)
-	- [END](#end)
 	- [7. CONCLUSIONS](#7-conclusions)
 		- [Next steps](#next-steps)
 		- [Ethical](#ethical)
@@ -476,9 +475,9 @@ The following graphs show that neither of the two models generates bias, since t
 
 
 **Dataset with a minimium of 6 reviews per user and 6 users per item**
-Para presental un único resultado, tomamos las medidas de arriba como referencia y ejecutamos todo con el dataset final.
+To present a single result, we take the measurements above as a reference and run everything with the final dataset.
 
-La siguiente tabla muestra que le hipósis inicial en donde el modelo NCF da mejores resultados que el FM, 
+The following table shows that the initial hypothesis in which the NCF model gives better results than the FM is fulfilled.
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |  
@@ -488,7 +487,7 @@ La siguiente tabla muestra que le hipósis inicial en donde el modelo NCF da mej
 | NCF   |     0.0470 |     0.0290 |      31.8064 |
 
 
-The following graphs show that neither of the two models generates bias, since their figure resembles the train data.
+The following graphs show that neither of the two models generates bias, since their figure resembles the train data besides, the number of  unique items in NCF is greater.
 <p align="center">
 	<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321181713.png">
 	<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321181720.png">
@@ -546,21 +545,26 @@ In summary, the pipeline takes in a dataset, trains and evaluates multiple recom
 </div>
 
 
-## END
+
 
 
 ## 7. CONCLUSIONS
+<div align="justify">
+As we have been able to verify, when comparing different models using the Amazon dataset, Neural Collaborative Filtering has been the winning model, since it has undoubtedly improved the Hit Ratio and NDCG metrics of the Factorization Machine, but has doubled your coverage.
+
+After analyzing the final test, we can deduce several key points that have a great impact on the understanding of a recommender system. The importance of the coverage value, since good metrics can be compatible with low coverage and must be taken into account. On the other hand, there must be a trade-off, this can be seen in the Random model where with a convergence of 100 percent we have very low results, since it does not learn from user preferences. On the other hand, the Popularity-Based model would be a great candidate to recommend items to a new user, a phenomenon also called "cold start", following the same line, it is worth mentioning that when running few epochs, the models tend to recommend the products More popular.
+
+Finally, comment that recommendation systems often tend to restrict compliance in business, whether due to legal, social or political issues.
 
 ### Next steps
-<div align="justify">
+
 In conclusion of the project, the numbers generated give us evidence of optimist results, leaving some topics open due to the interest in the subject that could improve the quality in general terms. 
 
 Pursuing our main goal to improve the user experience and make them engage with the content, using context variables to measure the behavior of the user as an explicit feedback should be a very important next step for this project. Regrettably, as already mentioned, as long as we enter in the domain of the recommender systems, we could understand the complexity of recommending something to a customer at this level, which makes us follow the way of using the implicit feedback. The calculations have been made taking into account the following tags: userID, itemID and timestamp, so several parameters have been left unanalysed. The rating has an important role, which we could have used as explicit feedback, the only drawback would be that if our matrix was already sparse enough, with this context we add more zeros. As well as, rating could have focused on defining the behavior of the user, since, if the user tends to score low, we would have this situation present and controlled together with the BIAS of the average score of the item. The analysis of the history of the items saved in the basket, favorites and deleted from the basket would be something interesting to take into account because that would generate a BIAS per user. The product category could have been added since the user may be interested in a specific area, such as string instruments. It must be emphasized that there are companies whose interests are to set a bias in the model, this is how certain products are shown to you either by marketing strategies or advertising agreements, but this could enter in conflict with the ethical side of using a recommender system and the data privacy area. 
 
-One of our consensus point is the possibility to “bring to life” and see the system in action to visualize the interested party to interact with the system, creating an application that would allow us to choose a user and it would show their top 10 recommendations with the highlighted ground truth. </div>
+One of our consensus point is the possibility to “bring to life” and see the system in action to visualize the interested party to interact with the system, creating an application that would allow us to choose a user and it would show their top 10 recommendations with the highlighted ground truth. </
 
 ### Ethical
-<div align="justify">
 
 As far as we get deep in the ethical point applied to recommender system, we could notice this is a topic worthy to have a entire project dedicated to it just considering the different aspects envolved and the importance of it for the user, the society or even for the country.<br/>
 The human being is a creature with preferences that can be a continuous variable, the complexity of implementing systems to monitor and collect those variables are extensive. This information once collected will provide data for the recommender systems. But apart from the technical side, the interests guided behind the code lines mould the nature of the system and show the limits of the ethical side of each company. It's not difficult to imagine inside the big advertisement industry, with sponsored products, brands, stores, ads and videos, the importance of the extreme care when configuring the recommender system to avoid influence in user's choice.<br/>
