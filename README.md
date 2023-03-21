@@ -369,6 +369,12 @@ To be able to accomplish our goal and process all those different datasets, trai
 
 #### Conclusions
 
+<div align="justify">
+
+With this experiment, comparing our models, given the current tuning parameters, it's possible to conclude the NCF model have a better performance in the end of the last epoch. With more presence of our test item in the topk 10 predicted values observed by the metric Hit Ratio. The ranking quality of our test item comparing inside the predicted values is close to the FM, but a difference 0,0129% better, observable by the NDCG metric. On the other hand, the total coverage of items in test set comparing with the training set was quite similar to the Factorization Machine model, with a positive advantage of 1,3943%
+
+</div>
+
 ### 5.2 EXPERIMENT B
 #### Experiment setup
 * Number of negatives per positive: $\mathbf{5}$
@@ -401,6 +407,8 @@ To be able to accomplish our goal and process all those different datasets, trai
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0699 |     0.0432 |      17.5481 |
 
+
+
 #### Conclusions
 
 
@@ -429,12 +437,23 @@ To be able to accomplish our goal and process all those different datasets, trai
 * MF Learning rate: $\mathbf{1·10^{-3}}$
 * NCF Learning rate: $\mathbf{1·10^{-4}}$
 
+**Dataset with a minimium of 8 reviews per user and 8 users per item**
+
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |  
 | FM    |     0.0606 |     0.0354 |      49.6635 |
 | RND   |     0.0049 |     0.0022 |     100.0000 |
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0709 |     0.0433 |      16.9712 |
+
+**Dataset with a minimium of 6 reviews per user and 6 users per item**
+
+| Model | HR@10      | NDCG@10    | %Coverage@10 |
+| :------  | :------:|   :------:|   :------: |  
+| FM    |     0.0487 |     0.0301 |      16.9796 |
+| RND   |     0.0019 |     0.0010 |     100.0000 |
+| POP   |     0.0266 |     0.0098 |       0.1619 |
+| NCF   |     0.0472 |     0.0288 |      32.6157 |
 
 <br />
 <br />
