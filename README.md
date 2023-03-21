@@ -506,7 +506,7 @@ La siguiente tabla muestra cómo a pesar de tenertner los parámetros que optimi
 The following graphs show that neither of the two models generates bias, since their figure resembles the train data.
 <p align="center">
 	<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321181713.png">
-	<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321023850.png">
+	<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321181720.png">
 	<img src="Implementation/logs_final_result_6x6/train_TOT_ds_num_neg_5_rating_TLOO_batch_size_64_hidden_64.png">
 </p>
 
