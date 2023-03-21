@@ -317,6 +317,12 @@ The formulation where $\mathbf{p}^G_u$ and $\mathbf{q}^G_i$ denote the user embe
 
 https://www.ijeat.org/wp-content/uploads/papers/v9i3/B4660129219.pdf
 https://www.analyticssteps.com/blogs/what-are-recommendation-systems-machine-learning
+
+The popularity model is a simple statistic model that generates a list of the items ordered by the number of interactions.
+
+It has the advantage of solving the 'cold start' problem when the recommender system has to recommend items to a new user or a user that has no enough recorded interactions history.
+
+Is a very interesting model to include into a comparison between models because allows to check how most popular items are tracted by other models.
 </div>
 
 #### Random
@@ -453,9 +459,7 @@ The final configuration looks like this:
 * Number of hidden neurons: $\mathbf{64}$
 * MF Learning rate: $\mathbf{1·10^{-3}}$
 * NCF Learning rate: $\mathbf{1·10^{-4}}$
-</div>
 
-<div align="justify">
 
 **Dataset with a minimium of 8 reviews per user and 8 users per item**
 As already mentioned, the models are fitted with the optimal parameters and run with the smallest dataset.
@@ -478,12 +482,12 @@ The following graphs show that neither of the two models generates bias, since t
 	<img src="Implementation/logs_final_result_6x6/train_TOT_ds_num_neg_5_rating_TLOO_batch_size_64_hidden_64.png">
 </p>
 
-</div>
 
-<div align="justify">
 
 **Dataset with a minimium of 6 reviews per user and 6 users per item**
+Para presental un único resultado, tomamos las medidas de arriba como referencia y ejecutamos todo con el dataset final.
 
+La siguiente tabla muestra cómo a pesar de tenertner los parámetros que optimizan las métricas de los modelos, se puede observar cómo el NCF es más bajo que el FM cuando debería ser mejor
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |  
