@@ -1,7 +1,6 @@
 # RECOMMENDER SYSTEM PROJECT
 Final project for the 2022-2023 Postgraduate course on Artificial Intelligence with Deep Learning, UPC School, authored by **Antonio Sánchez**, **Brenda Fernández**, **Evaristo Broullon** and **Joan Dayas**. 
 
-
 Advised by **Paula Gómez Duran**.
 
 Table of Contents
