@@ -30,21 +30,12 @@ class Sample():
         for num, x in tqdm(enumerate(data), desc='Perform negative sampling...'):
             interactions.append(np.append(x, 1))
             for t in range(num_ng):
-                j = np.random.randint(min_item, max_item) #if not pop else random.sample(items_to_sample, 1)[0]
+                j = np.random.randint(min_item, max_item) 
                 # IDEA: Loop to exclude true interactions (set to 1 in adj_train) user - item
                 while (x[0], j) in rating_mat or j == int(x[1]):
-                    j = np.random.randint(min_item, max_item) #if not pop else random.sample(items_to_sample, 1)[0]
+                    j = np.random.randint(min_item, max_item) 
                 interactions.append(np.concatenate([[x[0], j], x[2:], [0]]))
         return np.vstack(interactions), rating_mat
-    
-    """
-    def zero_positionsV2(self, log, rating_mat, start, end):
-        print(f"zero_positionsV2: Processing Chunk from {str(start)} to {str(end)}")
-        chunk = rating_mat[start:end]
-        log.save_data_configuration("\n"+"#"*4+"  zero_positions: all data separated by rows  "+"#"*4)
-        zero_true_matrix = np.where(chunk.A==0)
-        return np.asarray([zero_true_matrix[0],zero_true_matrix[1]]).T
-    """
 
     def zero_positions(self, rating_mat, showtime=False):
         if showtime:
