@@ -25,7 +25,7 @@ class Main():
         self.test_mode = False          # Simpler version with ess data + debug
         self.show_tb = False             #Tensorboard
 
-        self.tuning_mode = True         # For experiments use the csv 8x8
+        self.tuning_mode = False         # For experiments use the csv 8x8
         self.tuning_params = {
             "num_neg": 5,               # {4, 5, 6}         original: 4
             "leave_one_out": "TLOO",    # {TLOO, RLOO}      original: TLOO
@@ -108,6 +108,10 @@ class Main():
         # Message for tuning mode 
         if self.tuning_mode:
             self.log.save_data_configuration("-"*20+"\nTuning mode:")
+            [self.log.save_data_configuration(f"{tuning_param}: {value_param}") for tuning_param, value_param in self.tuning_params.items()]
+            self.log.save_data_configuration("-"*20+"\n")
+        else:
+            self.log.save_data_configuration("-"*20+"\nFinal results with 6x6 dataset:")
             [self.log.save_data_configuration(f"{tuning_param}: {value_param}") for tuning_param, value_param in self.tuning_params.items()]
             self.log.save_data_configuration("-"*20+"\n")
 
