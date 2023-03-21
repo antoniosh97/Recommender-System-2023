@@ -444,12 +444,15 @@ With this experiment, comparing our models, given the current tuning parameters,
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0709 |     0.0433 |      16.9712 |
 
-<p >
-	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150140.png" width="52%"/>
-	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150143.png" width="52%"/>
-	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150145.png">
-	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150149.png">
-</p>
+<div align="justify">
+...
+	<p align="center">
+		<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150140.png" />
+		<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150149.png">
+	</p>
+
+</div>
+
 
 **Dataset with a minimium of 6 reviews per user and 6 users per item**
 
@@ -460,10 +463,15 @@ With this experiment, comparing our models, given the current tuning parameters,
 | POP   |     0.0266 |     0.0098 |       0.1619 |
 | NCF   |     0.0472 |     0.0288 |      32.6157 |
 
+<div align="justify">
+...
+	<p align="center">
+		<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023843.png" />
+		<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023850.png">
+	</p>
 
-<p align="center">
-	<img src="Management/README_images/pipeline_simple.jpg" width="75%"><br />
-</p>
+</div>
+
 
 <br />
 <br />
