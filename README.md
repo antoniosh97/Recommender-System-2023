@@ -444,8 +444,11 @@ With this experiment, comparing our models, given the current tuning parameters,
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0709 |     0.0433 |      16.9712 |
 
-<p align="center">
-	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150140.png"><br />
+<p >
+	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150140.png" width="52%"/>
+	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150143.png" width="52%"/>
+	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150145.png">
+	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150149.png">
 </p>
 
 **Dataset with a minimium of 6 reviews per user and 6 users per item**
