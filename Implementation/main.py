@@ -27,7 +27,7 @@ class Main():
 
         self.tuning_mode = True         # For experiments use the csv 8x8
         self.tuning_params = {
-            "num_neg": 6,               # {4, 5, 6}         original: 4
+            "num_neg": 5,               # {4, 5, 6}         original: 4
             "leave_one_out": "TLOO",    # {TLOO, RLOO}      original: TLOO
             "topk": 10,                 # {10, 50, 100}     original: 10
             # "num_epochs": 12,           # {12, 20, 30}      original: 12
@@ -36,7 +36,7 @@ class Main():
             "hidden_size": 64,          # {32, 64, 128}     original: 32    
             "lr":1e-3,                  # {1e-4, 1e-3}      original: 1e-4
             "hidden_size_ncf": 64,      # {32, 64, 128}     original: 32  
-            "lr_ncf":1e-3               # {1e-4, 1e-3}      original: 1e-4
+            "lr_ncf":1e-4               # {1e-4, 1e-3}      original: 1e-4
         }
 
         self.ini_time   = datetime.now()
