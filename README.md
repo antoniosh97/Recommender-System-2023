@@ -42,9 +42,11 @@ Table of Contents
 		- [5.2 EXPERIMENT B](#52-experiment-b)
 			- [Experiment setup](#experiment-setup-1)
 			- [Results](#results-1)
+			- [Conclusions](#conclusions-1)
 		- [5.3 EXPERIMENT C](#53-experiment-c)
 			- [Experiment setup](#experiment-setup-2)
 			- [Results](#results-2)
+			- [Conclusions](#conclusions-2)
 		- [5.4 EXPERIMENT D](#54-experiment-d)
 			- [Experiment setup](#experiment-setup-3)
 			- [Results](#results-3)
@@ -363,7 +365,9 @@ To be able to accomplish our goal and process all those different datasets, trai
 | RND   |     0.0049 |     0.0022 |     100.0000 |
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0709 |     0.0433 |      16.9712 |
+
 #### Conclusions
+
 ### 5.2 EXPERIMENT B
 #### Experiment setup
 * Number of negatives per positive: $\mathbf{5}$
@@ -379,6 +383,9 @@ To be able to accomplish our goal and process all those different datasets, trai
 | RND   |     0.0049 |     0.0022 |     100.0000 |
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0515 |     0.0275 |      68.5096 |
+
+#### Conclusions
+
 ### 5.3 EXPERIMENT C
 #### Experiment setup
 * Number of negatives per positive: $\mathbf{6}$
@@ -392,6 +399,9 @@ To be able to accomplish our goal and process all those different datasets, trai
 | RND   |     0.0049 |     0.0022 |     100.0000 |
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0699 |     0.0432 |      17.5481 |
+
+#### Conclusions
+
 
 ### 5.4 EXPERIMENT D
 #### Experiment setup
