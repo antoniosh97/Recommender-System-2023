@@ -550,9 +550,8 @@ In summary, the pipeline takes in a dataset, trains and evaluates multiple recom
 
 ## 7. CONCLUSIONS
 <div align="justify">
-As we have been able to verify, when comparing different models using the Amazon dataset, Neural Collaborative Filtering has been the winning model, since it has undoubtedly improved the Hit Ratio and NDCG metrics of the Factorization Machine, but has doubled your coverage.
-
-After analyzing the final test, we can deduce several key points that have a great impact on the understanding of a recommender system. The importance of the coverage value, since good metrics can be compatible with low coverage and must be taken into account. On the other hand, there must be a trade-off, this can be seen in the Random model where with a convergence of 100 percent we have very low results, since it does not learn from user preferences. On the other hand, the Popularity-Based model would be a great candidate to recommend items to a new user, a phenomenon also called "cold start", following the same line, it is worth mentioning that when running few epochs, the models tend to recommend the products More popular.
+As we have been able to verify, when comparing different models using the Amazon dataset, Neural Collaborative Filtering has been the winning model, since it has undoubtedly improved the Hit Ratio and NDCG metrics of the Factorization Machine, but has doubled your coverage.<br/><br/>
+After analyzing the final test, we can deduce several key points that have a great impact on the understanding of a recommender system. The importance of the coverage value, since good metrics can be compatible with low coverage and must be taken into account. On the other hand, there must be a trade-off, this can be seen in the Random model where with a convergence of one hundred percent we have very low results, since it does not learn from user preferences. On the other hand, the Popularity-Based model would be a great candidate to recommend items to a new user, a phenomenon also called "cold start", following the same line, it is worth mentioning that when running few epochs, the models tend to recommend the products more popular.<br/><br/>
 
 Finally, comment that recommendation systems often tend to restrict compliance in business, whether due to legal, social or political issues.
 
