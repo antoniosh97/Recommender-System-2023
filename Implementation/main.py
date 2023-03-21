@@ -18,7 +18,7 @@ class Main():
     def __init__(self):
         
         # Select the dataset you want to try
-        self.dataset = "Amazon"#"movie lens" # movie lens
+        self.dataset = "Amazon"         #"movie lens"/"Amazon"
         self.device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
         # > Variables ------------------------------------------------
@@ -30,18 +30,18 @@ class Main():
             "num_neg": 5,               # {4, 5, 6}         original: 4
             "leave_one_out": "TLOO",    # {TLOO, RLOO}      original: TLOO
             "topk": 10,                 # {10, 50, 100}     original: 10
-            # "num_epochs": 12,           # {12, 20, 30}      original: 12
-            # "batch_size": 64,           # {64, 32}          original: 64
-
+            "num_epochs": 12,           # {12, 20, 30}      original: 12
+            "batch_size": 64,           # {64, 32}          original: 64
             "hidden_size": 64,          # {32, 64, 128}     original: 32    
             "lr":1e-3,                  # {1e-4, 1e-3}      original: 1e-4
+
             "hidden_size_ncf": 64,      # {32, 64, 128}     original: 32  
             "lr_ncf":1e-4               # {1e-4, 1e-3}      original: 1e-4
         }
 
-        self.ini_time   = datetime.now()
+        self.ini_time  = datetime.now()
         self.exec_path = os.getcwd()
-        self.strategy = self.tuning_params["leave_one_out"]
+        self.strategy  = self.tuning_params["leave_one_out"]
 
         self.hparams = {
             'batch_size':64,
@@ -63,11 +63,10 @@ class Main():
         self.log = logs.Logs(exec_path=self.exec_path, ml=False)
         self.spl = sampling.Sample()
         self.exec = exec.Execution()
+        self.ds = dataset.DataSet()
         # < Classes --------------------------------------------------
         
         # > Dataset --------------------------------------------------
-        self.ds = dataset.DataSet()
-
         self.min_reviews, self.min_usuarios = [8,8] if self.tuning_mode else [6,6]
         
         # Dataset columns depending on chosen data
@@ -101,7 +100,7 @@ class Main():
         
         # > Dataset ---------------------------------------------------------------------------------
         if self.test_mode:
-            NrRows = 8000
+            NrRows = 5000
         else:
             NrRows = None
 
@@ -149,7 +148,7 @@ class Main():
         if self.test_mode:
             print("Dimensions matrix:\n",dims)
         
-        #plot train dataset distribution
+        #Plot train dataset distribution
         plots.plot_Train_dataset(self.train_x, self.tuning_params, self.hparams, self.dataset)
         print(f"Start: train_dataset and dataloader")
         train_dataset = pointdata.PointData(self.train_x, dims)
