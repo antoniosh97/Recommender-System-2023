@@ -36,19 +36,17 @@ Table of Contents
 			- [Coverage](#coverage)
 		- [4.4 PIPELINE](#44-pipeline)
 	- [5. ABLATION STUDY](#5-ablation-study)
-		- [5.1 EXPERIMENT A](#51-experiment-a)
+		- [5.1 EXPERIMENT 1: epochs 12](#51-experiment-1-epochs-12)
 			- [Experiment setup](#experiment-setup)
 			- [Results](#results)
 			- [Conclusions](#conclusions)
-		- [5.2 EXPERIMENT B](#52-experiment-b)
-			- [Experiment setup](#experiment-setup-1)
-			- [Results](#results-1)
-		- [5.3 EXPERIMENT C](#53-experiment-c)
-			- [Experiment setup](#experiment-setup-2)
-			- [Results](#results-2)
-		- [5.4 EXPERIMENT D](#54-experiment-d)
-			- [Experiment setup](#experiment-setup-3)
-			- [Results](#results-3)
+		- [5.2 EXPERIMENT 2: epochs 16](#52-experiment-2-epochs-16)
+		- [5.X EXPERIMENT X: batch\_size 32](#5x-experiment-x-batch_size-32)
+		- [5.X EXPERIMENT X: batch\_size 64](#5x-experiment-x-batch_size-64)
+		- [5.X EXPERIMENT X: num\_ng 5](#5x-experiment-x-num_ng-5)
+		- [5.X EXPERIMENT X: num\_ng 6](#5x-experiment-x-num_ng-6)
+		- [5.X EXPERIMENT X: num\_ng 8](#5x-experiment-x-num_ng-8)
+		- [5.X EXPERIMENT X: hidden\_size 64 (final)](#5x-experiment-x-hidden_size-64-final)
 	- [FINAL RESULTS](#final-results)
 	- [6. DEVELOPMENT](#6-development)
 		- [PREPARE THE DATASET FROM SCRATCH](#prepare-the-dataset-from-scratch)
@@ -337,6 +335,7 @@ To be able to accomplish our goal and process all those different datasets, trai
 	<img src="Management/README_images/pipeline_simple.jpg" width="75%"><br />
 </p>
 
+
 ---
 <br />
 <br />
@@ -350,78 +349,19 @@ To be able to accomplish our goal and process all those different datasets, trai
 *  Pending modificar learning rate. (paper: si usas adam este ya lo modifica)
 
 
-
-### 5.1 EXPERIMENT A
+### 5.1 EXPERIMENT 1: epochs 12
 #### Experiment setup
-* Number of negatives per positive: $\mathbf{5}$
-* Number of hidden neurons: $\mathbf{64}$
-* Learning rate for MF and NCF: $\mathbf{1·10^{-4}}$
-
 #### Results
-
-| Model | HR@10      | NDCG@10    | %Coverage@10 |
-| :------  | :------:|   :------:|   :------: |
-| FM    |     0.0487 |     0.0304 |      15.5769 |
-| RND   |     0.0049 |     0.0022 |     100.0000 |
-| POP   |     0.0356 |     0.0129 |       0.4808 |
-| NCF   |     0.0709 |     0.0433 |      16.9712 |
 #### Conclusions
-### 5.2 EXPERIMENT B
-#### Experiment setup
-* Number of negatives per positive: $\mathbf{5}$
-* Number of hidden neurons: $\mathbf{64}$
-* Learning rate for MF and NCF: $\mathbf{1·10^{-3}}$
-
-#### Results
-
-| Model | HR@10      | NDCG@10    | %Coverage@10 |
-| :------  | :------:|   :------:|   :------: |
-| FM    |     0.0606 |     0.0354 |      49.6635 |
-| RND   |     0.0049 |     0.0022 |     100.0000 |
-| POP   |     0.0356 |     0.0129 |       0.4808 |
-| NCF   |     0.0515 |     0.0275 |      68.5096 |
-### 5.3 EXPERIMENT C
-#### Experiment setup
-* Number of negatives per positive: $\mathbf{6}$
-* Number of hidden neurons: $\mathbf{64}$
-* Learning rate for MF and NCF: $\mathbf{1·10^{-4}}$
-#### Results
-
-| Model | HR@10      | NDCG@10    | %Coverage@10 |
-| :------  | :------:|   :------:|   :------: |
-| FM    |     0.0475 |     0.0303 |      10.7692 |
-| RND   |     0.0049 |     0.0022 |     100.0000 |
-| POP   |     0.0356 |     0.0129 |       0.4808 |
-| NCF   |     0.0699 |     0.0432 |      17.5481 |
-
-### 5.4 EXPERIMENT D
-#### Experiment setup
-* Number of negatives per positive: $\mathbf{6}$
-* Number of hidden neurons: $\mathbf{64}$
-* Learning rate for MF and NCF: $\mathbf{1·10^{-3}}$
-#### Results
-| Model | HR@10      | NDCG@10    | %Coverage@10 |
-| :------  | :------:|   :------:|   :------: |  
-| FM    |     0.0639 |     0.0360 |      43.7500 |
-| RND   |     0.0049 |     0.0022 |     100.0000 |
-| POP   |     0.0356 |     0.0129 |       0.4808 |
-| NCF   |     0.0536 |     0.0274 |      67.8846 |
-
-<br />
-<br />
+### 5.2 EXPERIMENT 2: epochs 16
+### 5.X EXPERIMENT X: batch_size 32
+### 5.X EXPERIMENT X: batch_size 64
+### 5.X EXPERIMENT X: num_ng 5
+### 5.X EXPERIMENT X: num_ng 6
+### 5.X EXPERIMENT X: num_ng 8
+### 5.X EXPERIMENT X: hidden_size 64 (final)
 
 ## FINAL RESULTS
-* Number of negatives per positive: $\mathbf{5}$
-* Number of hidden neurons: $\mathbf{64}$
-* MF Learning rate: $\mathbf{1·10^{-3}}$
-* NCF Learning rate: $\mathbf{1·10^{-4}}$
-
-| Model | HR@10      | NDCG@10    | %Coverage@10 |
-| :------  | :------:|   :------:|   :------: |  
-| FM    |     0.0606 |     0.0354 |      49.6635 |
-| RND   |     0.0049 |     0.0022 |     100.0000 |
-| POP   |     0.0356 |     0.0129 |       0.4808 |
-| NCF   |     0.0709 |     0.0433 |      16.9712 |
 
 <br />
 <br />
