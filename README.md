@@ -49,29 +49,14 @@ Table of Contents
 			- [Results](#results-3)
 			- [Conclusions](#conclusions-3)
 	- [FINAL RESULTS](#final-results)
-	- [6. DEVELOPMENT](#6-development)
-		- [PREPARE THE DATASET FROM SCRATCH](#prepare-the-dataset-from-scratch)
-			- [Download Dataset](#download-dataset)
-			- [Clean dataset](#clean-dataset)
-		- [HOW TO EXTRACT OPTICAL FLOW](#how-to-extract-optical-flow)
-		- [HOW TO EXTRACT FEATURES FROM VIDEOS](#how-to-extract-features-from-videos)
-		- [HOW TO TRAIN THE MODEL](#how-to-train-the-model)
-			- [Setting the environment in Google Drive](#setting-the-environment-in-google-drive)
-			- [Running training scripts](#running-training-scripts)
-		- [HOW TO RUN THE PROGRAM - video\_processor](#how-to-run-the-program---video_processor)
-			- [Installation](#installation)
-				- [Install Docker](#install-docker)
-				- [Install docker-compose](#install-docker-compose)
-				- [Install Miniconda](#install-miniconda)
-				- [Create your Miniconda environment](#create-your-miniconda-environment)
-				- [Create your .env file](#create-your-env-file)
-			- [RUN the project](#run-the-project)
-				- [??](#)
+	- [6. EXECUTION PROCEDURE](#6-execution-procedure)
+		- [Activate the environment](#activate-the-environment)
+		- [Set the variables in the __init__ function of the Main class](#set-the-variables-in-the-init-function-of-the-main-class)
+		- [Run the mani module](#run-the-mani-module)
 	- [END](#end)
 	- [7. CONCLUSIONS](#7-conclusions)
 		- [Next steps](#next-steps)
 		- [Ethical](#ethical)
-		- [7.3 Text](#73-text)
 
 ---
 ---
@@ -516,24 +501,51 @@ The following graphs show that neither of the two models generates bias, since t
 <br />
 <br />
 
-## 6. DEVELOPMENT
-### PREPARE THE DATASET FROM SCRATCH
-#### Download Dataset
-#### Clean dataset
-### HOW TO EXTRACT OPTICAL FLOW
-### HOW TO EXTRACT FEATURES FROM VIDEOS
-### HOW TO TRAIN THE MODEL
-#### Setting the environment in Google Drive
-#### Running training scripts
-### HOW TO RUN THE PROGRAM - video_processor
-#### Installation
-##### Install Docker
-##### Install docker-compose
-##### Install Miniconda
-##### Create your Miniconda environment
-##### Create your .env file
-#### RUN the project
-##### ??
+## 6. EXECUTION PROCEDURE
+<div align="justify">
+To get started with the development process for this Deep learning-based recommender system, you'll need to follow the steps outlined below:
+
+### Activate the environment
+To begin, you'll need to activate the project's environment. This can be achieved by running the following commands in the terminal:
+```
+conda create --name final-project python=3.8 
+conda activate final-project 
+pip install -r requirements.txt 
+
+```
+These commands will create a new environment called "final-project" with Python version 3.8 and install all the required packages listed in the "requirements.txt" file.
+
+### Set the variables in the __init__ function of the Main class
+* **dataset**: the name of the dataset to use. Set it to "Amazon" or "movie lens".
+* **device**: the device to use for training. Set it to torch.device('cuda') to use the GPU, or torch.device('cpu') to use the CPU. (automatically tries to use CUDA if available)
+* **test_mode**: set it to True to use a smaller dataset for testing purposes.
+* **show_tb**: set it to True to enable Tensorboard.
+* **tuning_mode**: set it to True to perform hyperparameter tuning. Set it to False to use the default hyperparameters.
+* **tuning_params**: set the hyperparameters to use for hyperparameter tuning.
+* **num_neg**: the number of negative samples to use.
+* **leave_one_out**: the leave-one-out strategy to use. Set it to "TLOO" or "RLOO".
+* **topk**: the number of recommendations to return.
+* **num_epochs**: the number of epochs to train for.
+* **batch_size**: the batch size to use for training.
+* **hidden_size**: the size of the hidden layer in the FM and NCF models.
+* **lr**: the learning rate to use for training.
+* **hidden_size_ncf**: the size of the hidden layer in the NCF model.
+* **lr_ncf**: the learning rate to use for training the NCF model.
+* **seed**: the seed to use for random reproducibility.
+
+### Run the mani module
+This will execute a pipeline that includes the following steps:
+- Initializing the parameters and settings for the pipeline, such as the dataset to be used, the device to run the code on (GPU or CPU), and the hyperparameters to tune the models.
+- Reading and preprocessing the dataset using the dataset module.
+- Splitting the data into training and testing sets using the exec module.
+- Defining the models to be trained and evaluated: model_fm, model_random, model_pop, model_nfc.
+- Training and evaluating each model using the exec module.
+- Generating evaluation plots using the plots module.
+- Logging the results of each model and experiment using the logs module.
+In summary, the pipeline takes in a dataset, trains and evaluates multiple recommendation models on it, and generates plots and logs to summarize the results. The pipeline is configurable, allowing for the exploration of different hyperparameters and datasets.
+</div>
+
+
 ## END
 
 
@@ -550,8 +562,6 @@ One of our consensus point is the possibility to “bring to life” and see the
 ### Ethical
 <div align="justify">
 
-
-
 As far as we get deep in the ethical point applied to recommender system, we could notice this is a topic worthy to have a entire project dedicated to it just considering the different aspects envolved and the importance of it for the user, the society or even for the country.<br/>
 The human being is a creature with preferences that can be a continuous variable, the complexity of implementing systems to monitor and collect those variables are extensive. This information once collected will provide data for the recommender systems. But apart from the technical side, the interests guided behind the code lines mould the nature of the system and show the limits of the ethical side of each company. It's not difficult to imagine inside the big advertisement industry, with sponsored products, brands, stores, ads and videos, the importance of the extreme care when configuring the recommender system to avoid influence in user's choice.<br/>
 Recommend a product to a customer require knowledge about this person's preferences, the security issues about user data will be a very big point for discussion in data privacy area, problems that should be mitigated or avoid.<br/>
@@ -559,7 +569,7 @@ We can ask ourselves until each level companies should know about their clients?
 In the end, our point of view about the ethical dilemma in recommender systems, companies should play fair with users, cover all the security issues, always be transparent with clients about the user data usage and really try to build a system to solve the user's pain, giving them support and recommending products accordingly with their interests.
 </div>
 
-### 7.3 Text
+
 
 
 <!-- 
