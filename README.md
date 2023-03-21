@@ -52,7 +52,7 @@ Table of Contents
 	- [6. EXECUTION PROCEDURE](#6-execution-procedure)
 		- [Activate the environment](#activate-the-environment)
 		- [Set the variables in the __init__ function of the Main class](#set-the-variables-in-the-init-function-of-the-main-class)
-		- [Run the mani module](#run-the-mani-module)
+		- [Run the main module](#run-the-main-module)
 	- [END](#end)
 	- [7. CONCLUSIONS](#7-conclusions)
 		- [Next steps](#next-steps)
@@ -468,9 +468,9 @@ The following table shows that the Hit Ratio values are as high as possible in b
 
 The following graphs show that neither of the two models generates bias, since their figure resembles the train data.
 <p align="center">
-	<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150140.png" />
-	<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150149.png">
-	<img src="Implementation/logs_final_result_6x6/train_TOT_ds_num_neg_5_rating_TLOO_batch_size_64_hidden_64.png">
+	<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023843.png" />
+	<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023850.png">
+	<img src="Implementation/logs_final_result_8x8/train_TOT_ds_num_neg_5_rating_TLOO_batch_size_64_hidden_64.png">
 </p>
 
 
@@ -478,7 +478,7 @@ The following graphs show that neither of the two models generates bias, since t
 **Dataset with a minimium of 6 reviews per user and 6 users per item**
 Para presental un único resultado, tomamos las medidas de arriba como referencia y ejecutamos todo con el dataset final.
 
-La siguiente tabla muestra cómo a pesar de tenertner los parámetros que optimizan las métricas de los modelos, se puede observar cómo el NCF es más bajo que el FM cuando debería ser mejor PENDING
+La siguiente tabla muestra que le hipósis inicial en donde el modelo NCF da mejores resultados que el FM, 
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |  
@@ -533,7 +533,7 @@ These commands will create a new environment called "final-project" with Python 
 * **lr_ncf**: the learning rate to use for training the NCF model.
 * **seed**: the seed to use for random reproducibility.
 
-### Run the mani module
+### Run the main module
 This will execute a pipeline that includes the following steps:
 - Initializing the parameters and settings for the pipeline, such as the dataset to be used, the device to run the code on (GPU or CPU), and the hyperparameters to tune the models.
 - Reading and preprocessing the dataset using the dataset module.
