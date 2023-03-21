@@ -20,14 +20,14 @@ Table of Contents
 			- [Random](#random)
 		- [4.3 METRICS](#43-metrics)
 		- [4.4 PIPELINE](#44-pipeline)
-	- [5. ABLATION STUDY](#5-ablation-study)
-		- [5.1 EXPERIMENT A](#51-experiment-a)
-		- [5.2 EXPERIMENT B](#52-experiment-b)
-		- [5.3 EXPERIMENT C](#53-experiment-c)
-		- [5.4 EXPERIMENT D](#54-experiment-d)
-	- [FINAL RESULTS](#final-results)
-	- [6. EXECUTION PROCEDURE](#6-execution-procedure)
-	- [7. CONCLUSIONS](#7-conclusions)
+	- [5. EXECUTION PROCEDURE](#5-execution-procedure)
+	- [6. ABLATION STUDY](#6-ablation-study)
+		- [6.1 EXPERIMENT A](#61-experiment-a)
+		- [6.2 EXPERIMENT B](#62-experiment-b)
+		- [6.3 EXPERIMENT C](#63-experiment-c)
+		- [6.4 EXPERIMENT D](#64-experiment-d)
+	- [7. FINAL RESULTS](#7-final-results)
+	- [8. CONCLUSIONS](#8-conclusions)
 
 ---
 ---
@@ -287,11 +287,58 @@ To be able to accomplish our goal and process all those different datasets, trai
 	<img src="Management/README_images/pipeline_simple.jpg" width="75%"><br />
 </p>
 
----
+
 <br />
 <br />
 
-## 5. ABLATION STUDY
+## 5. EXECUTION PROCEDURE
+<div align="justify">
+To get started with the development process for this Deep learning-based recommender system, you'll need to follow the steps outlined below:<br /><br />
+
+**Activate the environment**
+To begin, you'll need to activate the project's environment. This can be achieved by running the following commands in the terminal:
+```
+conda create --name final-project python=3.8 
+conda activate final-project 
+pip install -r requirements.txt 
+
+```
+These commands will create a new environment called "final-project" with Python version 3.8 and install all the required packages listed in the "requirements.txt" file.<br /><br />
+
+**Set the variables in the __init__ function of the Main class**
+* **dataset**: the name of the dataset to use. Set it to "Amazon" or "movie lens".
+* **device**: the device to use for training. Set it to torch.device('cuda') to use the GPU, or torch.device('cpu') to use the CPU. (automatically tries to use CUDA if available)
+* **test_mode**: set it to True to use a smaller dataset for testing purposes.
+* **show_tb**: set it to True to enable Tensorboard.
+* **tuning_mode**: set it to True to perform hyperparameter tuning. Set it to False to use the default hyperparameters.
+* **tuning_params**: set the hyperparameters to use for hyperparameter tuning.
+* **num_neg**: the number of negative samples to use.
+* **leave_one_out**: the leave-one-out strategy to use. Set it to "TLOO" or "RLOO".
+* **topk**: the number of recommendations to return.
+* **num_epochs**: the number of epochs to train for.
+* **batch_size**: the batch size to use for training.
+* **hidden_size**: the size of the hidden layer in the FM and NCF models.
+* **lr**: the learning rate to use for training.
+* **hidden_size_ncf**: the size of the hidden layer in the NCF model.
+* **lr_ncf**: the learning rate to use for training the NCF model.
+* **seed**: the seed to use for random reproducibility.<br /><br />
+
+**Run the main module**
+This will execute a pipeline that includes the following steps:
+- Initializing the parameters and settings for the pipeline, such as the dataset to be used, the device to run the code on (GPU or CPU), and the hyperparameters to tune the models.
+- Reading and preprocessing the dataset using the dataset module.
+- Splitting the data into training and testing sets using the exec module.
+- Defining the models to be trained and evaluated: model_fm, model_random, model_pop, model_nfc.
+- Training and evaluating each model using the exec module.
+- Generating evaluation plots using the plots module.
+- Logging the results of each model and experiment using the logs module.
+In summary, the pipeline takes in a dataset, trains and evaluates multiple recommendation models on it, and generates plots and logs to summarize the results. The pipeline is configurable, allowing for the exploration of different hyperparameters and datasets.
+</div>
+
+<br />
+<br />
+
+## 6. ABLATION STUDY
 *  Numero de epochs modifica bastante el coverage
 *  Si se aumenta topk --> aumenta eficiencia pero empresarialmente no interesa recomendar más de 10 items
 *  hidden_layer aparentemente no afecta
@@ -301,7 +348,7 @@ To be able to accomplish our goal and process all those different datasets, trai
 
 
 
-### 5.1 EXPERIMENT A
+### 6.1 EXPERIMENT A
 **Experiment setup**
 * Number of negatives per positive: $\mathbf{5}$
 * Number of hidden neurons: $\mathbf{64}$
@@ -324,7 +371,7 @@ With this experiment, comparing our models, given the current tuning parameters,
 
 </div>
 
-### 5.2 EXPERIMENT B
+### 6.2 EXPERIMENT B
 **Experiment setup**
 * Number of negatives per positive: $\mathbf{5}$
 * Number of hidden neurons: $\mathbf{64}$
@@ -348,7 +395,7 @@ Based on the results of this experiment, given the current tuning parameters, we
 
 
 
-### 5.3 EXPERIMENT C
+### 6.3 EXPERIMENT C
 **Experiment setup**
 * Number of negatives per positive: $\mathbf{6}$
 * Number of hidden neurons: $\mathbf{64}$
@@ -371,7 +418,7 @@ Based on the results of this experiment, given the current tuning parameters, we
 Given the current tuning parameters for this experiment, is easly to see the a good performance of NCF model compared with FM. With more presence of our test item in the topk 10 predicted values observed by the metric Hit Ratio, but just a small difference of 0,0129 for the ranking quality observable by the NDCG metric. Even if with a predominant better result for the coverage for the NCF compared with FM, both models generated low percentage rates.
 </div>
 
-### 5.4 EXPERIMENT D
+### 6.4 EXPERIMENT D
 **Experiment setup**
 * Number of negatives per positive: $\mathbf{6}$
 * Number of hidden neurons: $\mathbf{64}$
@@ -396,7 +443,7 @@ For this experiment, based on the tuning parameters, it is not difficult to obse
 <br />
 <br />
 
-## FINAL RESULTS
+## 7. FINAL RESULTS
 
 <div align="justify">
 
@@ -459,55 +506,12 @@ The following graphs show that neither of the two models generates bias, since t
 <br />
 <br />
 
-## 6. EXECUTION PROCEDURE
-<div align="justify">
-To get started with the development process for this Deep learning-based recommender system, you'll need to follow the steps outlined below:<br /><br />
-
-**Activate the environment**
-To begin, you'll need to activate the project's environment. This can be achieved by running the following commands in the terminal:
-```
-conda create --name final-project python=3.8 
-conda activate final-project 
-pip install -r requirements.txt 
-
-```
-These commands will create a new environment called "final-project" with Python version 3.8 and install all the required packages listed in the "requirements.txt" file.<br /><br />
-
-**Set the variables in the __init__ function of the Main class**
-* **dataset**: the name of the dataset to use. Set it to "Amazon" or "movie lens".
-* **device**: the device to use for training. Set it to torch.device('cuda') to use the GPU, or torch.device('cpu') to use the CPU. (automatically tries to use CUDA if available)
-* **test_mode**: set it to True to use a smaller dataset for testing purposes.
-* **show_tb**: set it to True to enable Tensorboard.
-* **tuning_mode**: set it to True to perform hyperparameter tuning. Set it to False to use the default hyperparameters.
-* **tuning_params**: set the hyperparameters to use for hyperparameter tuning.
-* **num_neg**: the number of negative samples to use.
-* **leave_one_out**: the leave-one-out strategy to use. Set it to "TLOO" or "RLOO".
-* **topk**: the number of recommendations to return.
-* **num_epochs**: the number of epochs to train for.
-* **batch_size**: the batch size to use for training.
-* **hidden_size**: the size of the hidden layer in the FM and NCF models.
-* **lr**: the learning rate to use for training.
-* **hidden_size_ncf**: the size of the hidden layer in the NCF model.
-* **lr_ncf**: the learning rate to use for training the NCF model.
-* **seed**: the seed to use for random reproducibility.<br /><br />
-
-**Run the main module**
-This will execute a pipeline that includes the following steps:
-- Initializing the parameters and settings for the pipeline, such as the dataset to be used, the device to run the code on (GPU or CPU), and the hyperparameters to tune the models.
-- Reading and preprocessing the dataset using the dataset module.
-- Splitting the data into training and testing sets using the exec module.
-- Defining the models to be trained and evaluated: model_fm, model_random, model_pop, model_nfc.
-- Training and evaluating each model using the exec module.
-- Generating evaluation plots using the plots module.
-- Logging the results of each model and experiment using the logs module.
-In summary, the pipeline takes in a dataset, trains and evaluates multiple recommendation models on it, and generates plots and logs to summarize the results. The pipeline is configurable, allowing for the exploration of different hyperparameters and datasets.
-</div>
 
 
 
 
 
-## 7. CONCLUSIONS
+## 8. CONCLUSIONS
 <div align="justify">
 As we have been able to verify, when comparing different models using the Amazon dataset, Neural Collaborative Filtering has been the winning model, since it has undoubtedly improved the Hit Ratio and NDCG metrics of the Factorization Machine, but has doubled your coverage.<br/><br/>
 After analyzing the final test, we can deduce several key points that have a great impact on the understanding of a recommender system. The importance of the coverage value, since good metrics can be compatible with low coverage and must be taken into account. On the other hand, there must be a trade-off, this can be seen in the Random model where with a convergence of one hundred percent we have very low results, since it does not learn from user preferences. On the other hand, the Popularity-Based model would be a great candidate to recommend items to a new user, a phenomenon also called "cold start". We have seen that if we decrease the requirement, the results increase considerably, such as using lower lr, using top@k of 20 items, or not choosing the most modern interaction in the full rating test.<br/><br/>
