@@ -412,10 +412,12 @@ Based on the results of this experiment, given the current tuning parameters, we
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0699 |     0.0432 |      17.5481 |
 
-
-
 #### Conclusions
 
+<div align="justify">
+
+Given the current tuning parameters for this experiment, is easly to see the a good performance of NCF model compared with FM. With more presence of our test item in the topk 10 predicted values observed by the metric Hit Ratio, but just a small difference of 0,0129 for the ranking quality observable by the NDCG metric. Even if with a predominant better result for the coverage for the NCF compared with FM, both models generated low percentage rates.
+</div>
 
 ### 5.4 EXPERIMENT D
 #### Experiment setup
@@ -431,6 +433,11 @@ Based on the results of this experiment, given the current tuning parameters, we
 | NCF   |     0.0536 |     0.0274 |      67.8846 |
 
 #### Conclusions
+<div align="justify">
+
+For this experiment, based on the tuning parameters, it is not difficult to observe a small difference in our end results. Even so, FM achieved more presence of our test item in the topk 10 predicted values observed by the metric Hit Ratio compared with NCF and we can notice the same behavior for the ranking quality of our test item comparing inside the predicted values. Otherwise, even if FM reached a better position for the previous rates, the coverage in contradiction was much more favorable to NCF.
+</div>
+
 
 
 <br />
@@ -451,9 +458,9 @@ The final configuration looks like this:
 <div align="justify">
 
 **Dataset with a minimium of 8 reviews per user and 8 users per item**
-Como hemos mencionado ya, con los parámetros optimos ajustamos el los modelos y ejecutamos con el dataset más pequeño y obtenemos los siguientes resultados.
+As already mentioned, the models are fitted with the optimal parameters and run with the smallest dataset.
 
-En donde vemos que los valores de Hit Ratio son lo más elevado posible tanto en FM como en NCF y sus coverages tiene un 
+The following table shows that the Hit Ratio values are as high as possible in both FM and NCF besides their coverages have a decent value.
 </div>
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
@@ -464,10 +471,11 @@ En donde vemos que los valores de Hit Ratio son lo más elevado posible tanto en
 | NCF   |     0.0709 |     0.0433 |      16.9712 |
 
 <div align="justify">
-...
+The following graphs show that neither of the two models generates bias, since their figure resembles the train data.
 	<p align="center">
 		<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150140.png" />
 		<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150149.png">
+		<img src="Implementation/logs_final_result_6x6/train_TOT_ds_num_neg_5_rating_TLOO_batch_size_64_hidden_64.png">
 	</p>
 
 </div>
@@ -485,7 +493,7 @@ En donde vemos que los valores de Hit Ratio son lo más elevado posible tanto en
 <div align="justify">
 ...
 	<p align="center">
-		<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023843.png" />
+		<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023843.png">
 		<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023850.png">
 	</p>
 
