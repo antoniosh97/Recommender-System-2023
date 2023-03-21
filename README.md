@@ -407,6 +407,9 @@ To be able to accomplish our goal and process all those different datasets, trai
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0536 |     0.0274 |      67.8846 |
 
+<br />
+<br />
+
 ## FINAL RESULTS
 * Number of negatives per positive: $\mathbf{5}$
 * Number of hidden neurons: $\mathbf{64}$
