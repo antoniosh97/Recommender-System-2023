@@ -326,7 +326,13 @@ Is a very interesting model to include into a comparison between models because 
 </div>
 
 #### Random
-??
+<div align="justify">
+The Random model generates randomly every recomended list, it has the advantage of a coverage of the 100% of the items catalogue.
+
+It is also interesting to include in a comparison because it must always be the model with worse accuracy results but best coverture.
+
+</div>
+
 ### 4.3 METRICS
 
 * **Hit Ratio**: Measures whether the test item is in the top@K positions of the recommendation list.
@@ -487,14 +493,14 @@ The following graphs show that neither of the two models generates bias, since t
 **Dataset with a minimium of 6 reviews per user and 6 users per item**
 Para presental un único resultado, tomamos las medidas de arriba como referencia y ejecutamos todo con el dataset final.
 
-La siguiente tabla muestra cómo a pesar de tenertner los parámetros que optimizan las métricas de los modelos, se puede observar cómo el NCF es más bajo que el FM cuando debería ser mejor
+La siguiente tabla muestra cómo a pesar de tenertner los parámetros que optimizan las métricas de los modelos, se puede observar cómo el NCF es más bajo que el FM cuando debería ser mejor PENDING
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |  
-| FM    |     0.0487 |     0.0301 |      16.9796 |
+| FM    |     0.0431 |     0.0268 |      16.4616 |
 | RND   |     0.0019 |     0.0010 |     100.0000 |
 | POP   |     0.0266 |     0.0098 |       0.1619 |
-| NCF   |     0.0472 |     0.0288 |      32.6157 |
+| NCF   |     0.0470 |     0.0290 |      31.8064 |
 
 
 The following graphs show that neither of the two models generates bias, since their figure resembles the train data.
