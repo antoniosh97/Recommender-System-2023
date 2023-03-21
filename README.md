@@ -100,12 +100,9 @@ Among the various reasons why this field is interesting to study, we found that 
 ## 2. OBJECTIVES
 <div align="justify">
 
-
-In middle of such a variety of actual options in the market for recommender systems, the different problems, complexity and techniques used for data sampling for example, our ambition with this project is to know and understand the advantages of the main different models used today by the industry, sampling techniques and metrics to evaluate the end results of each model tested.
-
-Due to the maturity of the existent technology, vastly used nowadays, our anchor to understand this type of system will be the FM - Factorization Machina and then extending to other models like Random, Popularity and the NCF - Neural Collaborative Filtering.
-
 In middle of such a variety of actual options in the market for recommender systems, the different problems, complexity and techniques used for data sampling for example, our ambition with this project is to know and understand the advantages of the main different models used today by the industry, sampling techniques and metrics to evaluate the end results of each model tested. 
+
+Due to the maturity of the existent technology, vastly used nowadays, our anchor to understand this type of system will be the FM - Factorization Machina model and then extending our exploration to other models like Random, Popularity and the NCF - Neural Collaborative Filtering. Besides using the Amazon products dataset, we have the opportunity to integrate a second dataset to our algorithm, being able to choose between one or another for each execution. The MovieLens dataset, which is largely used and tested in the market and have the same structure (User, Items, Ratings and Timestamp), facilitating the comprehension to consolidate our final results. 
 
 From the beginning, we could notice and understand the complexity of recommending something to a customer. There are a lot of variables involved, from the personal taste and style to a general country culture. We understand the importance of using all those context content to recognize the personal taste of a customer, but with it, we come across with a very big complexity introducing those variables in our project. Not only by the scarcity of data resources from the datasets available, but also by time to work with a context based recommender system. This is the main reason we are going to explore the “implicit feedback”, considering as positive an interaction of the customer with a product. For the negative interactions, we will need to generate it using a “negative sampling” technique commonly used by this industry. 
 
@@ -339,26 +336,6 @@ To be able to accomplish our goal and process all those different datasets, trai
 <p align="center">
 	<img src="Management/README_images/pipeline_simple.jpg" width="75%"><br />
 </p>
-
-<div align="justify">
-
-**EVARISTO TO MODIFY!!!!**
-
-In middle of such a variety of actual options in the market for recommender systems, the different problems, complexity and techniques used for data sampling for example, our ambition with this project is to know and understand the advantages of the main different models used today by the industry, sampling techniques and metrics to evaluate the end results of each model tested. 
-
-Due to the maturity of the existent technology, vastly used nowadays, our anchor to understand this type of system will be the FM - Factorization Machina model and then extending our exploration to other models like Random, Popularity and the NCF - Neural Collaborative Filtering. Besides using the Amazon products dataset, we have the opportunity to integrate a second dataset to our algorithm, being able to choose between one or another for each execution. The MovieLens dataset, which is largely used and tested in the market and have the same structure (User, Items, Ratings and Timestamp), facilitating the comprehension to consolidate our final results. To be able to accomplish our goal and process all those different datasets, train and test the different models, in the diagram below we can have an idea the structure of the program and the necessary parametrization: 
-
-<p align="center">
-	<img src="Management/README_images/pipeline_simple.jpg" width="75%"><br />
-</p>
-
-
-From the beginning, we could notice and understand the complexity of recommending something to a customer. There are a lot of variables involved, from the personal taste and style to a general country culture. We understand the importance of using all those context content to recognize the personal taste of a customer, but with it, we come across with a very big complexity introducing those variables in our project. Not only by the scarcity of data resources from the datasets available, but also by time to work with a context based recommender system. This is the main reason we are going to explore the “implicit feedback”, considering as positive an interaction of the customer with a product. For the negative interactions, we will need to generate it using a “negative sampling” technique commonly used by this industry. 
-
-In a first superficial look, a recommender system can demonstrate help customers to get close with the products of their interest, but also can help companies to get users more engaged with their brand. On the other hand, instead of adopting a user-centered approach focusing on preference prediction, they shape user preferences and guide choices. This impact is significant and deserves ethical attention. 
-
-</div>
-
 
 ---
 <br />
