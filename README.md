@@ -30,9 +30,6 @@ Table of Contents
 			- [Popularity Based](#popularity-based)
 			- [Random](#random)
 		- [4.3 METRICS](#43-metrics)
-			- [Hit ratio](#hit-ratio)
-			- [NDCG](#ndcg)
-			- [Coverage](#coverage)
 		- [4.4 PIPELINE](#44-pipeline)
 	- [5. ABLATION STUDY](#5-ablation-study)
 		- [5.1 EXPERIMENT A](#51-experiment-a)
@@ -325,9 +322,10 @@ https://www.analyticssteps.com/blogs/what-are-recommendation-systems-machine-lea
 #### Random
 ??
 ### 4.3 METRICS
-#### Hit ratio
-#### NDCG
-#### Coverage
+
+* **Hit Ratio**: Measures whether the test item is in the top@K positions of the recommendation list.
+* **NDCG (Normalized Discounted Cumulative Gain)**: Measures the ranking quality which gives information about where in the raking is our test item. 
+* **Coverage**: Coverage is the percent of items in the training data the model is able to recommend on a test set.
 
 
 ### 4.4 PIPELINE
@@ -446,6 +444,10 @@ With this experiment, comparing our models, given the current tuning parameters,
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0709 |     0.0433 |      16.9712 |
 
+<p align="center">
+	<img src="Implementation/logs_final_resull_6x6/reco_ep_1120230321150140.png"><br />
+</p>
+
 **Dataset with a minimium of 6 reviews per user and 6 users per item**
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
@@ -454,6 +456,11 @@ With this experiment, comparing our models, given the current tuning parameters,
 | RND   |     0.0019 |     0.0010 |     100.0000 |
 | POP   |     0.0266 |     0.0098 |       0.1619 |
 | NCF   |     0.0472 |     0.0288 |      32.6157 |
+
+
+<p align="center">
+	<img src="Management/README_images/pipeline_simple.jpg" width="75%"><br />
+</p>
 
 <br />
 <br />
