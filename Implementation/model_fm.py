@@ -31,7 +31,7 @@ class FactorizationMachineModel(torch.nn.Module):
                 interactions: np.ndarray,
                 device: torch.device) -> torch.Tensor:
         # return the score, inputs are numpy arrays, outputs are tensors
-        test_interactions = torch.from_numpy(interactions).to(dtype=torch.long, device=device) #, dtype=torch.long)
+        test_interactions = torch.from_numpy(interactions).to(dtype=torch.long, device=device)
         output_scores = self.forward(test_interactions)
         return output_scores
 
@@ -47,8 +47,6 @@ class FM_operation(torch.nn.Module):
         """
         :param x: Float tensor of size ``(batch_size, num_fields, embed_dim)``
         """
-        # square_of_sum = np.sum(x, dim=1) ** 2 # ...
-        # sum_of_square = np.sum(x ** 2, dim=1) # ...
         
         square_of_sum = torch.pow(torch.sum(x, dim=1),2)
         sum_of_square = torch.sum(torch.pow(x,2), dim=1)
