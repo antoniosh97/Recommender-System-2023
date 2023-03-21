@@ -69,8 +69,8 @@ Table of Contents
 				- [??](#)
 	- [END](#end)
 	- [7. CONCLUSIONS](#7-conclusions)
-		- [7.1 Text](#71-text)
-		- [7.2 Ethical](#72-ethical)
+		- [Next steps](#next-steps)
+		- [Ethical](#ethical)
 		- [7.3 Text](#73-text)
 
 ---
@@ -461,7 +461,7 @@ The final configuration looks like this:
 As already mentioned, the models are fitted with the optimal parameters and run with the smallest dataset.
 
 The following table shows that the Hit Ratio values are as high as possible in both FM and NCF besides their coverages have a decent value.
-</div>
+
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |  
@@ -470,18 +470,20 @@ The following table shows that the Hit Ratio values are as high as possible in b
 | POP   |     0.0356 |     0.0129 |       0.4808 |
 | NCF   |     0.0709 |     0.0433 |      16.9712 |
 
-<div align="justify">
+
 The following graphs show that neither of the two models generates bias, since their figure resembles the train data.
-	<p align="center">
-		<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150140.png" />
-		<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150149.png">
-		<img src="Implementation/logs_final_result_6x6/train_TOT_ds_num_neg_5_rating_TLOO_batch_size_64_hidden_64.png">
-	</p>
+<p align="center">
+	<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150140.png" />
+	<img src="Implementation/logs_final_result_6x6/reco_ep_1120230321150149.png">
+	<img src="Implementation/logs_final_result_6x6/train_TOT_ds_num_neg_5_rating_TLOO_batch_size_64_hidden_64.png">
+</p>
 
 </div>
 
+<div align="justify">
 
 **Dataset with a minimium of 6 reviews per user and 6 users per item**
+
 
 | Model | HR@10      | NDCG@10    | %Coverage@10 |
 | :------  | :------:|   :------:|   :------: |  
@@ -490,12 +492,13 @@ The following graphs show that neither of the two models generates bias, since t
 | POP   |     0.0266 |     0.0098 |       0.1619 |
 | NCF   |     0.0472 |     0.0288 |      32.6157 |
 
-<div align="justify">
-...
-	<p align="center">
-		<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023843.png">
-		<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023850.png">
-	</p>
+
+The following graphs show that neither of the two models generates bias, since their figure resembles the train data.
+<p align="center">
+	<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023843.png">
+	<img src="Implementation/logs_final_result_8x8/reco_ep_1120230321023850.png">
+	<img src="Implementation/logs_final_result_8x8/train_TOT_ds_num_neg_5_rating_TLOO_batch_size_64_hidden_64.png">
+</p>
 
 </div>
 
@@ -525,17 +528,18 @@ The following graphs show that neither of the two models generates bias, since t
 
 
 ## 7. CONCLUSIONS
----
-### 7.1 Text
 
-### 7.2 Ethical
+### Next steps
 <div align="justify">
-
 In conclusion of the project, the numbers generated give us evidence of optimist results, leaving some topics open due to the interest in the subject that could improve the quality in general terms. 
 
 Pursuing our main goal to improve the user experience and make them engage with the content, using context variables to measure the behavior of the user as an explicit feedback should be a very important next step for this project. Regrettably, as already mentioned, as long as we enter in the domain of the recommender systems, we could understand the complexity of recommending something to a customer at this level, which makes us follow the way of using the implicit feedback. The calculations have been made taking into account the following tags: userID, itemID and timestamp, so several parameters have been left unanalysed. The rating has an important role, which we could have used as explicit feedback, the only drawback would be that if our matrix was already sparse enough, with this context we add more zeros. As well as, rating could have focused on defining the behavior of the user, since, if the user tends to score low, we would have this situation present and controlled together with the BIAS of the average score of the item. The analysis of the history of the items saved in the basket, favorites and deleted from the basket would be something interesting to take into account because that would generate a BIAS per user. The product category could have been added since the user may be interested in a specific area, such as string instruments. It must be emphasized that there are companies whose interests are to set a bias in the model, this is how certain products are shown to you either by marketing strategies or advertising agreements, but this could enter in conflict with the ethical side of using a recommender system and the data privacy area. 
 
-One of our consensus point is the possibility to “bring to life” and see the system in action to visualize the interested party to interact with the system, creating an application that would allow us to choose a user and it would show their top 10 recommendations with the highlighted ground truth. 
+One of our consensus point is the possibility to “bring to life” and see the system in action to visualize the interested party to interact with the system, creating an application that would allow us to choose a user and it would show their top 10 recommendations with the highlighted ground truth. </div>
+
+### Ethical
+<div align="justify">
+
 
 
 As far as we get deep in the ethical point applied to recommender system, we could notice this is a topic worthy to have a entire project dedicated to it just considering the different aspects envolved and the importance of it for the user, the society or even for the country.<br/>
