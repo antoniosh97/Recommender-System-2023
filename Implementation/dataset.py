@@ -1,10 +1,8 @@
 import pandas as pd
 import numpy as np
-
 import os
 import wget 
 import datetime
-import sys
 
 class DataSet():
     def __init__(self):
@@ -29,7 +27,6 @@ class DataSet():
         else:
             self.csv_filename = str(path + self.data_path) + "interactions_movie_lens.csv"
 
-
         if nrows == None:
             df = pd.read_csv(self.csv_filename)
         else:
@@ -46,16 +43,13 @@ class DataSet():
         # Duplicates
         df_duplicates = df[[self.col_names["col_id_reviewer"],self.col_names["col_id_product"], self.col_names["col_unix_time"]]].sort_values(by=[self.col_names["col_unix_time"]], ascending=False)
         df = df.drop(df_duplicates[df_duplicates[[self.col_names["col_id_reviewer"],self.col_names["col_id_product"]]].duplicated()][self.col_names["col_id_reviewer"]].index.values.tolist())
-    
-        # if (info==True):
-        # get_dataset_basic_info(df,"Informacion tras eliminar duplicados")
 
         productos_a_eliminar=[1]
         clientes_a_eliminar=[1]
         iteracion = 1
         while (len(productos_a_eliminar)!=0)and(len(clientes_a_eliminar)!=0):
 
-            # Minimo de usuarios que han comprado el producto productos 
+            # Minimum number of users who have purchased the product products
             aux=df.groupby([self.col_names["col_id_product"]])[self.col_names["col_id_reviewer"]].count().reset_index()
             aux2=aux[aux[self.col_names["col_id_reviewer"]]<self.min[1]].reset_index() # usuarios a eliminar
             aux=aux[aux[self.col_names["col_id_reviewer"]]>=self.min[1]].reset_index() # usuarios a conservar
@@ -64,11 +58,7 @@ class DataSet():
 
             productos_a_eliminar=aux2[self.col_names["col_id_product"]]
 
-
-            # if (info==True):
-            #     get_dataset_basic_info(df,f"Iteracion: {iteracion}. Informacion tras eliminar productos comprados por menos de {min_usuarios} personas")
-
-            # Seleccionamos los ids de producto que tienen mas de X reviews 
+            # Products selection with more than X reviews
             aux=df.groupby([self.col_names["col_id_reviewer"]])[self.col_names["col_rating"]].count().reset_index()
             aux2=aux[aux[self.col_names["col_rating"]]<self.min[0]].reset_index()
             aux=aux[aux[self.col_names["col_rating"]]>=self.min[0]].reset_index()
@@ -77,8 +67,6 @@ class DataSet():
 
             clientes_a_eliminar=aux2[self.col_names["col_id_reviewer"]]
 
-            # if (info==True):
-            #     get_dataset_basic_info(df,f"Iteracion: {iteracion}. Informacion tras eliminar usuarios con menos de {min_reviews} reviews")
             if info:
                 t_u = len(df[self.col_names["col_id_reviewer"]].unique())
                 t_p = len(df[self.col_names["col_id_product"]].unique())
@@ -122,9 +110,6 @@ class DataSet():
                 # RE-INDEX
                 data[:, i] += add_dims
                 add_dims = np.max(data[:, i]) + 1
-
-
-        #dims = [np.size(np.unique(data[:, i])) for i in range(data.shape[1])]
 
         dims = np.max(data, axis=0) + 1
         return data, dims
