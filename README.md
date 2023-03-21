@@ -42,10 +42,13 @@ Table of Contents
 			- [Conclusions](#conclusions)
 		- [5.2 EXPERIMENT B](#52-experiment-b)
 			- [Experiment setup](#experiment-setup-1)
+			- [Results](#results-1)
 		- [5.3 EXPERIMENT C](#53-experiment-c)
 			- [Experiment setup](#experiment-setup-2)
+			- [Results](#results-2)
 		- [5.4 EXPERIMENT D](#54-experiment-d)
 			- [Experiment setup](#experiment-setup-3)
+			- [Results](#results-3)
 	- [FINAL RESULTS](#final-results)
 	- [6. DEVELOPMENT](#6-development)
 		- [PREPARE THE DATASET FROM SCRATCH](#prepare-the-dataset-from-scratch)
@@ -376,8 +379,14 @@ In a first superficial look, a recommender system can demonstrate help customers
 * Number of hidden neurons: $\mathbf{64}$
 * Learning rate for MF and NCF: $\mathbf{1·10^{-4}}$
 
-
 #### Results
+
+| Model | HR@10      | NDCG@10    | %Coverage@10 |
+| :------  | :------:|   :------:|   :------: |
+| FM    |     0.0487 |     0.0304 |      15.5769 |
+| RND   |     0.0049 |     0.0022 |     100.0000 |
+| POP   |     0.0356 |     0.0129 |       0.4808 |
+| NCF   |     0.0709 |     0.0433 |      16.9712 |
 #### Conclusions
 ### 5.2 EXPERIMENT B
 #### Experiment setup
@@ -385,22 +394,53 @@ In a first superficial look, a recommender system can demonstrate help customers
 * Number of hidden neurons: $\mathbf{64}$
 * Learning rate for MF and NCF: $\mathbf{1·10^{-3}}$
 
+#### Results
+
+| Model | HR@10      | NDCG@10    | %Coverage@10 |
+| :------  | :------:|   :------:|   :------: |
+| FM    |     0.0606 |     0.0354 |      49.6635 |
+| RND   |     0.0049 |     0.0022 |     100.0000 |
+| POP   |     0.0356 |     0.0129 |       0.4808 |
+| NCF   |     0.0515 |     0.0275 |      68.5096 |
 ### 5.3 EXPERIMENT C
 #### Experiment setup
 * Number of negatives per positive: $\mathbf{6}$
 * Number of hidden neurons: $\mathbf{64}$
 * Learning rate for MF and NCF: $\mathbf{1·10^{-4}}$
+#### Results
+
+| Model | HR@10      | NDCG@10    | %Coverage@10 |
+| :------  | :------:|   :------:|   :------: |
+| FM    |     0.0475 |     0.0303 |      10.7692 |
+| RND   |     0.0049 |     0.0022 |     100.0000 |
+| POP   |     0.0356 |     0.0129 |       0.4808 |
+| NCF   |     0.0699 |     0.0432 |      17.5481 |
+
 ### 5.4 EXPERIMENT D
 #### Experiment setup
 * Number of negatives per positive: $\mathbf{6}$
 * Number of hidden neurons: $\mathbf{64}$
 * Learning rate for MF and NCF: $\mathbf{1·10^{-3}}$
-  
+#### Results
+| Model | HR@10      | NDCG@10    | %Coverage@10 |
+| :------  | :------:|   :------:|   :------: |  
+| FM    |     0.0639 |     0.0360 |      43.7500 |
+| RND   |     0.0049 |     0.0022 |     100.0000 |
+| POP   |     0.0356 |     0.0129 |       0.4808 |
+| NCF   |     0.0536 |     0.0274 |      67.8846 |
+
 ## FINAL RESULTS
 * Number of negatives per positive: $\mathbf{5}$
 * Number of hidden neurons: $\mathbf{64}$
 * MF Learning rate: $\mathbf{1·10^{-3}}$
 * NCF Learning rate: $\mathbf{1·10^{-4}}$
+
+| Model | HR@10      | NDCG@10    | %Coverage@10 |
+| :------  | :------:|   :------:|   :------: |  
+| FM    |     0.0606 |     0.0354 |      49.6635 |
+| RND   |     0.0049 |     0.0022 |     100.0000 |
+| POP   |     0.0356 |     0.0129 |       0.4808 |
+| NCF   |     0.0709 |     0.0433 |      16.9712 |
 
 <br />
 <br />
