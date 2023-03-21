@@ -326,7 +326,13 @@ Is a very interesting model to include into a comparison between models because 
 </div>
 
 #### Random
-??
+<div align="justify">
+The Random model generates randomly every recomended list, it has the advantage of a coverage of the 100% of the items catalogue.
+
+It is also interesting to include in a comparison because it must always be the model with worse accuracy results but best coverture.
+
+</div>
+
 ### 4.3 METRICS
 
 * **Hit Ratio**: Measures whether the test item is in the top@K positions of the recommendation list.
