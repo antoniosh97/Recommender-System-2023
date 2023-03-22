@@ -301,11 +301,14 @@ To begin, you'll need to activate the project's environment. This can be achieve
 conda create --name final-project python=3.8 
 conda activate final-project 
 pip install -r requirements.txt 
-
 ```
 These commands will create a new environment called "final-project" with Python version 3.8 and install all the required packages listed in the "requirements.txt" file.<br /><br />
 
 **Set the variables in the __init__ function of the Main class**
+
+>> Code can be found in: **/Implementation** folder
+
+
 * **dataset**: the name of the dataset to use. Set it to "Amazon" or "movie lens".
 * **device**: the device to use for training. Set it to torch.device('cuda') to use the GPU, or torch.device('cpu') to use the CPU. (automatically tries to use CUDA if available)
 * **test_mode**: set it to True to use a smaller dataset for testing purposes.
