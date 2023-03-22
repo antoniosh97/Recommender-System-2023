@@ -280,9 +280,10 @@ It is also interesting to include in a comparison because it must always be the 
 
 To be able to accomplish our goal and process all those different datasets, train and test the different models, in the diagram below we can have an idea the structure of the program and the necessary parametrization: 
 
-<p align="center">
+
+<!-- <p align="center">
 	<img src="Management/README_images/pipeline_simple.jpg" width="75%"><br />
-</p>
+</p> -->
 
 
 <br />
