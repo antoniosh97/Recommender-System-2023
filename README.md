@@ -293,16 +293,24 @@ To be able to accomplish our goal and process all those different datasets, trai
 
 ## 5. EXECUTION PROCEDURE
 <div align="justify">
-To get started with the development process for this Deep learning-based recommender system, you'll need to follow the steps outlined below:<br /><br />
+
+To get started with the development process for this Deep learning-based recommender system, you'll need to follow the steps outlined below:
+
+**Clone the repository**
+```
+>> git clone "https://github.com/antoniosh97/Recommender-System-2023.git"
+```
+<br />
 
 **Activate the environment**
 To begin, you'll need to activate the project's environment. This can be achieved by running the following commands in the terminal:
 ```
-conda create --name final-project python=3.8 
-conda activate final-project 
-pip install -r requirements.txt 
+>> conda create --name final-project python=3.8 
+>> conda activate final-project 
+>> pip install -r requirements.txt 
 ```
-These commands will create a new environment called "final-project" with Python version 3.8 and install all the required packages listed in the "requirements.txt" file.<br /><br />
+These commands will create a new environment called "final-project" with Python version 3.8 and install all the required packages listed in the "requirements.txt" file.
+<br />
 
 **Set the variables in the __init__ function of the Main class**
 
