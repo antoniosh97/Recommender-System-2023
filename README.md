@@ -76,7 +76,7 @@ Recommender Systems (RS) are powerful tools to address the information overload 
 
 Implicit interactions examples are clicks, listened songs, watched movies, likes, dislikes, etc. Often, hybrid RS are designed to ensemble CF with some other types of information filtering: demographic, context-aware, content-based, social information, etc. RS cover a wide range of recommendation targets, such as travels, movies, restaurants, fashion, news, etc.
 
-There are two kinds of collaborative filtering algorithms: user-based and item-based. User-based collaborative filtering algorithm is to recommend the items which similar users have liked while item-based one is to recommend similar items according to users’ part behaviour. Because internet products usually have much larger user number than item number, they prefer to use the item-based collaboration to the user-bases one in their recommendation system considering the computation complexity. 
+There are two kinds of collaborative filtering algorithms: user-based and item-based. User-based collaborative filtering algorithm is to recommend the items which similar users have liked while item-based one is to recommend similar items according to users’ past behaviour. Because internet products usually have much larger user number than item number, they prefer to use the item-based collaboration to the user-bases one in their recommendation system considering the computation complexity. 
 
 CB filtering is widely used for recommendation systems design, which utilizes the content of items to create features and attributes to match user profiles. Items are compared with items previous liked by the users and the best matched items are then recommended. One major issue of CB filtering approach is that RS needs to learn user preferences for some types of items and apply these for other types of items.
 
@@ -281,9 +281,9 @@ It is also interesting to include in a comparison because it must always be the 
 To be able to accomplish our goal and process all those different datasets, train and test the different models, in the diagram below we can have an idea the structure of the program and the necessary parametrization: 
 
 
-<!-- <p align="center">
-	<img src="Management/README_images/pipeline_simple.jpg" width="75%"><br />
-</p> -->
+<p align="center">
+	<img src="Management/README_images/pipeline_simple.jpeg" ><br />
+</p>
 
 
 <br />
