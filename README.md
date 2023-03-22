@@ -30,7 +30,7 @@ Table of Contents
 	- [8. CONCLUSIONS](#8-conclusions)
 
 ---
----
+
 
 
 
@@ -48,7 +48,6 @@ In general, recommender systems are algorithms based on suggesting relevant item
 Among the various reasons why this field is interesting to study, we found that improving the user experience encourages them to discover new products of interest. In addition, in case the recommendations are accurate, the commitment with the application is strengthened and this causes a win-win since the company captures data to improve its marketing strategies.
 </div>
 
----
 <br />
 <br />
 
@@ -64,7 +63,7 @@ From the beginning, we could notice and understand the complexity of recommendin
 In a first superficial look, a recommender system can demonstrate help customers to get close with the products of their interest, but also can help companies to get users more engaged with their brand. On the other hand, instead of adopting a user-centered approach focusing on preference prediction, they shape user preferences and guide choices. This impact is significant and deserves ethical attention.
 </div>
 
----
+
 <br />
 <br />
 
@@ -111,9 +110,7 @@ To rank a set of recommender models, we rank a target set of items for every seq
 
 <div align="justify">
 
-https://nijianmo.github.io/amazon/index.html
-
-This dataset is part from an updated version of the Amazon review dataset released in 2014. As in the previous version, this dataset includes reviews (ratings, text, helpfulness votes), product metadata (descriptions, category information, price, brand, and image features), and links (also viewed/also bought graphs).
+[This dataset](https://nijianmo.github.io/amazon/index.html) is part from an updated version of the Amazon review dataset released in 2014. As in the previous version, this dataset includes reviews (ratings, text, helpfulness votes), product metadata (descriptions, category information, price, brand, and image features), and links (also viewed/also bought graphs).
 We use the reduced dataset that includes no metadata or reviews but only (item, user, rating, timestamp) tuples.
 This dataset provides the following features:
   * The total number of clients is **903330**
@@ -127,14 +124,14 @@ This dataset provides the following features:
 
 <div align="justify">
 
-The MovieLens datasets, first released in 1998, describe people’s expressed preferences for movies. These preferences take the form of tuples, each the result of a person expressing a preference (a 0-5 star rating) for a movie at a particular time. These preferences were entered by way of the MovieLens web site1 — a recommender system that asks its users to give movie ratings in order to receive personalized movie recommendations.
+The [MovieLens](https://files.grouplens.org/datasets/movielens/ml-100k.zip) datasets, first released in 1998, describe people’s expressed preferences for movies. These preferences take the form of tuples, each the result of a person expressing a preference (a 0-5 star rating) for a movie at a particular time. These preferences were entered by way of the MovieLens web site1 — a recommender system that asks its users to give movie ratings in order to receive personalized movie recommendations.
 We use the MovieLens-100K Dataset containing 100.000 anonymous ratings with:
 - **userID** in range between 1 and 943
 - **movieID** in range between 1 and 1682
 - **rating** that are made in a 5-star scale
 - **timestamp** representing time in seconds since de rating was done
 - Each user has **at least 20 ratings**
-https://files.grouplens.org/datasets/movielens/ml-100k.zip 
+ 
 
 **Data preparation**
 Cleaning and transforming data is absolutely necessary for reliable results.
@@ -555,59 +552,3 @@ In the end, our point of view about the ethical dilemma in recommender systems, 
 </div>
 
 
-
-
-<!-- 
-
-
-### HOW TO TRAIN THE MODEL
-
-#### Setting the environment
-
-Text
-
-#### Running training scripts
-
-Text
-
-### HOW TO RUN THE PROGRAM
-
-#### Installation
-
-Text
-
-##### Install Miniconda
-
-To test your installation, in your terminal window or Anaconda Prompt, run the command: 
-```bash
-$ conda list
-```
-And you should obtain the list of packages installed in your base environment.
-
-##### Create your Miniconda environment
-
->  Notice: This repository has been designed in order to allow being executed with two different environments. If you have a GPU in your computer, make use of the file "environment_gpu.yml" during the next section, in case you only have CPU, use the file "environment.yml" to prepare your environment.
-
-Execute:
-
-```bash
- $ conda env create -f environment_gpu.yml
-```
-
-This will generate the `videoprocgpu` environment with all the required tools and packages installed.
-
-Once your environment had been created, activate it by typing:
-
-```bash
-$ conda activate videoprocgpu
-```
-
-
-##### RUN the project
-
-Text
-
-
-### HOW TO RUN THE PROGRAM
-
-Text    -->
