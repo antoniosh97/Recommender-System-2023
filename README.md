@@ -1,5 +1,5 @@
 # RECOMMENDER SYSTEM PROJECT
-Final project for the 2022-2023 Postgraduate course on Artificial Intelligence with Deep Learning, UPC School, authored by **[Antonio Sánchez](https://www.linkedin.com/in/antonio-s%C3%A1nchez-hern%C3%A1ndez/)**, **[Brenda Fernández](https://www.linkedin.com/in/brenda-fernandez-alayo/)**, **[Evaristo Broullon](https://www.linkedin.com/in/evaristobroullon/)** and **[Joan Dayas](https://www.linkedin.com/in/joansiam/)**. 
+Final project for the 2022-2023 Postgraduate Diploma course on Artificial Intelligence with Deep Learning, UPC School, authored by **[Antonio Sánchez](https://www.linkedin.com/in/antonio-s%C3%A1nchez-hern%C3%A1ndez/)**, **[Brenda Fernández](https://www.linkedin.com/in/brenda-fernandez-alayo/)**, **[Evaristo Broullon](https://www.linkedin.com/in/evaristobroullon/)** and **[Joan Dayas](https://www.linkedin.com/in/joansiam/)**. 
 
 Advised by **Paula Gómez Duran**.
 
